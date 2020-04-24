@@ -1,0 +1,87 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+@media only screen and (max-width : 1280px)
+	.places-preview--cards
+		min-height: 526px
+	[class*='places-preview--cards--layout']
+		grid-column-gap: 25px
+	.places-preview--cards--layout-top
+		.places-preview--card
+			&:nth-child(1)
+				height: 300px
+				clip-path: url('#places-mask-1200--1')
+			&:nth-child(2)
+				height: 270px
+				clip-path: url('#places-mask-1200--2')
+			&:nth-child(3)
+				height: 273px
+				clip-path: url('#places-mask-1200--3')
+
+	.places-preview--cards--layout-bottom
+		top: 200px
+		.places-preview--card
+			&:nth-child(1)
+				height: 234px
+				clip-path: url('#places-mask-1200--4')
+			&:nth-child(2)
+				height: 308px
+				clip-path: url('#places-mask-1200--5')
+			&:nth-child(3)
+				height: 322px
+				clip-path: url('#places-mask-1200--6')
+	.f-section-custom-dots
+		margin-top: 25px
+	.footer-f-section--container
+		padding-top: 140px
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	// 
+
+@media only screen and (max-width : 1024px)
+	// 
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	// 
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	// 
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	// 
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	// 
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	// 
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
