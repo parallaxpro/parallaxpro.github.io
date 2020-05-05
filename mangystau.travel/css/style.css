@@ -11501,7 +11501,7 @@ body.triger-anime .load-anime-top {
  * Media
  */
 
-@media (max-width: 1199px) {
+@media (max-width: 1280px) {
 	.hero-slider--title {
 		font-size: 72px;
 	}
@@ -11510,8 +11510,8 @@ body.triger-anime .load-anime-top {
 	.cbp-af-header.header-float.cbp-af-header-shrink .padding-on-scroll,
 	.cbp-af-header.cbp-af-header-shrink .padding-on-scroll,
 	.padding-on-scroll{
-		padding-top: 17px;
-		padding-bottom: 17px;
+		/*padding-top: 17px;*/
+		/*padding-bottom: 17px;*/
 		-webkit-transition : all 0.3s ease-out;
 		transition : all 0.3s ease-out;
 	}
