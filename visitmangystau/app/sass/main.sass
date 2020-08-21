@@ -2,3 +2,123 @@
 
 // CUSTOM USER STYLES & IMPORTS
 
+.header
+	padding: 50px 0
+
+.logotype
+	display: flex
+	width: 195px
+	height: 50px
+	background: url('/images/logos/logotype.png') 50% no-repeat
+	background-size: auto 50px
+	line-height: 100%
+
+.ul-navigation
+	padding: 0
+	margin: 0 0 0 35px
+	font-size: 14px
+	.li-navigation-item
+		list-style: none
+		line-height: 100%
+		margin: 0 15px
+		a
+			text-decoration: none
+			color: rgba($black, 0.5)
+			line-height: 100%
+			&:hover
+				color: rgba($black, 1)
+
+.navigation--right > *
+	margin-left: 10px
+
+
+.navigation--right-item
+	position: relative
+	display: flex
+	width: 40px
+	height: 40px
+	justify-content: center
+	align-items: center
+	border-radius: 5px
+	// margin-left: 10px
+	color: $darkblue
+	font-size: 16px
+	user-select: none
+	&:hover
+		color: $darkblue
+		text-decoration: none
+		background: rgba($darkblue, 0.05)
+		cursor: pointer
+
+.nav--item-icon
+	width: 18px
+	height: 18px
+	display: flex
+	&.icon-search, &.icon-user
+		background-size: 18px !important
+	&.icon-search
+		background: url('/images/icons/search.png')
+		background-position: bottom
+	&.icon-user
+		background: url('/images/icons/user.png')
+		background-position: 50%
+	&.icon-langs
+		background: url('/images/icons/langs.png')
+		background-size: 21px
+		background-position-x: center
+		&.i-lang-ru
+			background-position-y: 2px
+		&.i-lang-en
+			background-position-y: center
+		&.i-lang-kz
+			background-position-y: bottom
+
+.nav--item-icon.icon-langs
+	width: 21px
+
+.languages-list--dropdown
+	position: absolute
+	top: 100%
+	display: none
+	margin-top: 5px
+	background: white
+	border-radius: 5px
+	box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
+	overflow: hidden
+	a
+		display: flex
+		padding: 12px 9px
+		&:hover
+			background: rgba($darkblue, 0.1)
+	&.show
+		display: block
+		animation: slide-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+	&.close
+		animation: slide-down 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.navigation--right-search
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+	&.open
+		display: flex
+		flex-direction: row
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		background: #e5e7f0
+		border-radius: 5px
+		.navigation--right-item:hover
+			background: unset
+		.icon-search
+			background-position-y: top
+	&.show
+		padding: 0 5px
+		.search-input
+			display: flex
+			width: 100%
+			padding-right: 10px
+
+
+.search-input
+	display: none
+	background: unset
+	border: none
