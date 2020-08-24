@@ -3,12 +3,15 @@
 $accent: rgba(#2B3990, 0.15) // Accent Color
 $fontsize: 14px // Body Font Size
 $black: #1F2029 // Text Color
+$gray: #808080 // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 $roboto: Roboto, sans-serif // Roboto Font Family
 
 $darkblue: #2B3990
 $red: #EF4136
 $green: #219653
+
+$shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 30px
@@ -26,18 +29,18 @@ $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1230px)
 
 // FONTS LOAD SECTION
 
-@mixin font($fname, $fstyle, $fweight, $furl)
-	@font-face
-		font-family: $fname
-		font-style: $fstyle
-		font-weight: $fweight
-		// font-display: swap // Uncomment to initially display system fonts
-		src: local($fname), url($furl) format('woff2')
+// @mixin font($fname, $fstyle, $fweight, $furl)
+// 	@font-face
+// 		font-family: $fname
+// 		font-style: $fstyle
+// 		font-weight: $fweight
+// 		// font-display: swap // Uncomment to initially display system fonts
+// 		src: local($fname), url($furl) format('woff2')
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+// @include font('Roboto', normal, normal, '../fonts/roboto-regular-webfont.woff2')
+// @include font('Roboto', italic, italic, '../fonts/roboto-italic-webfont.woff2')
+// @include font('Roboto', normal, bold, '../fonts/Roboto-Bold.woff2')
+// @include font('Roboto', italic, italic, '../fonts/roboto-bolditalic-webfont.woff2')
 
 // GENERAL DOCUMENT STYLES
 
@@ -63,6 +66,7 @@ body
 	overflow-x: hidden
 	color: $black
 	background: #F0F0F5
+	text-rendering: optimizeLegibility
 
 *
 	box-sizing: border-box
@@ -71,6 +75,11 @@ body
 	&:before, &:after
 		box-sizing: border-box
 		transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+
+a
+	color: $darkblue
+	&:hover
+		text-decoration: none
 
 @keyframes slide-top
 	0%

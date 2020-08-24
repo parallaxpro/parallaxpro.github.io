@@ -4,13 +4,18 @@
 
 .header
 	padding: 50px 0
+	*
+		transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+
+.header-container
+	position: relative
 
 .logotype
 	display: flex
 	width: 195px
 	height: 50px
 	background: url('/images/logos/logotype.png') 50% no-repeat
-	background-size: auto 50px
+	background-size: cover
 	line-height: 100%
 
 .ul-navigation
@@ -30,7 +35,6 @@
 
 .navigation--right > *
 	margin-left: 10px
-
 
 .navigation--right-item
 	position: relative
@@ -62,6 +66,12 @@
 	&.icon-user
 		background: url('/images/icons/user.png')
 		background-position: 50%
+	&.icon-menu
+		width: 25px
+		height: 25px
+		background: url('/images/icons/menu.png')
+		background-position: 50%
+		background-size: cover
 	&.icon-langs
 		background: url('/images/icons/langs.png')
 		background-size: 21px
@@ -85,6 +95,7 @@
 	border-radius: 5px
 	box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
 	overflow: hidden
+	z-index: 999
 	a
 		display: flex
 		padding: 12px 9px
@@ -96,16 +107,19 @@
 	&.close
 		animation: slide-down 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
 
-.navigation--right-search
+
+.navigation--right-search--showed
+	display: none
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	right: 115px
+	background: #e5e7f0
+	border-radius: 5px
+	z-index: 99
 	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
 	&.open
 		display: flex
-		flex-direction: row
-		position: absolute
-		top: 50%
-		transform: translateY(-50%)
-		background: #e5e7f0
-		border-radius: 5px
 		.navigation--right-item:hover
 			background: unset
 		.icon-search
@@ -117,8 +131,327 @@
 			width: 100%
 			padding-right: 10px
 
+.navigation--right-search--showed-group
+	display: flex
+	flex-direction: row
+	width: 100%
 
 .search-input
 	display: none
 	background: unset
 	border: none
+
+.search-results-container
+	display: none
+	position: absolute
+	top: 100%
+	margin-top: 15px
+	left: 0
+	right: 0
+	z-index: 999
+	&.mobile
+		margin: 0 15px
+	&.show
+		display: block
+		animation: slide-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+	&.close
+		animation: slide-down 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.search-results-block
+	background: white
+	border-radius: 5px
+	box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
+	overflow: hidden
+
+.search-results-item
+	display: flex
+	padding: 18px 20px
+	color: $black
+	line-height: 100%
+	&:hover
+		color: $black
+		background: rgba($darkblue, 0.1)
+	&:after
+		content: ''
+		position: absolute
+		right: 20px
+		width: 16px
+		height: 16px
+		background: url('/images/icons/link.png') 50% no-repeat
+		background-size: contain
+
+.actual-section
+	img
+		transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1)
+		
+
+.actual-first--link
+	position: relative
+	display: block
+	height: 400px
+	overflow: hidden
+	border-radius: 5px
+	color: white
+	.actual-first--container-image
+		position: absolute
+		width: 100%
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		min-height: 400px
+		z-index: 1
+	&:hover
+		.actual-first--container-image
+			transform: translate(-50%, -50%) scale(1.1)
+
+.actual-first--container-wrapper
+	display: block
+	position: absolute
+	z-index: 1
+	bottom: 40px
+	right: 40px
+	left: 40px
+	z-index: 3
+
+.actual-first--link:hover
+	color: white
+
+.bg-gradient
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	background: linear-gradient(180deg, rgba(42, 43, 50, 0) 0%, rgba(42, 43, 50, 0.9) 100%)
+	z-index: 2
+
+.actual-first--title
+	font-size: 24px
+	line-height: 120%
+	margin: 10px 0
+	font-weight: bold
+
+.actual-first--desc
+	margin: 0
+	padding: 0
+	font-size: 14px
+	line-height: 150%
+
+.actual-first--container--tags span, .actual-first--container-date
+	opacity: 0.5
+	font-size: 12px
+	line-height: 100%
+
+.actual-first--container--tags span
+	margin-right: 10px
+	&:hover
+		opacity: 1
+
+.article-row-block--image
+	position: relative
+	display: block
+	min-width: 175px
+	height: 120px
+	border-radius: 5px
+	overflow: hidden
+	margin-right: 10px
+	img
+		position: absolute
+		min-width: 100%
+		height: 120px
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&:hover
+		img
+			transform: translate(-50%, -50%) scale(1.1)
+
+.actual-article
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+
+.article-row-block
+	// display: flex
+	color: $black
+	&:hover
+		color: $black
+
+.article-row-block--image
+	position: relative
+	display: block
+	min-width: 175px
+	height: 120px
+	border-radius: 5px
+	overflow: hidden
+	img
+		position: absolute
+		// min-width: 100%
+		min-height: 120px
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+.article-row-block--body
+	display: block
+	border-radius: 5px
+	padding: 18px 20px 17px
+	&:hover
+		background: #FFFFFF
+		box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
+
+.article-row-block--title
+	font-size: 16px
+	line-height: 100%
+	margin: 16px 0 7px
+	font-weight: normal
+
+.article-row-block--desc
+	font-size: 12px
+	line-height: 140%
+	opacity: 0.75
+	margin: 0
+
+.article-row-block-header
+	font-size: 12px
+	line-height: 100%
+
+.article-row-block--date
+	opacity: 0.5
+
+.article-row-block--hashtag span
+	opacity: 0.3
+	margin-right: 10px
+	&:hover
+		color: $darkblue
+		opacity: 1
+
+.mobile-search--container, .mobile-menu--button
+	display: none
+
+.mobile-navigation-container
+	position: absolute
+	display: none
+	margin-top: 20px
+	top: 100%
+	left: 0
+	right: 0
+	z-index: 99
+	&.show
+		display: block
+		animation: slide-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+	&.close
+		animation: slide-down 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.mobile-nav-item
+	display: flex
+	padding: 18px 20px
+	color: $black
+	line-height: 100%
+	&:hover
+		color: $black
+		background: rgba($darkblue, 0.1)
+
+.mobile-navigation
+	background: white
+	border-radius: 3px
+	overflow: hidden
+	box-shadow: $shadow
+
+.actual-row
+	padding: 50px 0 20px
+
+.actual-row-article
+	border-right: 1px solid rgba($gray, 0.1)
+	&:last-child
+		border-right: 0
+
+.actual-row-item
+	color: $black
+	&:hover
+		color: $black
+
+.actual-row-header
+	font-size: 12px
+	line-height: 100%
+	margin-bottom: 16px
+
+.actual-row--hashtags span
+	opacity: 0.3
+	margin-right: 10px
+	&:hover
+		opacity: 1
+		color: $darkblue
+	&:last-child
+		margin-right: 0
+
+.actual-row--title
+	font-weight: normal
+	font-size: 16px
+	line-height: 150%
+	&:hover
+		color: $darkblue
+
+.actual-row--date
+	opacity: 0.5
+
+.more-articles
+	padding: 20px 0
+
+.more-button
+	display: block
+	width: 100%
+	padding: 18px
+	text-align: center
+	font-size: 14px
+	line-height: 100%
+	color: rgba($black, 0.2)
+	background: rgba($black, 0.03)
+	border-radius: 3px
+	border: 0
+	outline: none
+	&:hover
+		color: rgba($black, 0.3)
+		background: rgba($black, 0.06)
+
+
+@media only screen and (max-width: 1200px)
+	.logotype
+		width: 156px
+		height: 40px
+	// .navigation, .navigation--right-search--container
+	.navigation
+		display: none !important
+	.mobile-search--container, .mobile-menu--button
+		display: flex
+	.mobile-menu--button 
+		margin-right: 10px
+	.header
+		padding: 30px 0
+
+@media only screen and (max-width: 576px)
+	body
+		padding-top: 80px
+	.header
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		padding: 10px 0
+		background: white
+		border-bottom: 1px solid rgba($darkblue, 0.1)
+		z-index: 9999
+	.navigation--right > *
+		margin-left: 0
+	.logotype
+		width: 126px
+		background-size: contain
+	.navigation--right-search--showed
+		right: 95px
+	.search-results-container.mobile
+		margin-top: 20px
+@media only screen and (max-width: 372px)
+	.logotype
+		width: 40px
+		background: url('/images/logos/mobile.png') 50% no-repeat
+		background-size: contain
