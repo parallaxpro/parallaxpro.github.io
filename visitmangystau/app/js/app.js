@@ -95,6 +95,14 @@ $(document).ready(function() {
 
 	// 
 
+	var mySwiper = new Swiper('.swiper-container', {
+		// Optional parameters
+		// direction: 'vertical',
+		// loop: true,
+		slidesPerView: 4,
+		spaceBetween: 30,
+	})
+
 });
 
 function closeDropdown(block) {
