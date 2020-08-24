@@ -121,6 +121,6 @@ function setResultsToSearch(data) {
 		var template = '<a href='+ value.url +' class="search-results-item">'+ value.title +'</a>';
 		block.append(template);
 	});
-	
+
 	container.addClass('show');
 }
