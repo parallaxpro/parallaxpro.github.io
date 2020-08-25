@@ -5,7 +5,7 @@
 .header
 	padding: 50px 0
 	*
-		transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+		transition: $transition
 
 .header-container
 	position: relative
@@ -301,6 +301,7 @@ img
 	&:hover
 		background: #FFFFFF
 		box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
+		transform: translateY(-5px)
 
 .article-row-block--title
 	font-size: 16px
@@ -398,7 +399,7 @@ img
 	opacity: 0.5
 
 .more-articles
-	padding: 20px 0
+	padding-top: 20px
 
 .more-button
 	display: block
@@ -445,9 +446,19 @@ img
 	z-index: 3
 	margin: 40px
 
+.actual-section
+	margin: 0 !important
 
 .guide-section
 	padding: 15px 0
+	margin-bottom: 0 !important
+	margin-top: 15px !important
+
+.help-section
+	margin: 0 !important
+
+.help-section--slider
+	padding: 20px 0 !important
 
 .help-item
 	display: block
@@ -456,9 +467,11 @@ img
 	padding: 45px
 	color: $black
 	border-radius: 5px
+	// margin: 20px 0
 	&:hover
 		box-shadow: $shadow
 		color: $black
+		transform: translateY(-5px)
 
 .help-item--title
 	font-weight: 500
@@ -474,6 +487,378 @@ img
 .help-item--image
 	height: 75px
 	margin-bottom: 30px
+
+
+.section-title-big
+	font-size: 36px
+	line-height: 100%
+	margin-bottom: 10px
+	text-align: center
+
+.todo-section
+	background: rgba($darkblue, 0.05)
+	padding: 50px 0 30px
+	margin-top: 30px !important
+
+.todo-block
+	position: relative
+	display: block
+	color: $black
+	width: 100%
+	max-height: 250px
+	margin-bottom: 50px
+	*
+		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+	&:hover
+		color: $black
+		.todo-block--title
+			bottom: -15px
+			box-shadow: $shadow
+		.todo-block--image
+			transform: translateY(-10px)
+
+
+.todo-block--image
+	display: block
+	overflow: hidden
+	border-radius: 5px
+	img
+		width: 100%
+		max-height: 250px
+		object-fit: cover
+		border-radius: 5px
+
+.todo-block--title
+	display: block
+	position: absolute
+	bottom: -20px
+	left: 40px
+	right: 40px
+	text-align: center
+	background: white
+	padding: 19px
+	font-size: 18px
+	line-height: 120%
+	font-weight: bold
+	z-index: 99
+	border-radius: 5px
+
+// .swipe-on
+// 	// display: none
+// 	opacity: 0
+// 	// z-index: -1
+// 	&:before, &:after
+// 		content: ''
+// 		display: block
+// 		position: absolute
+// 		top: 20px
+// 		bottom: 20px
+// 		width: 30px
+// 		background: url('/images/icons/help-touch-gradient.png') 50% no-repeat
+// 		background-size: cover
+// 		z-index: 9
+// 	&:before
+// 		right: 0
+// 	&:after
+// 		transform: rotate(180deg)
+// 		left: 0
+
+.section
+	margin: 50px 0
+
+// .comercial-section
+// 	padding: 25px 0
+
+.section-title
+	font-size: 28px
+	line-height: 100%
+	margin-bottom: 35px
+
+.custom-item
+	display: flex
+	flex-direction: row
+	color: black
+	&.item-page
+		.custom-item--title
+			line-height: 130%
+			margin-bottom: 13px
+		.custom-item--header--left
+			opacity: 0.5
+
+.custom-item--image
+	min-width: 246px
+	max-width: 246px
+	border-radius: 5px
+	overflow: hidden
+	margin-right: 15px
+	max-height: 150px
+	img
+		width: 100%
+		max-height: 150px
+		object-fit: cover
+	&:hover
+		img
+			transform: scale(1.1)
+
+
+.custom-item:hover
+	color: black
+
+.custom-item--block
+	width: 100%
+	padding: 25px
+	border-radius: 5px
+	&:hover
+		box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
+		background: white
+		transform: translateY(-5px)
+
+.custom-item--header, .custom-item--bottom
+	display: flex
+	flex-direction: row
+
+.custom-item--header > *, .custom-item--bottom > *
+	flex-grow: 1
+	line-height: 100%
+
+.custom-item--header--right, .custom-item--bottom--right
+	text-align: right
+
+.custom-item--bottom--right
+	opacity: 0.5
+
+.custom-item--header
+	font-size: 12px
+	margin-bottom: 15px
+	max-height: 12px
+
+.custom-item--header--right
+	opacity: 0.5
+
+.custom-item--title
+	font-weight: 500
+	font-size: 18px
+	line-height: 100%
+	margin-bottom: 10px
+
+.custom-item--desc
+	margin-bottom: 17px
+	line-height: 100%
+	opacity: 0.5
+
+.comercial-more
+	margin-top: 25px
+
+.star-icon
+	display: inline-flex
+	line-height: 100%
+	height: 12px
+	&:before
+		content: ''
+		width: 12px
+		height: 12px
+		background: url('/images/icons/star.png') 50% no-repeat
+		background-size: cover
+		margin-right: 2px
+	&:last-child
+		&::before
+			margin-right: 0
+
+.custom-container-row 
+	> *
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+
+.custom-container-col
+	.custom-item
+		flex-direction: column
+	.custom-item--image
+		max-width: 100%
+		margin-right: 0
+		margin-bottom: 15px
+
+.section-header
+	display: flex
+	flex-direction: row
+	align-items: center
+	margin-bottom: 35px
+	.section-title
+		margin-bottom: 0
+	> *
+		flex-grow: 1
+	.section-link
+		text-align: right
+	
+.swiper--animated
+	animation: swiper-showed 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+	animation-delay: 0.5s
+
+
+.events-section
+	padding: 50px 0
+	background: rgba($darkblue, 0.05)
+
+.events-block
+	position: relative
+	display: block
+	width: 100%
+	height: 400px !important
+	overflow: hidden
+	border-radius: 5px
+	color: white
+	// margin: 0 15px
+	max-width: 585px
+	img
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		border-radius: 5px
+		object-fit: cover
+	&:hover
+		color: white
+		img
+			transform: scale(1.1)
+
+.events-block--content
+	display: block
+	position: absolute
+	bottom: 40px
+	left: 40px
+	right: 40px
+	z-index: 3
+
+.events-block--title
+	font-size: 24px
+	line-height: 120%
+	margin-bottom: 10px
+
+.events-block--desc
+	font-size: 14px
+	line-height: 150%
+	margin-bottom: 0
+
+.events-block--header
+	display: flex
+	flex-direction: row
+	line-height: 100%
+	margin-bottom: 15px
+	> *
+		flex-grow: 1
+
+.events-block--header-right
+	text-align: right
+	opacity: 0.5
+
+.footer-logotype
+	display: block
+	width: 195px
+	height: 50px
+	background: url('/images/logos/logotype-footer.png')
+	background-size: 195px
+	background-position: bottom
+	opacity: 0.25
+	transition: none
+
+	&:hover
+		opacity: 1
+		background-position: top
+
+.footer-icon
+	display: inline-flex !important
+	width: 30px
+	height: 16px
+	background: url('/images/icons/social.png')
+	margin-bottom: 0 !important
+	opacity: 0.25
+	transition: none
+	&:hover
+		opacity: 1
+
+.footer-socials
+	margin-top: 35px
+
+.footer a
+	display: flex
+	font-size: 14px
+	line-height: 150%
+	margin-bottom: 10px
+	color: rgba($black, 0.25)
+
+	&:hover
+		color: $darkblue
+
+.footer-description span
+	display: block
+	margin-bottom: 20px
+	opacity: 0.25
+
+.footer
+	padding: 40px 0
+	margin-top: 100px
+	border-top: 1px solid rgba($darkblue, 0.1)
+
+.footer-icon
+	&.i-vk
+		background: url('/images/icons/vk.png') 50% no-repeat
+		background-size: 28px
+		background-position: top
+	background-position: top !important
+	&:hover
+		background-position: bottom !important
+	&.i-vk
+		background: url('/images/icons/vk.png') 50% no-repeat
+		background-size: 28px
+
+	&.i-fb
+		background: url('/images/icons/fb.png') 50% no-repeat
+		background-size: 8px
+
+	&.i-insta
+		background: url('/images/icons/insta.png') 50% no-repeat
+		background-size: 16px
+
+	&.i-yt
+		background: url('/images/icons/yt.png') 50% no-repeat
+		background-size: 23px
+
+.footer-callback
+	margin-top: 40px
+
+.footer-callback--button
+	display: block !important
+	text-align: center
+	font-size: 14px
+	line-height: 100% !important
+	padding: 16px
+	border: 1px solid rgba($black, 0.25)
+	border-radius: 5px
+	margin-bottom: 0 !important
+
+	&:hover
+		border: 1px solid
+
+.footer-callback--line
+	display: block
+	width: 100%
+	height: 1px
+	background: #2B3990
+	opacity: 0.1
+
+.footer-parallax
+	display: block
+	width: 170px
+	height: 24px
+	background: url('/images/logos/parallax.png') 50% no-repeat
+	background-position: top
+	background-size: 170px
+	opacity: 0.25
+	transition: none
+
+	&:hover
+		opacity: 1
+		background-position: bottom
 
 @media only screen and (max-width: 1200px)
 	.logotype
@@ -510,8 +895,26 @@ img
 		right: 95px
 	.search-results-container.mobile
 		margin-top: 20px
+	.todo-block--title
+		left: 30px
+		right: 30px
+	.guide-item--header
+		margin: 30px
+		font-size: 24px
 @media only screen and (max-width: 372px)
 	.logotype
 		width: 40px
 		background: url('/images/logos/mobile.png') 50% no-repeat
 		background-size: contain
+	.todo-block
+		margin: 20px 0
+	.todo-block--title
+		left: 20px
+		right: 20px
+		font-size: 16px
+		padding: 15px
+	.section-title-big
+		// font-size: 26px
+		line-height: 130%
+	.guide-item--header
+		line-height: 130%

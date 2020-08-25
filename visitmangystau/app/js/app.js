@@ -1,5 +1,63 @@
 $(document).ready(function() {
-	
+
+	var mySwiper = new Swiper('.swiper--slider', {
+		slidesPerView: 4,
+		spaceBetween: 30,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			1200: {
+				slidesPerView: 4,
+			}
+		}
+	});
+
+	var mySwiper_1 = new Swiper('.comercial-slider', {
+		slidesPerView: 4,
+		spaceBetween: 30,
+		autoplay: {
+			delay: 6000,
+			disableOnInteraction: false,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			1200: {
+				slidesPerView: 4,
+			}
+		}
+	});
+
+	var mySwiper_2 = new Swiper('.events--slider', {
+		slidesPerView: 2,
+		spaceBetween: 30,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+	});
 	
 	$('.languages-button').on('click', function() {
 		var dropdown = $('.languages-list--dropdown');
@@ -95,13 +153,9 @@ $(document).ready(function() {
 
 	// 
 
-	var mySwiper = new Swiper('.swiper-container', {
-		// Optional parameters
-		// direction: 'vertical',
-		// loop: true,
-		slidesPerView: 4,
-		spaceBetween: 30,
-	})
+	$('.swiper-wrapper').viewportChecker({
+		classToAdd: 'swiper--animated'
+	}); 
 
 });
 
