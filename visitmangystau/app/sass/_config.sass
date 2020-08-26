@@ -26,7 +26,7 @@ $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1230px)
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
 @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+// @import '../libs/fancybox/jquery.fancybox.min.css'
 
 // FONTS LOAD SECTION
 
@@ -72,15 +72,18 @@ body
 *
 	box-sizing: border-box
 	outline: none
-	transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+	// transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
 	&:before, &:after
 		box-sizing: border-box
-		transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+		// transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
 
 a
 	color: $darkblue
 	&:hover
 		text-decoration: none
+
+.text-right
+	text-align: right !important
 
 @keyframes slide-top
 	0%

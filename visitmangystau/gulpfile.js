@@ -11,14 +11,20 @@ let paths = {
 	scripts: {
 		src: [
 			'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			baseDir + '/libs/swiper/swiper-bundle.min.js',
 			baseDir + '/libs/viewportchecker.js',
+			baseDir + '/libs/fancybox/jquery.fancybox.min.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',
 	},
 
 	styles: {
-		src:  baseDir + '/' + preprocessor + '/main.*',
+		src:  [
+			baseDir + '/' + preprocessor + '/main.*',
+			baseDir + '/libs/swiper/swiper-bundle.min.css',
+			baseDir + '/libs/fancybox/jquery.fancybox.css',
+		],
 		dest: baseDir + '/css',
 	},
 

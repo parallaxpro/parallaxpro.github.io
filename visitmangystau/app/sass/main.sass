@@ -7,6 +7,12 @@
 	*
 		transition: $transition
 
+.section
+	*
+		transition: $transition
+		&:before, &:after
+			transition: $transition
+
 .header-container
 	position: relative
 
@@ -181,8 +187,8 @@
 		background-size: contain
 
 img
-	transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1)
-
+	width: 100%
+	transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1) !important
 
 .actual-first--link
 	position: relative
@@ -251,22 +257,18 @@ img
 .article-row-block--image
 	position: relative
 	display: block
-	min-width: 175px
+	max-width: 175px
 	height: 120px
 	border-radius: 5px
 	overflow: hidden
 	margin-right: 10px
 	img
-		position: absolute
 		width: 100%
 		height: 100%
-		top: 50%
-		left: 50%
 		object-fit: cover
-		transform: translate(-50%, -50%)
 	&:hover
 		img
-			transform: translate(-50%, -50%) scale(1.1)
+			transform: scale(1.1)
 
 .actual-article
 	margin-bottom: 20px
@@ -278,21 +280,6 @@ img
 	color: $black
 	&:hover
 		color: $black
-
-.article-row-block--image
-	position: relative
-	display: block
-	min-width: 175px
-	height: 120px
-	border-radius: 5px
-	overflow: hidden
-	img
-		position: absolute
-		// min-width: 100%
-		min-height: 120px
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
 
 .article-row-block--body
 	display: block
@@ -328,6 +315,8 @@ img
 	&:hover
 		color: $darkblue
 		opacity: 1
+	&:last-child
+		margin-right: 0
 
 .mobile-search--container, .mobile-menu--button
 	display: none
@@ -362,12 +351,12 @@ img
 	box-shadow: $shadow
 
 .actual-row
-	padding: 50px 0 20px
+	padding: 50px 0 20px !important
 
-.actual-row-article
-	border-right: 1px solid rgba($gray, 0.1)
-	&:last-child
-		border-right: 0
+// .actual-row-article
+// 	border-right: 1px solid rgba($gray, 0.1)
+// 	&:last-child
+// 		border-right: 0
 
 .actual-row-item
 	color: $black
@@ -591,10 +580,11 @@ img
 	border-radius: 5px
 	overflow: hidden
 	margin-right: 15px
-	max-height: 150px
+	height: 150px
+	// height: 100%
 	img
 		width: 100%
-		max-height: 150px
+		height: 100%
 		object-fit: cover
 	&:hover
 		img
@@ -707,8 +697,7 @@ img
 	overflow: hidden
 	border-radius: 5px
 	color: white
-	// margin: 0 15px
-	max-width: 585px
+	width: 100%
 	img
 		position: absolute
 		width: 100%
@@ -855,66 +844,217 @@ img
 	background-size: 170px
 	opacity: 0.25
 	transition: none
-
 	&:hover
 		opacity: 1
 		background-position: bottom
 
-@media only screen and (max-width: 1200px)
-	.logotype
-		width: 156px
-		height: 40px
-	// .navigation, .navigation--right-search--container
-	.navigation
-		display: none !important
-	.mobile-search--container, .mobile-menu--button
-		display: flex
-	.mobile-menu--button 
-		margin-right: 10px
-	.header
-		padding: 30px 0
+.actual-row .swiper-slide:before
+	content: ''
+	position: absolute
+	width: 1px
+	height: 100%
+	background: rgba(#808080, 0.1)
+	right: -15px
 
-@media only screen and (max-width: 576px)
-	body
-		padding-top: 80px
-	.header
-		position: fixed
-		top: 0
-		left: 0
-		right: 0
-		padding: 10px 0
-		background: white
-		border-bottom: 1px solid rgba($darkblue, 0.1)
-		z-index: 9999
-	.navigation--right > *
-		margin-left: 0
-	.logotype
-		width: 126px
-		background-size: contain
-	.navigation--right-search--showed
-		right: 95px
-	.search-results-container.mobile
-		margin-top: 20px
-	.todo-block--title
-		left: 30px
-		right: 30px
-	.guide-item--header
-		margin: 30px
+.inner-page h1
+  font-weight: 500
+  font-size: 36px
+  line-height: 130%
+  margin-bottom: 10px
+
+.inner-page--description
+  color: #666666
+
+.inner-page
+	font-size: 20px
+	line-height: 170%
+	h2
 		font-size: 24px
-@media only screen and (max-width: 372px)
-	.logotype
-		width: 40px
-		background: url('/images/logos/mobile.png') 50% no-repeat
+		margin: 40px 0 10px
+	img
+		border-radius: 5px
+		margin: 20px 0 30px
+	p
+		padding: 10px 0
+		margin-bottom: 0
+
+.background-image
+	margin: 20px 0
+	padding: 50px 0
+	background: rgba($darkblue, 0.05)
+	img
+		margin-bottom: 0
+
+.image-description
+	font-size: 14px
+	line-height: 100%
+	text-align: center
+	margin-top: 10px
+	opacity: 0.5
+
+.inner-page--views
+	display: flex
+	font-size: 16px
+	line-height: 19px
+	align-items: center
+	opacity: 0.5
+	margin-right: 30px
+	&:before
+		content: ''
+		display: inline-flex
+		width: 24px
+		height: 14px
+		background: url('/images/icons/view.png') 50% no-repeat
 		background-size: contain
-	.todo-block
-		margin: 20px 0
-	.todo-block--title
-		left: 20px
-		right: 20px
-		font-size: 16px
-		padding: 15px
-	.section-title-big
-		// font-size: 26px
-		line-height: 130%
-	.guide-item--header
-		line-height: 130%
+		margin-right: 10px
+
+.inner-page--header-footer
+	display: flex
+	flex-direction: row
+	align-items: center
+	padding: 10px 0
+	> *
+		flex-grow: 1
+
+.inner-page--header-footer--right
+	text-align: right
+
+.inner-page-favorite-btn
+	display: flex
+	cursor: pointer
+	font-size: 16px
+	line-height: 19px
+	align-items: center
+	opacity: 0.5
+	transition: $transition
+	&:before
+		content: ''
+		display: inline-flex
+		width: 16px
+		height: 14px
+		background: url('/images/icons/like.png') 50% no-repeat
+		background-size: 16px
+		background-position-y: top
+		margin-right: 10px
+
+.inner-page--header-footer--left
+	display: flex
+	align-items: center
+
+.inner-page-favorite-btn
+	&:after
+		content: attr(data-before)
+	&:hover
+		opacity: 1
+	&.favorite
+		opacity: 1
+		color: #EF4136
+		&:before
+			background-position-y: bottom
+
+.page--share-list
+	display: inline-flex
+	align-items: center
+	text-align: right
+
+
+.page--share
+	display: flex
+	margin-left: 15px
+
+	&:before
+		content: ''
+		height: 12px
+		background-position-y: top !important
+		background-size: cover !important
+
+	&:hover:before
+		background-position-y: bottom !important
+
+	&:first-child
+		margin-left: 0
+
+	&.i-vk:before
+		background: url('/images/icons/page/vk.png') 50% no-repeat
+		width: 22px
+
+	&.i-fb:before
+		background: url('/images/icons/page/fb.png') 50% no-repeat
+		width: 6px
+
+	&.i-tw:before
+		background: url('/images/icons/page/tw.png') 50% no-repeat
+		width: 15px
+
+	&.i-tg:before
+		background: url('/images/icons/page/tg.png') 50% no-repeat
+		width: 14px
+
+	&.i-mail:before
+		background: url('/images/icons/page/mail.png') 50% no-repeat
+		width: 17px
+
+	&.i-ok:before
+		background: url('/images/icons/page/ok.png') 50% no-repeat
+		width: 7px
+
+	&.i-wp:before
+		background: url('/images/icons/page/wp.png') 50% no-repeat
+		width: 12px
+	opacity: 0.5
+	&:hover
+		opacity: 1
+
+.inner-page--footer
+	padding: 30px 0
+	.inner-page--header-footer
+		padding: 20px 0
+
+.page--date
+	opacity: 0.5
+
+.page--navigation
+	margin: 30px 0
+	border-top: 1px solid #DCDEEB
+	border-bottom: 1px solid #DCDEEB
+
+.page--navigation-prev, .page--navigation-next
+	padding: 25px 10px
+	font-size: 16px
+	line-height: 150%
+	color: $black
+
+.page--navigation-prev:hover, .page--navigation-next:hover
+	color: $black
+	background: #DCDEEB
+
+.page--navigation-prev
+	border-right: 1px solid #DCDEEB
+
+.page--navigation--sub
+	display: inline-flex
+	font-size: 12px
+	line-height: 14px
+	align-items: center
+	opacity: 0.5
+	margin-bottom: 15px
+	&.prev:before
+		content: ''
+		display: inline-flex
+		width: 4px
+		height: 8px
+		background: url('/images/icons/arrow.png') 50% no-repeat
+		background-size: cover
+		margin-right: 7px
+
+	&.next:after
+		content: ''
+		display: inline-flex
+		width: 4px
+		height: 8px
+		background: url('/images/icons/arrow.png') 50% no-repeat
+		background-size: cover
+		margin-left: 7px
+		transform: rotate(180deg)
+
+@import media

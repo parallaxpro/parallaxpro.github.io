@@ -1,0 +1,129 @@
+@media only screen and (max-width: 1200px)
+	.logotype
+		width: 156px
+		height: 40px
+	// .navigation, .navigation--right-search--container
+	.navigation
+		display: none !important
+	.mobile-search--container, .mobile-menu--button
+		display: flex
+	.mobile-menu--button 
+		margin-right: 10px
+	.header
+		padding: 30px 0
+	.custom-item--image
+		min-width: 150px
+		max-width: 150px
+	.article-row-block--image
+		max-width: 30%
+
+@media only screen and (max-width: 992px)
+	.custom-item--image
+		min-width: 30%
+		max-width: 30%
+	.actual-first--link
+		margin-bottom: 20px
+	.article-row-block--image
+		height: unset
+
+@media only screen and (max-width: 768px)
+	.inner-page--header-footer
+		flex-direction: column
+		> *
+			width: 100%
+	.inner-page--header-footer--right
+		text-align: left
+		margin-top: 15px
+
+@media only screen and (max-width: 576px)
+	body
+		padding-top: 80px
+	.header
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		padding: 10px 0
+		background: white
+		border-bottom: 1px solid rgba($darkblue, 0.1)
+		z-index: 9999
+	.navigation--right > *
+		margin-left: 0
+	.logotype
+		width: 126px
+		background-size: contain
+	.navigation--right-search--showed
+		right: 95px
+	.search-results-container.mobile
+		margin-top: 20px
+	.todo-block--title
+		left: 30px
+		right: 30px
+	.guide-item--header
+		margin: 30px
+		font-size: 24px
+	.section-header
+		flex-direction: column
+		margin-bottom: 25px
+		.section-title
+			width: 100%
+			margin-bottom: 15px
+			line-height: 130%
+		.section-link
+			width: 100%
+			text-align: left
+	.article-row-block--image
+		min-height: 100%
+		max-width: 100%
+		margin-right: 0
+		margin-bottom: 15px
+	.article-row-block--title
+		line-height: 140%
+	.inner-page
+		margin-top: 10px
+
+@media only screen and (max-width: 480px)
+	.custom-item
+		flex-direction: column
+	.custom-item--image
+		max-width: 100%
+		margin-right: 0
+		margin-bottom: 15px
+		height: unset
+	.events-block--content, .actual-first--container-wrapper
+		left: 30px
+		right: 30px
+		bottom: 30px
+	.inner-page
+		font-size: 16px
+		line-height: 165%
+		p
+			padding: 5px 0
+		h2
+			margin-top: 30px
+	.background-image
+		padding: 20px 0 30px
+	// .page--navigation-next, .page--navigation-prev
+	// 	font-size: 14px
+	.inner-page--footer
+		padding-bottom: 0
+
+@media only screen and (max-width: 372px)
+	.logotype
+		width: 40px
+		background: url('/images/logos/mobile.png') 50% no-repeat
+		background-size: contain
+	.todo-block
+		margin: 20px 0
+	.todo-block--title
+		left: 20px
+		right: 20px
+		font-size: 16px
+		padding: 15px
+	.section-title-big, .guide-item--header
+		line-height: 130%
+	.article-row-block--hashtag
+		display: block
+		margin-bottom: 10px
+	.article-row-block--title
+		margin-top: 14px

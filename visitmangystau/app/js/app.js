@@ -57,6 +57,42 @@ $(document).ready(function() {
 			delay: 5000,
 			disableOnInteraction: false,
 		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			1024: {
+				slidesPerView: 2,
+			},
+		}
+	});
+
+	var mySwiper_3 = new Swiper('.actual-row', {
+		slidesPerView: 4,
+		spaceBetween: 30,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 2,
+			},
+			1024: {
+				slidesPerView: 3,
+			},
+			1200: {
+				slidesPerView: 4,
+				watchOverflow: true
+			}
+		}
+	});
+
+	$('.swiper-wrapper--animated').viewportChecker({
+		classToAdd: 'swiper--animated'
 	});
 	
 	$('.languages-button').on('click', function() {
@@ -152,10 +188,6 @@ $(document).ready(function() {
 	});
 
 	// 
-
-	$('.swiper-wrapper').viewportChecker({
-		classToAdd: 'swiper--animated'
-	}); 
 
 });
 
