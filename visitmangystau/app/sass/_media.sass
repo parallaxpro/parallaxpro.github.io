@@ -25,6 +25,11 @@
 		margin-bottom: 20px
 	.article-row-block--image
 		height: unset
+	.comercial-content, .comercial-aside
+		padding: 0 15px
+	.comercial-aside
+		margin-top: 30px
+		border: 0
 
 @media only screen and (max-width: 768px)
 	.inner-page--header-footer
@@ -33,6 +38,16 @@
 			width: 100%
 	.inner-page--header-footer--right
 		text-align: left
+		margin-top: 15px
+	.review-typing-footer
+		display: block
+	.review-typing--rules, .review-typing--rating
+		display: inline-flex
+	.review-typing--rating
+		margin-left: 20px
+	.review-typing-content
+		margin-bottom: 15px
+	.review-typing--button
 		margin-top: 15px
 
 @media only screen and (max-width: 576px)
@@ -81,6 +96,11 @@
 		line-height: 140%
 	.inner-page
 		margin-top: 10px
+	.review-typing--rating
+		display: flex
+		margin-left: 0
+		margin-top: 10px
+		justify-content: start
 
 @media only screen and (max-width: 480px)
 	.custom-item
@@ -107,6 +127,14 @@
 	// 	font-size: 14px
 	.inner-page--footer
 		padding-bottom: 0
+	.star-icon.start-xl
+		height: 28px !important
+		margin-right: 7px !important
+		&::before
+			width: 28px !important
+			height: 28px !important
+	.rating-block--star-row
+		margin-right: 10px
 
 @media only screen and (max-width: 372px)
 	.logotype
@@ -127,3 +155,6 @@
 		margin-bottom: 10px
 	.article-row-block--title
 		margin-top: 14px
+	.comercial-header--favorite
+		margin-left: 0
+		margin-top: 15px

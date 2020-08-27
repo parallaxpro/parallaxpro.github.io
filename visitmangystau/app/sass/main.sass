@@ -647,7 +647,8 @@ img
 		content: ''
 		width: 12px
 		height: 12px
-		background: url('/images/icons/star.png') 50% no-repeat
+		background: url('/images/icons/stars.svg') 50% no-repeat
+		background-position-y: bottom 
 		background-size: cover
 		margin-right: 2px
 	&:last-child
@@ -832,7 +833,7 @@ img
 	display: block
 	width: 100%
 	height: 1px
-	background: #2B3990
+	background: $darkblue
 	opacity: 0.1
 
 .footer-parallax
@@ -1039,6 +1040,7 @@ img
 	align-items: center
 	opacity: 0.5
 	margin-bottom: 15px
+	user-select: none
 	&.prev:before
 		content: ''
 		display: inline-flex
@@ -1057,5 +1059,478 @@ img
 		background-size: cover
 		margin-left: 7px
 		transform: rotate(180deg)
+
+#comercial-map
+	width: 100%
+	height: 300px
+	border-radius: 5px
+	overflow: hidden
+	margin-bottom: 25px
+
+.comercial-page img
+	width: 100%
+	border-radius: 5px
+	margin: 20px 0
+
+.comercial-body
+	margin-bottom: 70px
+
+.comercial-body--preview a
+	display: block
+
+.comercial-page h1
+	font-weight: 500
+	font-size: 36px
+	line-height: 130%
+	margin-bottom: 0
+
+.comercial-header--favorite
+	margin-left: 30px
+
+.comercial-content
+	padding-right: 30px
+	// margin-bottom: 70px
+	img:last-child
+		margin-bottom: 0
+
+.comercial-header
+	margin-bottom: 30px
+
+.comercial-aside
+	border-left: 1px solid rgba($darkblue, 0.1)
+	padding-left: 30px
+
+.comercial-page h2
+	font-size: 24px
+	line-height: 140%
+	margin: 30px 0 10px
+
+.comercial-body--preview
+	margin-bottom: 10px
+
+.comercial-page p
+	font-size: 16px
+	line-height: 170%
+	padding: 5px 0
+	margin: 0
+
+.comercial-body--preview img
+	margin: 0
+
+.comercial-aside--video
+	margin-bottom: 5px
+
+.button-default
+	display: flex
+	justify-content: center
+	padding: 18px
+	outline: none
+	border: 0
+	border-radius: 3px
+	line-height: 100%
+	font-size: 14px
+	background: $darkblue
+	color: white
+	transition: $transition
+	user-select: none
+	&:hover
+		background: darken($darkblue, 10%)
+		color: white
+
+	&.btn-opacity
+		background: rgba($darkblue, 0.1)
+		border-radius: 3px
+		color: $darkblue
+		&:hover
+			background: rgba($darkblue, 0.2)
+			// color: white
+
+.comercial-aside--buttons > *
+	margin-bottom: 15px
+
+	&:last-child
+		margin-bottom: 0
+
+#comercial-map--address
+	padding: 17px
+	text-align: center
+	font-size: 14px
+	line-height: 16px
+	border: 1px solid rgba(43, 57, 144, 0.1)
+	border-radius: 3px
+	margin-bottom: 25px
+	color: rgba($black, 0.5)
+
+.page-share--btn
+	user-select: none
+	> span
+		position: relative
+		display: flex
+		align-items: center
+		opacity: 0.5
+		font-size: 16px
+		cursor: pointer
+		&:before
+			content: ''
+			display: block
+			width: 14px
+			height: 12px
+			background: url('/images/icons/share.png') 50% no-repeat
+			background-position: top
+			background-size: cover
+			margin-right: 7px
+		&:hover
+			opacity: 1
+			color: $darkblue
+			&:before
+				background-position-y: -14px
+
+.page-share--buttons
+	position: absolute
+	right: 0
+	top: 100%
+	margin-top: 14px
+	padding: 18px 25px
+	background: #FFFFFF
+	border: 1px solid rgba(43, 57, 144, 0.03)
+	border-radius: 3px
+	display: none
+
+.comercial-aside--video
+	margin: 20px 0 25px
+	a
+		position: relative
+		display: block
+		overflow: hidden
+		border-radius: 5px
+		img
+			margin: 0
+		&:before
+			content: ''
+			position: absolute
+			display: block
+			width: 32px
+			height: 37px
+			background: url('/images/icons/play.png') 50% no-repeat
+			background-size: cover
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			z-index: 1
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 100%
+			background: rgba($black, 0.5)
+			left: 0
+			transition: $transition
+		&:hover:after
+			background: rgba($black, 0.75)
+
+.comercial-social--item
+	display: inline-flex
+	align-items: center
+	padding: 10px 15px
+	border-radius: 5px
+	margin-right: 12px
+	margin-bottom: 12px
+	line-height: 100%
+
+.comercial-socials
+	margin-top: 17px
+
+.comercial-social--item
+	transition: $transition
+	&:before
+		content: ''
+		display: block
+		margin-right: 7px
+		height: 10px
+		background-size: cover !important
+		background-position: top !important
+	&:hover
+		color: white !important
+		&:before
+			background-position-y: bottom !important
+	&.item-vk
+		color: #426795
+		border: 1px solid #426795
+		&:before
+			background: url('/images/icons/contacts/vk.png') 50% no-repeat
+			width: 18px
+		&:hover
+			background: #426795
+	&.item-instagram
+		color: #B10999
+		border: 1px solid #B10999
+		&:before
+			background: url(/images/icons/contacts/insta.png) 50% no-repeat
+			width: 10px
+		&:hover
+			background: #B10999
+	&.item-youtube
+		color: #FF0000
+		border: 1px solid #FF0000
+		&:before
+			background: url(/images/icons/contacts/yt.png) 50% no-repeat
+			width: 15px
+		&:hover
+			background: #FF0000
+	&.item-facebook
+		color: #3B5999
+		border: 1px solid #3B5999
+		&:before
+			background: url(/images/icons/contacts/fb.png) 50% no-repeat
+			width: 5px
+		&:hover
+			background: #3B5999
+	&.item-twitter
+		color: #03A9F4
+		border: 1px solid #03A9F4
+		&:before
+			background: url(/images/icons/contacts/tw.png) 50% no-repeat
+			width: 12px
+		&:hover
+			background: #03A9F4
+
+.comercial-aside--contacts
+	margin-top: 25px
+
+.comercial-contacts
+	font-size: 16px
+	line-height: 100%
+	.comercial-contacts--title
+		padding: 9px 30px 9px 0
+		opacity: 0.5
+
+.comercial-socials--title
+	font-size: 20px
+	line-height: 100%
+	margin-bottom: 17px
+	margin-top: 30px
+
+.aside-sticky
+	position: sticky
+	top: 30px
+
+.more-services p
+	display: flex
+	padding: 14px 15px
+	align-items: center
+	color: #0B331C
+	&:before
+		content: ''
+		display: block
+		min-width: 14px
+		height: 14px
+		background: url('/images/icons/ticks.svg') 50% no-repeat
+		background-position-y: top
+		margin-right: 12px
+
+.review-typing-content
+	display: flex
+	margin-bottom: 20px
+
+.review-typing--image
+	display: block
+	max-width: 50px
+	height: 50px
+	background-size: cover !important
+	border-radius: 3px
+	margin-right: 20px
+
+.default-input
+	display: block
+	background: #FFFFFF
+	border: 1px solid #F2F2F2
+	border-radius: 3px
+	width: 100%
+	font-size: 14px
+
+.review-typing-content > *
+	flex-grow: 1
+
+.review-textarea
+	height: 50px
+	min-height: 50px
+	resize: vertical
+	padding: 12px 20px
+
+.review-typing-footer
+	display: flex
+	align-items: center
+
+	> *
+		flex-grow: 1
+
+.review-typing--rules
+	display: flex
+	align-items: center
+	max-width: 220px
+	font-size: 12px
+	line-height: 150%
+	color: #BFBFBF
+
+	&:before
+		content: ''
+		display: flex
+		min-width: 14px
+		height: 11px
+		background: url('/images/icons/ticks.svg') 50% no-repeat
+		background-size: cover
+		background-position: bottom
+		margin-right: 10px
+
+.review-typing--rating
+	display: flex
+	align-items: center
+	justify-content: center
+	> span
+		opacity: 0.5
+
+.review-typing--rating-row
+	margin-left: 20px
+
+.review-typing--button button
+	width: 100%
+	padding: 14px
+
+.review-typing--container
+	margin-bottom: 30px
+	margin-top: 20px
+
+.review-item
+	padding: 25px
+	background: #FFFFFF
+	border-radius: 5px
+	margin: 20px 0
+
+	p
+		font-size: 14px
+		line-height: 160%
+		padding: 0
+
+.review-item--header
+	display: flex
+	flex-direction: row
+	margin-bottom: 14px
+
+	> *
+		flex-grow: 1
+
+.review-item--author
+	display: flex
+	align-items: center
+
+.review-item--author-image
+	width: 40px
+	height: 40px
+	background-size: cover !important
+	border-radius: 5px
+	margin-right: 14px
+
+.review-item--date
+	font-size: 13px
+	line-height: 100%
+	opacity: 0.3
+	margin-top: 5px
+
+.review-item--author-name
+	line-height: 100%
+
+.user-verify
+	display: inline-flex
+	width: 13px
+	height: 12px
+	background: url('/images/icons/verify.svg') 50% no-repeat
+	margin-left: 3px
+
+.review-item--header--left
+	display: flex
+	align-items: center
+
+.review-item--rating
+	margin-left: 20px
+
+.review-item--more-btn > span:before
+	content: ''
+	display: block
+	width: 18px
+	height: 4px
+	background: url('/images/icons/more.svg') 50% no-repeat
+
+.review-item--header--right
+	display: flex
+	align-items: center
+	justify-content: flex-end
+
+.review-item--more-btn
+	user-select: none
+	> span
+		display: flex
+		width: 32px
+		height: 32px
+		align-items: center
+		justify-content: center
+		border-radius: 5px
+		cursor: pointer
+		transition: $transition
+		&:hover
+			background: #f0f0f5
+	position: relative
+
+
+.review-item--more-dropdown
+	display: none
+	position: absolute
+	right: 0
+	background: #FFFFFF
+	border: 1px solid rgba(43, 57, 144, 0.03)
+	border-radius: 3px
+	padding: 10px 0
+	// margin-top: 10px
+	> *
+		padding: 10px 15px
+		font-size: 13px
+		line-height: 100%
+	.danger
+		color: #F9632B
+	> *:hover
+		background: rgba($darkblue, 0.1)
+
+.rating-block--title
+	font-size: 14px
+	line-height: 100%
+	opacity: 0.5
+	margin-bottom: 20px
+
+.star-icon.start-xl
+	height: 32px
+	margin-right: 12px
+
+	&:before
+		width: 32px
+		height: 32px
+
+.rating-block--content
+	display: flex
+	align-items: center
+
+.rating-block--star-row
+	margin-right: 20px
+
+	.star-icon.start-xl:last-child
+		margin-right: 0
+
+.rating-block--star-desc
+	font-size: 24px
+	line-height: 100%
+
+.star-desc--static
+	opacity: 0.5
+
+.rating-block
+	margin-top: 20px
 
 @import media

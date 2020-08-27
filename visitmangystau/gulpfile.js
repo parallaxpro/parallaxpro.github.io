@@ -14,6 +14,8 @@ let paths = {
 			baseDir + '/libs/swiper/swiper-bundle.min.js',
 			baseDir + '/libs/viewportchecker.js',
 			baseDir + '/libs/fancybox/jquery.fancybox.min.js',
+			baseDir + '/libs/rating/rating.min.js',
+			baseDir + '/libs/autosize/autosize.min.js',
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',
@@ -24,6 +26,7 @@ let paths = {
 			baseDir + '/' + preprocessor + '/main.*',
 			baseDir + '/libs/swiper/swiper-bundle.min.css',
 			baseDir + '/libs/fancybox/jquery.fancybox.css',
+			baseDir + '/libs/rating/rating.min.css',
 		],
 		dest: baseDir + '/css',
 	},
