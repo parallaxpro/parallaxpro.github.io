@@ -4,8 +4,21 @@
 
 .header
 	padding: 50px 0
+	// position: fixed
+	// top: 0
+	// left: 0
+	// right: 0
+	// z-index: 999
+	// transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
 	*
 		transition: $transition
+	// &.srolled
+	// 	background: white
+	// 	padding: 14px 0
+	// 	border-bottom: 1px solid rgba($darkblue, 0.1)
+
+// .main-container
+// 	margin-top: 150px
 
 .section
 	*
@@ -187,7 +200,6 @@
 		background-size: contain
 
 img
-	// width: 100%
 	transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1) !important
 
 .actual-first--link
@@ -598,6 +610,7 @@ img
 	width: 100%
 	padding: 25px
 	border-radius: 5px
+	transition: $transition
 	&:hover
 		box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
 		background: white
@@ -654,6 +667,13 @@ img
 	&:last-child
 		&::before
 			margin-right: 0
+
+.custom-container-col, .custom-container-row
+	*
+		transition: $transition
+	&.custom-container-xl
+		.custom-item--image
+			height: 230px
 
 .custom-container-row 
 	> *
@@ -936,7 +956,7 @@ img
 		height: 14px
 		background: url('/images/icons/like.png') 50% no-repeat
 		background-size: 16px
-		background-position-y: top
+		background-position-y: -38px
 		margin-right: 10px
 
 .inner-page--header-footer--left
@@ -963,11 +983,11 @@ img
 .page--share
 	display: flex
 	margin-left: 15px
-
+	cursor: pointer
 	&:before
 		content: ''
 		height: 12px
-		background-position-y: top !important
+		background-position-y: -17px !important
 		background-size: cover !important
 
 	&:hover:before
@@ -1145,6 +1165,12 @@ img
 			background: rgba($darkblue, 0.2)
 			// color: white
 
+.btn-gray
+	background: rgba($black, 0.03) !important
+	color: rgba($black, 0.5) !important
+	&:hover
+		background: rgba($black, 0.075) !important
+
 .comercial-aside--buttons > *
 	margin-bottom: 15px
 
@@ -1163,6 +1189,7 @@ img
 
 .page-share--btn
 	user-select: none
+	position: relative
 	> span
 		position: relative
 		display: flex
@@ -1295,7 +1322,7 @@ img
 			background: #03A9F4
 
 .comercial-aside--contacts
-	margin-top: 25px
+	margin: 25px 0
 
 .comercial-contacts
 	font-size: 16px
@@ -1401,21 +1428,32 @@ img
 	margin-top: 20px
 
 .review-item
-	padding: 25px
+	// padding: 25px
 	background: #FFFFFF
 	border-radius: 5px
 	margin: 20px 0
-
 	p
 		font-size: 14px
 		line-height: 160%
 		padding: 0
+	&:last-child
+		margin-bottom: 0
+
+.review-item--footer
+	display: flex
+	> *
+		flex-grow: 1
+	.review-item--footer--right
+		display: flex
+		justify-content: flex-end
+
+.review-item--content, .review-item--footer
+	padding: 0 25px 25px
 
 .review-item--header
 	display: flex
 	flex-direction: row
-	margin-bottom: 14px
-
+	padding: 25px 25px 14px
 	> *
 		flex-grow: 1
 
@@ -1532,5 +1570,205 @@ img
 
 .rating-block
 	margin-top: 20px
+
+.company-gallery-preview, .company-gallery-preview--nav
+	cursor: pointer
+
+.company-gallery-preview
+	height: 400px !important
+	border-radius: 5px
+	background-size: cover !important
+
+.company-gallery-preview--nav
+	height: 110px !important
+	background-size: cover
+	border-radius: 5px
+
+.gallery-thumbs
+	margin-top: 20px
+
+.article-full
+	position: relative
+	display: flex
+	width: 100%
+	height: 400px
+	overflow: hidden
+	border-radius: 5px
+	color: white
+	align-items: flex-end
+	margin-bottom: 15px
+	img
+		position: absolute
+		top: 0
+		width: 100%
+		height: 400px
+		object-fit: cover
+		border-radius: 5px
+		z-index: -1
+	&:hover
+		color: white
+		img
+			transform: scale(1.1)
+
+.article-full-content
+	display: flex
+	flex-direction: row
+	width: 100%
+	padding: 0 50px 50px
+	align-items: center
+	z-index: 9
+	> *
+		flex-grow: 1
+
+.article-full .article-full-content--title
+	line-height: 100%
+	margin-bottom: 0
+
+.article-full-content--right
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	> *
+		margin-left: 30px
+
+.category-item
+	position: relative
+	display: flex
+	height: 250px
+	width: 100%
+	overflow: hidden
+	border-radius: 5px
+	margin: 15px 0
+	img
+		position: absolute
+		width: 100%
+		height: 250px
+		object-fit: cover
+		border-radius: 5px
+	&:hover
+		img
+			transform: scale(1.1)
+
+.category-item--content
+	display: flex
+	z-index: 9
+	color: white
+	align-items: flex-end
+	padding: 0 25px 25px
+	h2
+		font-weight: 500
+		font-size: 18px
+		line-height: 21px
+		margin-bottom: 0
+
+.category-page
+	margin-bottom: 100px
+	
+.white-mode
+	.page--share
+		&::before
+			background-position-y: unset !important
+		&:hover:before
+			background-position-y: top !important
+	.inner-page-favorite-btn:before
+		background-position-y: -19px !important
+
+.hotels-preview--container
+	position: relative
+	padding-bottom: 50px
+	margin-bottom: 30px
+	&:before
+		content: ''
+		position: absolute
+		background: rgba($darkblue, 0.05)
+		top: -100%
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+
+.comercial-listing--title
+	font-size: 28px
+	line-height: 100%
+	margin-bottom: 0
+
+.comercial-listing--desc
+	font-size: 14px
+	line-height: 100%
+	opacity: 0.5
+
+.comercial-listing--header
+	margin-bottom: 35px
+
+.custom-item--block--additional-block
+	display: flex
+	flex-direction: column
+	padding: 30px
+	justify-content: center
+	> *
+		margin-bottom: 30px
+		&:last-child
+			margin-bottom: 0
+
+.hotels-listing--nav
+	padding: 10px 0 40px
+
+.hotels-listing--content
+	margin: 20px 0 100px
+
+.star-opacity
+	opacity: 0.5
+
+.star-gray:before
+	background: url('/images/icons/star.svg') 50% no-repeat
+	background-position-y: 0px !important
+	background-size: cover
+
+.hotels-listing--content .custom-item
+	border-bottom: 1px solid rgba($darkblue, 0.1)
+	padding: 5px 0 25px
+	&:last-child
+		border-bottom: 0
+
+
+.hotels-listing--content--item
+	padding: 70px 0
+	border-bottom: 1px solid rgba($darkblue, 0.1)
+	&:last-child
+		border-bottom: 0
+	&:first-child
+		padding-top: 0
+
+.dropdown--3d
+	position: relative
+
+.dropdown--3d-block
+	position: absolute
+	z-index: 9
+	top: 100%
+	margin-top: 10px
+	display: none
+	img
+		margin: 0
+		max-width: 200px
+
+
+.comercial-aside--prices
+	display: flex
+	align-items: center
+	flex-direction: row
+	border: 1px solid rgba(43, 57, 144, 0.1)
+	padding: 20px 30px
+	font-size: 18px
+	line-height: 21px
+	margin-bottom: 25px
+	border-radius: 3px
+	> *
+		flex-grow: 1
+
+.comercial-aside--price-usd
+	opacity: 0.5
+	text-align: right
+
 
 @import media

@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+	// $(window).scroll(function(){
+	// 	$('.header').toggleClass('srolled', $(this).scrollTop() > 0);
+	// });
+
 	var mySwiper = new Swiper('.swiper--slider', {
 		slidesPerView: 4,
 		spaceBetween: 30,
@@ -88,6 +92,42 @@ $(document).ready(function() {
 				slidesPerView: 4,
 				watchOverflow: true
 			}
+		}
+	});
+
+	var mySwiper_3 = new Swiper('.hotels-preview--slider', {
+		slidesPerView: 3,
+		spaceBetween: 30,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 2,
+			},
+			1024: {
+				slidesPerView: 3,
+				watchOverflow: true
+			},
+		}
+	});
+
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
+		spaceBetween: 20,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+	
+	var galleryTop = new Swiper('.gallery-top', {
+		spaceBetween: 20,
+		thumbs: {
+		  swiper: galleryThumbs
 		}
 	});
 
@@ -189,8 +229,8 @@ $(document).ready(function() {
 			closeDropdown(dropdown);
 		}
 	});
-	// 
 
+	// 
 	$('.page-share--btn').on('click', function() {
 		var dropdown = $('.page-share--buttons');
 
@@ -208,8 +248,8 @@ $(document).ready(function() {
 			closeDropdownNew(dropdown);
 		}
 	});
-	//
 
+	//
 	$('.review-item--more-btn--span').on('click', function() {
 		var id = $(this).data('id')
 		var dropdown = $('.review-item--more-dropdown[data-id='+ id +']');
@@ -228,6 +268,26 @@ $(document).ready(function() {
 			closeDropdownNew(dropdown);
 		}
 	});
+	//
+
+	$('.dropdown--3d').on('click', function() {
+		var dropdown = $('.dropdown--3d-block');
+
+		if (dropdown.hasClass('show--block'))
+			closeDropdownNew(dropdown);
+		else 
+			dropdown.addClass('show--block');
+	});
+
+	$(document).mouseup(function (e) {
+		var container = $('.dropdown--3d');
+		var dropdown = $('.dropdown--3d-block');
+
+		if (container.has(e.target).length === 0 && dropdown.hasClass('show--block')){
+			closeDropdownNew(dropdown);
+		}
+	});
+
 	// 
 
 });

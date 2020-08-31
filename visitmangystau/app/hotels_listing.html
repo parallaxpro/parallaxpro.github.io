@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Отели | Visitmangystau</title>
+
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/app.min.css">
+
+	<link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.min.css">
+	
+	<!-- begin::Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end::Favicons -->
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=4f9840ba-a35a-4f4d-b222-3817d1b87fd3" type="text/javascript"></script>
+</head>
+
+<body>
+	
+	<!-- Begin::Header -->
+	<header class="header">
+		<div class="header-container container">
+			<div class="row align-items-center">
+				<div class="navigation--left col-auto d-flex align-items-center">
+
+					<div class="mobile-nav mobile-menu--button navigation--right-item">
+						<a href="#" onclick="return false;" class="mobile-menu--button-icon">
+							<span class="nav--item-icon icon-menu"></span>
+						</a>
+					</div>
+
+					<a href="/" class="logotype"></a>
+					<nav class="navigation">
+						<ul class="ul-navigation d-flex">
+							<li class="li-navigation-item"><a href="/" onclick="return false;">Карта туристам</a></li>
+							<li class="li-navigation-item"><a href="/" onclick="return false;">Экстренные службы</a></li>
+							<li class="li-navigation-item"><a href="/" onclick="return false;">3D-туры</a></li>
+							<li class="li-navigation-item"><a href="/" onclick="return false;">Достопримечательности</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="navigation--right col d-flex justify-content-end">
+
+					<div class="navigation--right-search--container">
+						<div class="navigation--right-search">
+							<a href="#" onclick="return false;" class="navigation--right-item">
+								<span class="nav--item-icon icon-search"></span>
+							</a>
+						</div>
+					</div>
+
+					<!-- Languages button::begin -->
+					<div class="navigation--right-langs">
+						<div class="navigation--right-item languages-button">
+							<span class="nav--item-icon icon-langs i-lang-ru"></span>
+						</div>
+						<div class="languages-list--dropdown">
+							<a href="#" onclick="return false;">
+								<span class="nav--item-icon icon-langs i-lang-en"></span>
+							</a>
+							<a href="#" onclick="return false;">
+								<span class="nav--item-icon icon-langs i-lang-kz"></span>
+							</a>
+						</div>
+					</div>
+					<!-- Languages button::end -->
+					<a href="#" class="navigation--right-item" onclick="return false;">
+						<span class="nav--item-icon icon-user"></span>
+					</a>
+				</div>
+
+				<div class="navigation--right-search--showed">
+					<div class="navigation--right-search--showed-group">
+						<a href="#" onclick="return false;" class="navigation--right-item">
+							<span class="nav--item-icon icon-search"></span>
+						</a>
+						<input type="search" class="search-input" placeholder="Поиск...">
+					</div>
+					<div class="search-results-container desktop">
+						<div class="search-results-block desktop"></div>
+					</div>
+				</div>
+				
+				<div class="search-results-container mobile">
+					<div class="search-results-block mobile"></div>
+				</div>
+				
+				<!-- Mobile menu::begin -->
+				<div class="mobile-nav mobile-navigation-container">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="mobile-navigation">
+									<a href="#" onclick="return false;" class="mobile-nav-item">Карта туристам</a>
+									<a href="#" onclick="return false;" class="mobile-nav-item">Экстренные службы</a>
+									<a href="#" onclick="return false;" class="mobile-nav-item">3D-туры</a>
+									<a href="#" onclick="return false;" class="mobile-nav-item">Достопримечательности</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Mobile menu::end -->
+
+			</div>
+		</div>
+	</header>
+	<!-- End::Header -->
+
+	<main class="main-container">
+        
+        <div class="hotels-preview--container">
+            <div class="container">
+                <div class="comercial-listing--header row align-items-center">
+                    <div class="col-6">
+                        <h1 class="comercial-listing--title">Гостиницы</h1>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                        <span class="comercial-listing--desc">ТОП-3</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 custom-container-col custom-container-xl">
+                        <div class="swiper-container hotels-preview--slider">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <a href="#" onclick="return false;" class="custom-item">
+                                        <span class="custom-item--image">
+                                            <img src="/images/dest/11.jpg" alt="1">
+                                        </span>
+                                        <span class="custom-item--block">
+                                            <span class="custom-item--header">
+                                                <span class="custom-item--header--left">
+                                                    <span class="star-icon"></span>
+                                                    <span class="star-icon"></span>
+                                                    <span class="star-icon"></span>
+                                                </span>
+                                                <span class="custom-item--header--right">#Аппартаменты</span>
+                                            </span>
+                                            <span class="custom-item--content">
+                                                <h4 class="custom-item--title">Caspian Riviera</h4>
+                                                <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                            </span>
+                                            <span class="custom-item--bottom">
+                                                <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                                <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" onclick="return false;" class="custom-item">
+                                        <span class="custom-item--image">
+                                            <img src="/images/dest/11.jpg" alt="1">
+                                        </span>
+                                        <span class="custom-item--block">
+                                            <span class="custom-item--header">
+                                                <span class="custom-item--header--left">
+                                                    <span class="star-icon"></span>
+                                                    <span class="star-icon"></span>
+                                                    <span class="star-icon"></span>
+                                                </span>
+                                                <span class="custom-item--header--right">#Аппартаменты</span>
+                                            </span>
+                                            <span class="custom-item--content">
+                                                <h4 class="custom-item--title">Caspian Riviera</h4>
+                                                <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                            </span>
+                                            <span class="custom-item--bottom">
+                                                <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                                <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" onclick="return false;" class="custom-item">
+                                        <span class="custom-item--image">
+                                            <img src="/images/dest/11.jpg" alt="1">
+                                        </span>
+                                        <span class="custom-item--block">
+                                            <span class="custom-item--header">
+                                                <span class="custom-item--header--left">
+                                                    <span class="star-icon"></span>
+                                                    <span class="star-icon"></span>
+                                                    <span class="star-icon"></span>
+                                                </span>
+                                                <span class="custom-item--header--right">#Аппартаменты</span>
+                                            </span>
+                                            <span class="custom-item--content">
+                                                <h4 class="custom-item--title">Caspian Riviera</h4>
+                                                <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                            </span>
+                                            <span class="custom-item--bottom">
+                                                <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                                <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotels-listing">
+
+            <div class="hotels-listing--nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <a href="#" class="button-default btn-opacity btn-gray">
+                                <span class="star-icon star-gray"></span>
+                                <span class="star-icon star-gray"></span>
+                                <span class="star-icon star-gray"></span>
+                                <span class="star-icon star-gray star-opacity"></span>
+                                <span class="star-icon star-gray star-opacity"></span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" class="button-default btn-opacity btn-gray">
+                                <span class="star-icon star-gray"></span>
+                                <span class="star-icon star-gray star-opacity"></span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="#" class="button-default btn-opacity btn-gray">Хостелы</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotels-listing--content">
+                <div class="hotels-listing--content--item">
+                    <div class="container">
+                        <div class="row">
+    
+                            <div class="col-lg-3">
+                                <div class="aside-sticky">
+                                    <div class="rating-block">
+                                        <div class="rating-block--title">Категория гостиницы</div>
+                                        <div class="rating-block--content">
+                                            <div class="rating-block--star-row">
+                                                <span class="star-icon start-xl"></span>
+                                                <span class="star-icon start-xl"></span>
+                                                <span class="star-icon start-xl"></span>
+                                                <span class="star-icon start-xl"></span>
+                                                <span class="star-icon start-xl"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 custom-container-row">
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="hotels-listing--content--item">
+                    <div class="container">
+                        <div class="row">
+    
+                            <div class="col-lg-3">
+                                <div class="aside-sticky">
+                                    <div class="rating-block">
+                                        <div class="rating-block--title">Категория гостиницы</div>
+                                        <div class="rating-block--content">
+                                            <div class="rating-block--star-row">
+                                                <span class="star-icon start-xl"></span>
+                                                <span class="star-icon start-xl star-opacity"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 custom-container-row">
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" onclick="return false;" class="custom-item">
+                                    <span class="custom-item--image">
+                                        <img src="/images/dest/11.jpg" alt="1">
+                                    </span>
+                                    <span class="custom-item--block">
+                                        <span class="custom-item--header">
+                                            <span class="custom-item--header--left">
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                                <span class="star-icon"></span>
+                                            </span>
+                                            <span class="custom-item--header--right">#Аппартаменты</span>
+                                        </span>
+                                        <span class="custom-item--content">
+                                            <h4 class="custom-item--title">Caspian Riviera</h4>
+                                            <p class="custom-item--desc">г.Актау, 9 микрорайон</p>
+                                        </span>
+                                        <span class="custom-item--bottom">
+                                            <span class="custom-item--bottom--left">от 5 000 тг.</span>
+                                            <span class="custom-item--bottom--right">~ 12,10 USD</span>
+                                        </span>
+                                    </span>
+                                    <div class="custom-item--block--additional-block">
+                                        <div class="inner-page-favorite-btn" data-before="В закладки" data-after="В закладках"></div>
+                                        <div class="page-share--btn">
+                                            <span>Поделиться</span> 
+                                            <div class="page-share--buttons">
+                                                <div class="page--share-list">
+                                                    <span data-href="#" class="page--share i-vk"></span>
+                                                    <span data-href="#" class="page--share i-fb"></span>
+                                                    <span data-href="#" class="page--share i-tw"></span>
+                                                    <span data-href="#" class="page--share i-tg"></span>
+                                                    <span data-href="#" class="page--share i-mail"></span>
+                                                    <span data-href="#" class="page--share i-ok"></span>
+                                                    <span data-href="#" class="page--share i-wp"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+	</main>
+
+	<footer class="footer">
+		<div class="footer-container">
+
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-3 mb-lg-0 mb-4">
+						<a href="#" onclick="return false;" class="footer-logotype"></a>
+						<div class="footer-socials">
+							<a href="#" onclick="return false;" class="footer-icon i-vk"></a>
+							<a href="#" onclick="return false;" class="footer-icon i-fb"></a>
+							<a href="#" onclick="return false;" class="footer-icon i-insta"></a>
+							<a href="#" onclick="return false;" class="footer-icon i-yt"></a>
+						</div>
+					</div>
+
+					<div class="col-lg-3">
+						<a href="#" onclick="return false;">Для бизнеса</a>
+						<a href="#" onclick="return false;">Список полезный веб-ресурсов</a>
+						<a href="#" onclick="return false;">Партнеры</a>
+						<a href="#" onclick="return false;">Пользовотельское соглашение</a>
+					</div>
+
+					<div class="col-lg-3">
+						<a href="#" onclick="return false;">Контакты</a>
+						<a href="#" onclick="return false;">О проекте</a>
+						<a href="#" onclick="return false;">Партнеры</a>
+						<a href="#" onclick="return false;">Обратная связь</a>
+					</div>
+
+					<div class="col-lg-3 mb-lg-0 mt-4">
+						<div class="footer-description">
+							<span>Управление инвестиций и развития туризма по Мангистауской области</span>
+							<span>Все права защищены © 2020</span>
+						</div>
+					</div>
+
+				</div>
+				<div class="row footer-callback d-flex align-items-center">
+					<div class="col-lg-3 mb-lg-0 mb-4">
+						<a href="#" onclick="return false;" class="footer-callback--button">Связаться с нами</a>
+					</div>
+					<div class="col-lg-6 mb-lg-0 mb-4">
+						<div class="footer-callback--line"></div>
+					</div>
+					<div class="col-lg-3">
+						<a href="https://parallax.pro/" target="_blank" class="footer-parallax"></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+    <script src="js/app.min.js"></script>
+
+</body>
+</html>

@@ -30,6 +30,15 @@
 	.comercial-aside
 		margin-top: 30px
 		border: 0
+	.article-full-content, .article-full-content--right
+		flex-direction: column
+	.article-full-content--title
+		margin-bottom: 20px !important
+	.article-full-content--right
+		.page--share-list, .inner-page--favorite
+			margin-left: 0
+		.inner-page--favorite
+			margin-top: 20px
 
 @media only screen and (max-width: 768px)
 	.inner-page--header-footer
@@ -49,6 +58,10 @@
 		margin-bottom: 15px
 	.review-typing--button
 		margin-top: 15px
+	.review-item--rating
+		margin-left: 0
+	.review-item--content
+		padding-bottom: 10px
 
 @media only screen and (max-width: 576px)
 	body
@@ -100,7 +113,7 @@
 		display: flex
 		margin-left: 0
 		margin-top: 10px
-		justify-content: start
+		justify-content: flex-start
 
 @media only screen and (max-width: 480px)
 	.custom-item

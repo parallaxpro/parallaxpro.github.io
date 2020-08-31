@@ -24,9 +24,9 @@ let paths = {
 	styles: {
 		src:  [
 			baseDir + '/' + preprocessor + '/main.*',
+			baseDir + '/libs/rating/rating.min.css',
 			baseDir + '/libs/swiper/swiper-bundle.min.css',
 			baseDir + '/libs/fancybox/jquery.fancybox.css',
-			baseDir + '/libs/rating/rating.min.css',
 		],
 		dest: baseDir + '/css',
 	},
