@@ -1,8 +1,30 @@
 $(document).ready(function() {
 
-	// $(window).scroll(function(){
-	// 	$('.header').toggleClass('srolled', $(this).scrollTop() > 0);
-	// });
+	var $page = $('html, body');
+	$('a[href*="#"]').click(function() {
+		$page.animate({
+			scrollTop: $($.attr(this, 'href')).offset().top - 80
+		}, 400);
+			return false;
+	});
+
+	var $nav_block 	= $('.hotels-listing--nav');
+
+	if ($nav_block.is(':visible')) {
+		var $top = $nav_block.offset().top - 10;
+		
+		$(window).scroll(function() {
+	
+			if ($(this).scrollTop() > $top) {
+				$nav_block.addClass('fixed');
+				$('.hotels-listing--content').addClass('action');
+			} else {
+				$nav_block.removeClass('fixed');
+				$('.hotels-listing--content').removeClass('action');
+			}
+			
+		});
+	}
 
 	var mySwiper = new Swiper('.swiper--slider', {
 		slidesPerView: 4,
@@ -231,8 +253,10 @@ $(document).ready(function() {
 	});
 
 	// 
-	$('.page-share--btn').on('click', function() {
-		var dropdown = $('.page-share--buttons');
+	$('.page-share--btn').on('click', function(event) {
+		event.preventDefault();
+		var id			= $(this).data('id');
+		var dropdown 	= $('.page-share--buttons[data-id='+ id +']');
 
 		if (dropdown.hasClass('show--block'))
 			closeDropdownNew(dropdown);
