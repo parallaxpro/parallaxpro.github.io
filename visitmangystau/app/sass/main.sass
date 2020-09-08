@@ -132,7 +132,8 @@
 	position: absolute
 	top: 50%
 	transform: translateY(-50%)
-	right: 115px
+	// right: 115px
+	right: 65px
 	background: #e5e7f0
 	border-radius: 5px
 	z-index: 99
@@ -285,11 +286,13 @@ img
 
 .actual-article
 	margin-bottom: 20px
+	transition: $transition
+	*
+		transition: $transition
 	&:last-child
 		margin-bottom: 0
 
 .article-row-block
-	// display: flex
 	color: $black
 	&:hover
 		color: $black
@@ -330,9 +333,9 @@ img
 .article-row-block--hashtag span
 	opacity: 0.3
 	margin-right: 10px
-	&:hover
-		color: $darkblue
-		opacity: 1
+	// &:hover
+	// 	color: $darkblue
+	// 	opacity: 1
 	&:last-child
 		margin-right: 0
 
@@ -389,9 +392,9 @@ img
 .actual-row--hashtags span
 	opacity: 0.3
 	margin-right: 10px
-	&:hover
-		opacity: 1
-		color: $darkblue
+	// &:hover
+	// 	opacity: 1
+	// 	color: $darkblue
 	&:last-child
 		margin-right: 0
 
@@ -1608,12 +1611,16 @@ img
 	padding: 0 50px 50px
 	align-items: center
 	z-index: 9
+	color: white
 	> *
 		flex-grow: 1
+	&:hover
+		color: white
 
-.article-full .article-full-content--title
-	line-height: 100%
-	margin-bottom: 0
+.article-full
+	.article-full-content--title
+		line-height: 100%
+		margin-bottom: 0
 
 .article-full-content--right
 	display: flex
@@ -1779,5 +1786,17 @@ img
 	opacity: 0.5
 	text-align: right
 
+.news-listing--other
+	> *
+		margin: 10px 0
+
+.navigation--right-search--showed.typing .icon-search
+	background: none
+	border: 2px solid #BFBFBF
+	border-left: 2px solid transparent
+	animation: rotation 1s linear infinite
+	width: 18px
+	height: 18px !important
+	border-radius: 50%
 
 @import media

@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+	$('.page--share').on('click', function(event) {
+    	event.preventDefault();
+        let params = 'scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=600,height=300,left=100,top=100';
+        var link = $(this).data('href');
+        window.open(link, '', params);
+    });
+
 	var $page = $('html, body');
 	$('a[href*="#"]').click(function() {
 		$page.animate({
