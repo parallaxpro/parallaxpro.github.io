@@ -10,7 +10,8 @@ let paths = {
 
 	scripts: {
 		src: [
-			'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+			baseDir + '/libs/jquery-3.5.1.min.js',
+			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
 			baseDir + '/libs/swiper/swiper-bundle.min.js',
 			baseDir + '/libs/viewportchecker.js',
 			baseDir + '/libs/fancybox/jquery.fancybox.min.js',

@@ -873,7 +873,8 @@ img
 
 .inner-page--image
 	display: block
-	margin: 20px 0 30px
+	margin-top: 20px !important
+	margin-bottom: 30px !important
 
 .inner-page
 	font-size: 20px
@@ -1143,6 +1144,7 @@ img
 	color: white
 	transition: $transition
 	user-select: none
+	cursor: pointer
 	&:hover
 		background: darken($darkblue, 10%)
 		color: white
@@ -1798,5 +1800,11 @@ img
 	width: 18px
 	height: 18px !important
 	border-radius: 50%
+
+.category--title
+	font-weight: bold
+	font-size: 28px
+	line-height: 150%
+	margin-bottom: 20px
 
 @import media

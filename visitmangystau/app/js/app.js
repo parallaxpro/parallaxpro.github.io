@@ -301,7 +301,8 @@ $(document).ready(function() {
 	});
 	//
 
-	$('.dropdown--3d').on('click', function() {
+	$('.dropdown--3d').on('click', function(event) {
+		event.preventDefault();
 		var dropdown = $('.dropdown--3d-block');
 
 		if (dropdown.hasClass('show--block'))
