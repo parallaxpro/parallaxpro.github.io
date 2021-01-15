@@ -1,0 +1,60 @@
+.login-form--header
+	display: flex
+	justify-content: center
+	margin-bottom: 25px
+	img
+		height: 75px
+
+.default-input
+	display: block
+	width: 100%
+	background: #FFFFFF
+	border: 0
+	border-radius: 5px
+	padding: 18px 20px
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+	outline: none
+	appearance: none
+	transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+
+.login-form
+	width: 100%
+
+.login-form--input > *
+	margin-bottom: 10px
+
+.default-input
+	&:hover
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1)
+	&:focus
+		box-shadow: inset 0px 0px 0px 1px #FFDB46
+
+.default-btn
+	display: block
+	width: 100%
+	border: 0
+	outline: none
+	padding: 15px
+	border-radius: 5px
+	cursor: pointer
+	user-select: none
+	appearance: none
+	transition: all 0.175s cubic-bezier(0.19, 1, 0.22, 1)
+	&:focus
+		outline: none
+
+.btn-confirm
+	background: #FFDB46
+	&:hover
+		background: #ffd014
+
+.forgot-link
+	display: block
+	text-align: center
+	color: black
+	opacity: 0.5
+	margin-top: 20px
+	&:hover
+		opacity: 0.75
+		text-decoration: none
+		color: black

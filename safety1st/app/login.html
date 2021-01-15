@@ -1,0 +1,29 @@
+<!--#set var="title" value="Авторизация" -->
+<!--#include virtual="/parts/header.html" -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 m-auto align-items-center vh-100 d-flex">
+            
+            <div class="login-form">
+
+                <div class="login-form--header">
+                    <a href="/"><img src="../images/logo.svg"></a>
+                </div>
+
+                <div class="login-form--content">
+                    <div class="login-form--input">
+                        <input type="email" name="email" class="default-input" placeholder="Email">
+                        <input type="password" name="password" class="default-input" placeholder="Пароль">
+                    </div>
+                    <button type="submit" class="default-btn btn-confirm">Войти</button>
+                </div>
+                
+                <a href="#" onclick="return false;" class="forgot-link">Забыли пароль?</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="/parts/footer.html" -->
