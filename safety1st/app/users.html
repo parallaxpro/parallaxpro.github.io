@@ -1,0 +1,138 @@
+<!--#set var="title" value="Курсы" -->
+<!--#include virtual="/parts/header.html" -->
+
+<div class="app">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-3">
+                <div class="app-aside">
+                    <div class="aside-header">
+                        <div class="aside--left">
+                            <div class="aside-logo"><img src="../images/logo.svg"></div>
+                            <!-- <div class="aside-title">Личный кабинет</div> -->
+                        </div>
+                        <div class="aside--right">
+                            <div class="dropdown-btn language-select">
+                                <div class="dropdown-item">ru</div>
+                                <div class="dropdown-list">
+                                    <a href="/" onclick="return false;">kz</a>
+                                    <a href="/" onclick="return false;">en</a>
+                                    <a href="/" onclick="return false;">ch</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="aside-menu">
+                        <a href="#" onclick="return false;" class="nav-item">
+                            <span class="nav-item--icon"><img src="../images/dist/icons/Group.svg"></span>
+                            <span class="nav-item--text">Мои курсы</span>
+                        </a>
+                        <a href="#" onclick="return false;" class="nav-item">
+                            <span class="nav-item--icon"><img src="../images/dist/icons/Group 65.svg"></span>
+                            <span class="nav-item--text">История</span>
+                        </a>
+                        <a href="#" onclick="return false;" class="nav-item active">
+                            <span class="nav-item--icon"><img src="../images/dist/icons/Group-1.svg"></span>
+                            <span class="nav-item--text">Сотрудники</span>
+                        </a>
+                    </nav>
+                </div>
+                <footer class="aside-footer">
+
+                    <div class="footer-profile">
+                        <div class="profile-user">Виталий Балаян</div>
+                        <a href="#" onclick="return false;" class="profile-logout"></a>
+                    </div>
+
+                    <div class="footer-copyrite">
+                        <div class="copyrite-title">2020 © Все права защищены</div>
+                        <div class="copyrite-links">
+                            <a href="#" onclick="return false;">Перейти на сайт</a>
+                            <a href="#" onclick="return false;">Контакты</a>
+                        </div>
+                        <div class="production">
+                            <a href="https://parallax.pro/" target="_blank"><img src="../images/parallax.svg"></a>
+                        </div>
+                    </div>
+
+                </footer>
+            </div>
+            <div class="col-9">
+                <div class="app-content pl-4">
+                    <div class="content">
+
+                        <div class="content-header">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h1 class="content-header--header">Сотрудники</h1>
+                                </div>
+                                <div class="col-4 justify-content-end d-flex">
+                                    <span class="content-header--desc">10 / 30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="users-header">
+                            <div class="row">
+                                <div class="col-4"><div class="btn-add--user">Добавить</div></div>
+                                <div class="col-8">
+                                    <div class="search-container">
+                                        <input type="search" class="default-search" placeholder="Поиск">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="user-add">
+                                <div class="row">
+                                    <div class="col-4"><input type="text" class="default-input" placeholder="Введите Имя"></div>
+                                    <div class="col-4"><input type="text" class="default-input" placeholder="Введите Фамилию"></div>
+                                    <div class="col-4"><input type="text" class="default-input" placeholder="Введите Отчество"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12"><input type="email" class="default-input" placeholder="Введите Email"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6"><input type="password" class="default-input" placeholder="Введите пароль"></div>
+                                    <div class="col-6"><input type="password" class="default-input" placeholder="Повторите пароль"></div>
+                                </div>
+                                <button class="default-btn btn-confirm">Создать</button>
+                            </div>
+
+                        </div>
+
+                        <div class="users-list">
+
+                            <a href="#" onclick="return false;" class="c-row">
+                                <div class="row d-flex align-items-center">
+                                    <div class="c-row--title col-6">Логвинов Егор</div>
+                                    <div class="c-row--desc col-3">ecamu@gmail.com</div>
+                                    <div class="c-row--value col-3 d-flex justify-content-end btn-options">
+                                        <!-- <a href="#" onclick="return false;" class="btn-option btn-edit"></a> -->
+                                        <button class="btn-option btn-delete"></button>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" onclick="return false;" class="c-row">
+                                <div class="row d-flex align-items-center">
+                                    <div class="c-row--title col-6">Логвинов Егор</div>
+                                    <div class="c-row--desc col-3">ecamu@gmail.com</div>
+                                    <div class="c-row--value col-3 d-flex justify-content-end btn-options">
+                                        <!-- <a href="#" onclick="return false;" class="btn-option btn-edit"></a> -->
+                                        <button class="btn-option btn-delete"></button>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="/parts/footer.html" -->
