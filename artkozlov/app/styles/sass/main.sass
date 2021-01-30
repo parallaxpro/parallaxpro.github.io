@@ -1,0 +1,385 @@
+@import config
+@import "blocks/**/*"
+
+.gallery
+	ul
+		display: flex
+		flex-wrap: wrap
+		margin: 0
+		padding: 0
+	li
+		position: relative
+		height: 40vh
+		flex-grow: 1
+		list-style: none
+		overflow: hidden
+		margin: 5px
+		&:last-child
+			// There's no science in using "10" here. In all my testing, this delivered the best results.
+			flex-grow: 2
+		&:hover
+			img
+				transform: scale(1.2)
+	img
+		max-height: 100%
+		min-width: 100%
+		object-fit: cover
+		vertical-align: bottom
+		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+
+.gallery a
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)
+		transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		z-index: 9
+		opacity: 0
+	// &:hover
+
+
+.gallery-item--content
+	position: absolute
+	z-index: 99
+	color: white
+	bottom: 20px
+	left: 20px
+	right: 20px
+	opacity: 0
+	transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+	h2
+		font-weight: 500
+		font-size: 14px
+		line-height: 100%
+	p
+		font-weight: 500
+		font-size: 12px
+		line-height: 100%
+		margin-bottom: 0
+		margin-top: 7px
+		color: rgba(255, 255, 255, 0.5)
+
+.gallery li:hover
+	.gallery-item--content
+		opacity: 1
+	a:before
+		opacity: 1
+
+
+.desktop-header
+	position: fixed
+	top: 25px
+	left: 0
+	right: 0
+	display: flex
+	align-items: center
+	z-index: 999999
+	padding: 25px 55px
+	background: #FAFAFA
+	&.scroll
+		top: 0
+
+.destop-header--right
+	display: flex
+	flex-grow: 1
+	justify-content: flex-end
+
+.destop-header--right-container
+	display: flex
+	align-items: center
+
+.destop-header--left
+	display: flex
+	flex-grow: 1
+
+.nav-link
+	display: inline-flex
+	margin-left: 5px
+	font-weight: 600
+	font-size: 14px
+	line-height: 100%
+
+	/* identical to box height, or 14px
+	padding: 10px
+	text-transform: uppercase
+	color: #000000
+
+.main-menu
+	display: flex
+	align-items: center
+
+.nav-link:hover
+	color: white
+	text-decoration: none
+	background: black
+
+.lang-btn
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 35px
+	height: 35px
+	font-size: 14px
+	line-height: 100%
+	text-transform: uppercase
+	color: #FFFFFF
+	background: black
+	padding: 10px 8px
+
+	&:hover
+		color: white
+		text-decoration: none
+
+.menu-buttons
+	display: flex
+	align-items: center
+	margin-left: 20px
+
+.insta-btn, .phone-btn
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 35px
+	height: 35px
+
+.insta-btn:hover, .phone-btn:hover
+	background: rgba(0, 0, 0, 0.05)
+
+.insta-btn:before
+	content: ''
+	display: flex
+	width: 18px
+	height: 18px
+	background: url('../images/dist/icons/insta.svg')
+
+.phone-btn:before
+	content: ''
+	display: flex
+	width: 18px
+	height: 18px
+	background: url('../images/dist/icons/phone.svg')
+
+.insta-btn
+	margin-left: 15px
+
+.pagination
+	display: flex
+	flex-wrap: wrap
+	list-style: none
+	padding: 15px 5px
+	margin: 0
+	justify-content: center
+	align-items: center
+
+.gallery
+	margin-bottom: 25px
+
+.pagination
+	.page-link
+		display: inline-flex
+		padding: 10px 20px
+		background: rgba(0, 0, 0, 0.05)
+		margin: 10px 5px
+		color: black
+
+		&:hover
+			text-decoration: none
+
+	.page-item
+		&.disabled .page-link
+			color: rgba(0, 0, 0, 0.3)
+
+		&.active .page-link
+			background: black
+			color: white
+
+	a.page-link:hover
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1)
+
+.production
+	display: flex
+	justify-content: center
+	padding: 25px
+
+	a
+		opacity: 0.15
+
+		&:hover
+			opacity: 1
+
+.mobile-header
+	display: none
+
+.mobile-header--container
+	display: flex
+	align-items: center
+
+.mobile-header--right
+	display: flex
+	flex-grow: 1
+	justify-content: flex-end
+
+.menu-btn
+	display: flex
+	width: 35px
+	height: 35px
+
+.mobile-header--left
+	display: flex
+	align-items: center
+
+.menu-btn:hover
+	background: rgba(0, 0, 0, 0.05)
+	cursor: pointer
+
+.mobile-header
+	position: fixed
+	padding: 20px 55px
+	top: 10px
+	left: 0
+	right: 0
+	background: #FAFAFA
+	z-index: 9999
+	&.scroll
+		top: 0
+
+.menu-btn
+	align-items: center
+	justify-content: center
+	margin-right: 20px
+	&:before
+		content: ''
+		display: block
+		width: 18px
+		height: 9px
+		background: url('../images/dist/icons/menu.svg')
+
+.mobile-menu
+	position: absolute
+	display: none
+	background: #262626
+	right: 0
+	left: 0
+	top: 60px
+	margin: 20px 55px
+	z-index: 999999
+
+.mobile-header
+
+.nav-mobile
+	display: flex
+	padding: 16px 20px
+	font-weight: 600
+	font-size: 14px
+	line-height: 100%
+	text-transform: uppercase
+	color: #FFFFFF
+
+	&:hover
+		background: rgba(255, 255, 255, 0.05)
+		color: white
+		text-decoration: none
+
+.mobile-menu-hr
+	background: rgba(255, 255, 255, 0.05)
+	width: 100%
+	height: 1px
+	margin: 10px 0
+
+.nav-mobile-lang
+	display: flex
+	justify-content: center
+	align-items: center
+	padding: 16px
+	background: rgba(255, 255, 255, 0.05)
+	color: white
+
+	&:hover
+		background: rgba(255, 255, 255, 0.1)
+		color: white
+		text-decoration: none
+
+.grid-2
+	display: grid
+	grid-template-columns: 1fr 1fr
+	grid-gap: 50px
+
+.left-img
+	position: absolute
+	width: 45%
+	overflow: hidden
+	top: 130px
+	bottom: 0
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.content
+	h1
+		font-weight: bold
+		font-size: 28px
+		line-height: 140%
+		margin-bottom: 25px
+
+	p
+		font-weight: normal
+		font-size: 14px
+		line-height: 170%
+		color: rgba(0, 0, 0, 0.7)
+		margin: 20px 0
+
+	h2
+		font-weight: bold
+		font-size: 18px
+		line-height: 170%
+		color: rgba(0, 0, 0, 0.7)
+		margin-bottom: 10px
+
+	ol
+		font-size: 14px
+		line-height: 170%
+		padding: 0
+		margin: 0
+		color: rgba(0, 0, 0, 0.7)
+
+		li
+			list-style: none
+
+.content-hr
+	width: 100%
+	height: 1px
+	margin: 30px 0
+	background: rgba(0, 0, 0, 0.05)
+
+.content h3
+	font-weight: bold
+	font-size: 24px
+	line-height: 140%
+	text-transform: uppercase
+	margin-bottom: 25px
+
+ul.list
+	padding: 0
+	font-size: 14px
+	line-height: 170%
+	color: rgba(0, 0, 0, 0.7)
+	margin: 0
+
+li.desc
+	list-style: none
+	margin: 0 !important
+	font-size: 13px
+	line-height: 160%
+	margin-top: 10px !important
+
+ul.list > li
+	margin: 0 20px
+
+@import media

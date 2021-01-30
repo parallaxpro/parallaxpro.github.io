@@ -1,0 +1,86 @@
+// USER VARIABLES SECTION
+
+$accent: #F2B705 // Accent Color
+$fontsize: 14px // Body Font Size
+$textcolor: #000 // Text Color
+$lineheight: 100% // Document Line Height
+$userfont: Montserrat, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 32px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+// @mixin font($fname, $fstyle, $fweight, $furl)
+// 	@font-face
+// 		font-family: $fname
+// 		font-style: $fstyle
+// 		font-weight: $fweight
+// 		src: url($furl) format('woff2')
+
+// @include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+// @include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+// @include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+// @include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+*
+	transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1)
+
+::placeholder
+	color: #B3B3B3
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	background: #FAFAFA
+	padding: 130px 50px 25px
+
+.show--block
+	display: block !important
+	animation: slide-top 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+
+.close--block
+	animation: slide-down 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+
+@keyframes slide-top
+	0%
+		transform: translateY(50px)
+		opacity: 0
+	100%
+		transform: translateY(0px)
+		opacity: 1
+
+@keyframes slide-down
+	0%
+		transform: translateY(0px)
+		opacity: 1
+	100%
+		transform: translateY(50px)
+		opacity: 0
