@@ -1,4 +1,8 @@
+import autosize from '../libs/autosize.min.js';
+
 $(document).ready(function() {
+
+	autosize($('textarea'));
 
 	$(window).scroll(function(){
 		$('.desktop-header, .mobile-header').toggleClass('scroll', $(this).scrollTop() > 0);
@@ -16,6 +20,18 @@ $(document).ready(function() {
 			menu.slideDown();
 		}
 
-	})
+	});
+
+	const swiper = new Swiper('.swiper-container', {
+		slidesPerView: 3,
+		slidesPerColumn: 3,
+		slidesPerColumnFill: 'row',
+		spaceBetween: 20,
+		// Navigation arrows
+		navigation: {
+		  nextEl: '.swiper-button-next',
+		  prevEl: '.swiper-button-prev',
+		},
+	});
 
 });
