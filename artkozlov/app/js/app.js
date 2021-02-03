@@ -4,6 +4,11 @@ $(document).ready(function() {
 
 	autosize($('textarea'));
 
+	$('[data-fancybox]').fancybox({
+		// clickContent: 'close',
+		buttons: ['close', 'thumbs']
+	})
+
 	$(window).scroll(function(){
 		$('.desktop-header, .mobile-header').toggleClass('scroll', $(this).scrollTop() > 0);
 	});
@@ -34,4 +39,8 @@ $(document).ready(function() {
 		},
 	});
 
+});
+
+$(window).scroll(function(){
+	$('.mobile-menu').slideUp();
 });

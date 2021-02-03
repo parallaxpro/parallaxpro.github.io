@@ -36,7 +36,7 @@ $(document).ready(function() {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
-	})
+	});
 	
 });
 
@@ -86,3 +86,15 @@ $(document).on('click', '.c-row-users .c-row', function(e) {
 	// 	$(this).removeClass('active');
 	// }
 })
+
+$(document).on('change', '#is_agreement', function() {
+	
+	var btn = $('[data-btn=is_agreement]');
+
+	btn.toggleClass('btn-confirm');
+
+	if (btn.is('[disabled]')) btn.attr('disabled', false);
+	else btn.prop('disabled', true);
+	
+	// btn-confirm
+});
