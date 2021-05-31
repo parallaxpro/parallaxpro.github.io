@@ -41,12 +41,37 @@
     .quiz-response p
         line-height: 150%
 
+@media (max-width: 575px)
+    .mass_users--header
+        flex-direction: column
+        margin: 50px 0 30px
+    .mass_users-logo
+        margin-right: 0
+        margin-bottom: 30px
+    .mass_users-title
+        text-align: center
+
 @media (max-width: 425px)
     .c-row
         padding: 24px
         margin-bottom: 15px
     .content-header
         margin-bottom: 20px
+    .agreement
+        position: absolute
+        align-items: unset
+        padding: 50px 0
+    .agreement-header
+        line-height: 150%
+    .mass-input-row
+        flex-direction: column
+        margin: 0
+    .mass-input-row>*
+        margin: 0 0 10px
+    .mass_users-delete
+        margin-top: 0
+    .mass_users-block:first-child
+        padding-bottom: 20px
 
 @media (max-width: 320px)
     .user-add

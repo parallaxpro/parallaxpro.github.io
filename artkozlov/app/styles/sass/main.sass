@@ -1,5 +1,31 @@
 @import config
 @import "blocks/**/*"
+@import '../../libs/justifiedGallery.min.css'
+
+#gallery
+	a
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%)
+			transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			z-index: 9
+			opacity: 0
+		&:hover
+			&::before, .gallery-item--content
+				opacity: 1
+			img
+				transform: scale(1.2)
+	img
+		transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+.jg-caption
+	display: none !important
 
 .gallery
 	ul
@@ -14,7 +40,7 @@
 		list-style: none
 		overflow: hidden
 		margin: 5px
-		&:last-child
+		&:last-child, &:nth-child(31)
 			// There's no science in using "10" here. In all my testing, this delivered the best results.
 			flex-grow: 0
 		&:hover
@@ -41,8 +67,6 @@
 		bottom: 0
 		z-index: 9
 		opacity: 0
-	// &:hover
-
 
 .gallery-item--content
 	position: absolute
@@ -491,6 +515,22 @@ p.h-desc
 	top: 20px
 	width: 40px
 	height: 40px
+	background-image: url('../images/dist/icons/video.svg')
+	background-color: black
+	border-radius: 100px
+	border: 2px solid white
+	background-repeat: no-repeat
+	background-position: 55% 50%
+
+#gallery a.video::after
+	content: ''
+	display: flex
+	position: absolute
+	right: 20px
+	top: 20px
+	width: 50px
+	height: 50px
+	border: 2px solid white
 	background-image: url('../images/dist/icons/video.svg')
 	background-color: black
 	border-radius: 100px

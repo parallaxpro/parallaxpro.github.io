@@ -4,6 +4,12 @@ $(document).ready(function() {
 
 	autosize($('textarea'));
 
+	$('#gallery').justifiedGallery({
+		rowHeight : 300,
+		lastRow : 'nojustify',
+		margins : 10
+	});
+
 	$('[data-fancybox]').fancybox({
 		// clickContent: 'close',
 		buttons: ['close', 'thumbs']
@@ -19,10 +25,10 @@ $(document).ready(function() {
 
 		if (menu.hasClass('active')) {
 			menu.removeClass('active');
-			menu.slideUp();
+			menu.slideUp(300);
 		} else {
 			menu.addClass('active');
-			menu.slideDown();
+			menu.slideDown(300);
 		}
 
 	});
