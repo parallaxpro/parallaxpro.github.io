@@ -491,6 +491,7 @@
     color: rgba(black, 0.5)
 
 .g-input
+    position: relative
     display: flex
     align-items: center
     background: white
@@ -594,5 +595,48 @@
     line-height: 100%
     opacity: 0.25
 
+.multiform-btn
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 32px
+    height: 32px
+    right: 25px
+    border-radius: 10px
+    cursor: pointer
+    &.multiform-btn--plus
+        border: 1px solid $blue
+        &:hover
+            background: rgba($blue, 0.1)
+        &::before
+            content: ''
+            display: flex
+            width: 12px
+            height: 12px
+            background: url('../../images/dist/icons/plus-blue.svg')
+            background-size: cover
+
+    &.multiform-btn--minus
+        border: 1px solid$red
+        &:hover
+            background: rgba($red, 0.1)
+        &::before
+            content: ''
+            display: flex
+            width: 12px
+            height: 1.5px
+            background: $red
+            border-radius: 100px
+            
+
+
+.form-hr
+    display: block
+    width: 100%
+    height: 1px
+    background: rgba(0, 0, 0, 0.03)
+    border: none
+    margin: 25px 0
 
 @import media

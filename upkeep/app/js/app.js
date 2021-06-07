@@ -1,12 +1,15 @@
-import $ from 'jquery';
-
 $(document).ready(function() {
+
+    phone_mask();
+
     $(document).mouseup(function (e) {
 		var container = $('.dropdown-btn');
 		var dropdown = $('.dropdown-list');
 
 		if (container.has(e.target).length === 0 && dropdown.hasClass('show--block')) closeDropdown(dropdown);
 	});
+
+
 });
 
 function showAlertError(text) {
@@ -87,4 +90,57 @@ $(document).on('click', '.bussiness-add', function(e) {
     
     $('#popups').show(); $('.popup-overlay').fadeIn();
     $('.popup-item[data-id='+ popup_id +']').addClass('show--block');
+});
+
+$(document).on('click', '.multiform-btn--plus', function(e) {
+    e.preventDefault();
+
+    var $multiform = $(this).data('multiform');
+    multiformAddInput($multiform);
 })
+
+function multiformAddInput(multiform) {
+
+    var $container  = $('.c-multiform[data-multiform='+ multiform +']');
+    var last_input  = $container.children('.g-input').last();
+    var next_id     = last_input.data('id') + 1;
+    var label       = last_input.children('label').text();
+    var mask        = last_input.children('input').data('mask');
+
+    console.log(mask);
+
+    last_input.children('.multiform-btn').removeClass('multiform-btn--plus').addClass('multiform-btn--minus');
+
+    var template = '\
+    <div class="g-input" data-id="'+ next_id +'">\
+        <label for="'+ multiform +'_'+ next_id +'" class="g-input--label">'+ label +'</label>\
+        <input type="text" \
+            name="'+ multiform +'['+ next_id +']" \
+            id="'+ multiform +'_'+ next_id +'" \
+            class="g-input--input" \
+            data-mask="'+ mask +'" \
+            data-multiform="'+ multiform +'"> \
+        <span class="multiform-btn multiform-btn--plus" data-multiform="'+ multiform +'"></span>\
+    </div>';
+
+    $container.append(template);
+
+    if (multiform === 'phone' || multiform === 'whatsapp') phone_mask();
+}
+
+$(document).on('click', '.multiform-btn--minus', function(e) {
+    e.preventDefault();
+
+    var multiform   = $(this).data('multiform');
+    var id          = $(this).parent('.g-input').data('id');
+
+    multiformRemoveInput(multiform, id);
+});
+
+function multiformRemoveInput(multiform, id) {
+    $('.c-multiform[data-multiform='+ multiform +']').children('.g-input[data-id='+ id +']').slideUp(300, function() { $(this).remove() });
+}
+
+function phone_mask() {
+    $('input[data-mask="phone"]').inputmask("mask", {"mask": "(999) 999-99-99"});
+}
