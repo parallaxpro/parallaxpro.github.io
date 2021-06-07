@@ -6,6 +6,7 @@ $textcolor: #000 // Text Color
 $lineheight: 100% // Document Line Height
 $userfont: Roboto, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$blue: #005FF9
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 32px
@@ -59,7 +60,7 @@ body
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
-	background: #FAFAFA
+	background: #F7F7F7
 	padding: 0px
 
 .show--block
@@ -68,6 +69,13 @@ body
 
 .close--block
 	animation: slide-down 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+
+a
+	transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+	&:hover
+		text-decoration: none
+	&:active
+		opacity: 0.75
 
 @keyframes slide-top
 	0%
