@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
     phone_mask();
+    $(".default-select").selectmenu();
 
     $(document).mouseup(function (e) {
 		var container = $('.dropdown-btn');
@@ -138,9 +139,133 @@ $(document).on('click', '.multiform-btn--minus', function(e) {
 });
 
 function multiformRemoveInput(multiform, id) {
-    $('.c-multiform[data-multiform='+ multiform +']').children('.g-input[data-id='+ id +']').slideUp(300, function() { $(this).remove() });
+    $('.c-multiform[data-multiform='+ multiform +']').children('.g-input[data-id='+ id +']').remove();
 }
 
 function phone_mask() {
     $('input[data-mask="phone"]').inputmask("mask", {"mask": "(999) 999-99-99"});
 }
+
+$(document).on('click', '.multiselect-btn--plus', function(e) {
+    e.preventDefault();
+
+    var multiselect = $(this).data('multiselect');
+    var container   = $('.c-multiselect[data-multiselect='+ multiselect +']');
+    var last_select = container.children('.multiselect-item').last();
+    var id          = last_select.data('id');
+    var next_id     = id + 1;
+
+
+    var template    = '\
+    <div class="multiselect-item" data-id="'+ next_id +'">\
+        <div class="row">\
+            <div class="col-3">\
+                <select id="'+ multiselect +'_'+ next_id +'" name="'+ multiselect +'['+ next_id +'][select]" class="default-select">\
+                    <option value="vk">VK</option>\
+                    <option value="instagram">Instagram</option>\
+                    <option value="facebook">Facebook</option>\
+                </select>\
+            </div>\
+            <div class="col-9">\
+                <div class="g-input">\
+                    <label for="link_'+ next_id +'" class="g-input--label">Ссылка</label>\
+                    <input type="text" name="'+ multiselect +'['+ next_id +'][value]" id="link_'+ next_id +'" class="g-input--input">\
+                    <span class="multiselect-btn multiselect-btn--plus" data-multiselect="'+ multiselect +'" data-id="'+ next_id +'"></span>\
+                </div>\
+            </div>\
+        </div>\
+    </div>\
+    ';
+
+    container.append(template);
+    $('.multiselect-btn[data-multiselect='+ multiselect +'][data-id='+ id +']').removeClass('multiselect-btn--plus').addClass('multiselect-btn--minus');
+
+    $('.default-select').selectmenu();
+});
+
+$(document).on('click', '.multiselect-btn--minus', function(e) {
+    e.preventDefault();
+
+    var multiselect = $(this).data('multiselect');
+    var container   = $('.c-multiselect[data-multiselect='+ multiselect +']');
+    var id          = $(this).data('id');
+
+    container.children('.multiselect-item[data-id='+ id +']').remove();
+});
+
+$(document).ready(function() {
+
+	ymaps.ready(init);
+	
+	var myMap;
+	function init() {
+		myMap = new ymaps.Map("map", {
+			center: [55.76, 37.64],
+			controls: ['zoomControl', 'searchControl', 'fullscreenControl'],
+			zoom: 11
+		}, {
+			balloonMaxWidth: 200,
+			searchControlProvider: 'yandex#search'
+		});
+
+		ymaps.geolocation.get({
+			provider: 'browser',
+			mapStateAutoApply: true
+		}).then(function(res) {
+			console.log(res);
+			var coord = res.geoObjects.get(0).geometry.getCoordinates();
+			myMap.setCenter(coord, 15);
+
+			setAddress(res);
+			// ymapsContent(myMap, res);
+		});
+
+		myMap.events.add('actionbegin', function(e) {
+			// console.log('начинаем');
+			$('#marker').addClass('active');
+		})
+
+		myMap.events.add('actionend', function(e) {
+			$('#marker').removeClass('active');
+
+			ymaps.geocode(myMap.getCenter(), {
+				/**
+				 * Опции запроса
+				 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
+				 */
+				// Ищем только дома.
+				kind: 'house',
+				// Запрашиваем не более 1 результата.
+				results: 1
+			}).then(function(res) {
+				setAddress(res);
+			});
+		});
+	}
+    
+    // $(".image-base").change(function(){
+    //     readURL(this);
+    // });
+
+});
+
+function setAddress(res) {
+	var firstGeoObject = res.geoObjects.get(0),
+	address = firstGeoObject.getAddressLine();
+	console.log(address);
+}
+
+// function readURL(input) {
+// 	if (input.files && input.files[0]) {
+
+// 		var reader 		= new FileReader();
+// 		var $parent 	= $(input).data('parent');
+
+// 		reader.onload = function (e) {
+// 			$('label[for='+ $parent +']').css('background', 'url('+ e.target.result +')');
+// 			// $('#blah').attr('src', e.target.result);
+// 		}
+
+// 		reader.readAsDataURL(input.files[0]);
+// 	}
+// }

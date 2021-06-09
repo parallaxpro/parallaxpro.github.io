@@ -125,21 +125,65 @@
                 <hr class="form-hr">
 
                 <div class="c-multiselect" data-multiselect="socials">
-                    <div class="multiselect-item">
+                    
+                    <div class="multiselect-item" data-id="1">
                         <div class="row">
-
                             <div class="col-3">
+                                <select id="socials" name="socials[1][select]" class="default-select">
+                                    <option value="vk">VK</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="facebook">Facebook</option>
+                                </select>
+                            </div>
+                            <div class="col-9">
                                 <div class="g-input">
-                                    <label for="social" class="g-input--label">Cоц. сеть</label>
-                                    <select id="social" name="social">
-                                        <option value="0">1</option>
-                                    </select>
+                                    <label for="link_1" class="g-input--label">Ссылка</label>
+                                    <input type="text" name="socials[1][value]" id="link_1" class="g-input--input">
+                                    <span class="multiselect-btn multiselect-btn--plus" data-multiselect="socials" data-id="1"></span>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
+
+                </div>
+
+                <hr class="form-hr">
+
+                <div class="editor--block-map">
+
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="editor--map-first">
+                                <select name="region_id" id="region" class="default-select selectpicker" data-live-search="true">
+                                    <option value="1">123</option>
+                                    <option value="1">321</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="editor--map-address">
+                                <div class="g-input">
+                                    <label for="address" class="g-input--label">Адрес</label>
+                                    <input type="text" name="address" id="address" class="g-input--input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="editor--map">
+                        <div id="map"></div>
+                        <div id="marker"></div>
+                    </div>
+
+                    
+                </div>
+
+                <hr class="form-hr">
+
+                <h2>Настройки графика</h2>
+
+                <div class="work-schedule">
+                     
                 </div>
 
             </div>
