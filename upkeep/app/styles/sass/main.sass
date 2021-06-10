@@ -879,4 +879,110 @@ html .ui-button.ui-state-disabled
 		transform: rotate(180deg)
 		margin: 0 10px
 
+.b-input
+	width: 100%
+	background: #FFFFFF
+	border-radius: 7px
+	border: 0
+	padding: 28px 30px
+	font-size: 16px
+	line-height: 150%
+	&[data-spoiler_input]
+		opacity: 0.5
+		pointer-events: none
+	&.active
+		opacity: 1 !important
+		pointer-events: unset
+
+
+.input-contianer
+	position: relative
+
+.b-input.wallet-symbol
+	padding-right: 70px
+
+.i-wallet-symbol
+	position: absolute
+	right: 30px
+	font-size: 20px
+	line-height: 100%
+	top: 50%
+	transform: translateY(-50%)
+
+.cl-checkbox input
+	position: absolute
+	opacity: 0
+	cursor: pointer
+	height: 0
+	width: 0
+	&:checked ~ .checkmark
+		background-color: #32D74B
+
+.checkmark
+	display: flex
+	align-items: center
+	position: relative
+	width: 34px
+	height: 20px
+	background-color: #FF453A
+	border-radius: 100px
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+.checkbox-label
+	user-select: none
+
+.checkmark:before
+	content: ''
+	display: block
+	position: absolute
+	width: 16px
+	height: 16px
+	background: white
+	border-radius: 10px
+	left: 2px
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06)
+	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+.cl-checkbox
+	input:checked ~ .checkmark:before
+		right: 2px
+		left: unset
+		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+		margin-bottom: 0
+		transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
+
+.label-control .cl-checkbox
+	display: flex
+	justify-content: end
+
+.label-control--text
+	font-size: 16px
+	line-height: 150%
+	flex-grow: 1
+
+.label-control
+	&:last-child
+		margin-bottom: 0
+
+	&:hover
+		box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.01)
+		transform: translateY(-3px)
+
+	&:active
+		transform: unset
+
+.label-control
+	display: flex
+	background: #FFFFFF
+	border-radius: 7px
+	padding: 28px 30px
+	align-items: center
+	cursor: pointer
+	transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1)
+	user-select: none
+
+label
+	margin-bottom: 0
+
 @import media

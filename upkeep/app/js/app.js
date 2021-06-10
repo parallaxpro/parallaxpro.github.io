@@ -10,8 +10,105 @@ $(document).ready(function() {
 		if (container.has(e.target).length === 0 && dropdown.hasClass('show--block')) closeDropdown(dropdown);
 	});
 
+    $('#set_password').on('submit', function(e) {
+		e.preventDefault();
+
+		var button = $(this).children('button');
+			button.attr('disabled', true);
+			button.addClass('loading');
+
+		$.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData: false,
+            statusCode: {
+                404: function() {
+                    alert( "Страница не найдена." );
+                }
+            },
+            success: function(result){
+                buttonActive();
+                closePopups();
+            },
+			error: function(result) {
+				buttonActive();
+
+				var errors = result.responseJSON.errors;
+
+				$.each(errors, function(index, value) {
+					$.each(value, function(error_index, error) {
+						showAlertError(error);							
+					});
+					console.log(value);
+				})
+			}
+        });
+
+		function buttonActive() {
+			button.attr('disabled', false);
+            button.removeClass('loading');
+		}
+	});
+
+    $('input[data-spoiler]').on('change', function (e) {
+        var id = $(this).data('spoiler');
+        $('[data-spoiler_input='+ id +']').toggleClass('active');
+    })
 
 });
+
+$(document).ready(function() {
+		ymaps.ready(init);
+	
+	var myMap;
+	function init() {
+		myMap = new ymaps.Map("map", {
+			center: [55.76, 37.64],
+			controls: ['zoomControl', 'searchControl', 'fullscreenControl'],
+			zoom: 11
+		}, {
+			balloonMaxWidth: 200,
+			searchControlProvider: 'yandex#search'
+		});
+
+		ymaps.geolocation.get({
+			provider: 'browser',
+			mapStateAutoApply: true
+		}).then(function(res) {
+			console.log(res);
+			var coord = res.geoObjects.get(0).geometry.getCoordinates();
+			myMap.setCenter(coord, 15);
+
+			setAddress(res);
+			// ymapsContent(myMap, res);
+		});
+
+		myMap.events.add('actionbegin', function(e) {
+			// console.log('начинаем');
+			$('#marker').addClass('active');
+		})
+
+		myMap.events.add('actionend', function(e) {
+			$('#marker').removeClass('active');
+
+			ymaps.geocode(myMap.getCenter(), {
+				/**
+				 * Опции запроса
+				 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
+				 */
+				// Ищем только дома.
+				kind: 'house',
+				// Запрашиваем не более 1 результата.
+				results: 1
+			}).then(function(res) {
+				setAddress(res);
+			});
+		});
+	}
+})
 
 function showAlertError(text) {
     var id = getRandomInt(16);
@@ -38,7 +135,6 @@ function closeAlert(block) {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-
 
 $(document).on('click', '.alert-block--close', function(e) {
     e.preventDefault();
@@ -191,62 +287,6 @@ $(document).on('click', '.multiselect-btn--minus', function(e) {
     var id          = $(this).data('id');
 
     container.children('.multiselect-item[data-id='+ id +']').remove();
-});
-
-$(document).ready(function() {
-
-	ymaps.ready(init);
-	
-	var myMap;
-	function init() {
-		myMap = new ymaps.Map("map", {
-			center: [55.76, 37.64],
-			controls: ['zoomControl', 'searchControl', 'fullscreenControl'],
-			zoom: 11
-		}, {
-			balloonMaxWidth: 200,
-			searchControlProvider: 'yandex#search'
-		});
-
-		ymaps.geolocation.get({
-			provider: 'browser',
-			mapStateAutoApply: true
-		}).then(function(res) {
-			console.log(res);
-			var coord = res.geoObjects.get(0).geometry.getCoordinates();
-			myMap.setCenter(coord, 15);
-
-			setAddress(res);
-			// ymapsContent(myMap, res);
-		});
-
-		myMap.events.add('actionbegin', function(e) {
-			// console.log('начинаем');
-			$('#marker').addClass('active');
-		})
-
-		myMap.events.add('actionend', function(e) {
-			$('#marker').removeClass('active');
-
-			ymaps.geocode(myMap.getCenter(), {
-				/**
-				 * Опции запроса
-				 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode.xml
-				 */
-				// Ищем только дома.
-				kind: 'house',
-				// Запрашиваем не более 1 результата.
-				results: 1
-			}).then(function(res) {
-				setAddress(res);
-			});
-		});
-	}
-    
-    // $(".image-base").change(function(){
-    //     readURL(this);
-    // });
-
 });
 
 function setAddress(res) {
