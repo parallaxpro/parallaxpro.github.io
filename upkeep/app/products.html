@@ -1,0 +1,104 @@
+<!--#set var="title" value="Заведения" -->
+<!--#include virtual="/parts/header.html" -->
+
+<header class="header">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-6">
+                <a href="/" class="logo"><img src="./images/logo.svg" alt="upkeep"></a>
+            </div>
+            <div class="col-6 d-flex justify-content-end align-items-center">
+
+                <a href="/" onclick="return false;" class="profile-button">
+                    <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+                    <div class="profile-name">Виталий Балаян</div>
+                </a>
+
+                <a href="/" onclick="return false;" class="profile-logout"></a>
+
+                <div class="dropdown-btn language-select">
+                    <div class="dropdown-item">ru</div>
+                    <div class="dropdown-list">
+                        <a href="/" onclick="return false;">kz</a>
+                        <a href="/" onclick="return false;">en</a>
+                        <a href="/" onclick="return false;">ch</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container">
+        
+        <div class="row index-header">
+            <div class="col-xl-8 m-auto">
+                <div class="row d-flex align-items-end">
+                    <div class="col-9 d-flex align-items-end"><a href="#" onclick="return false;" class="header--back">Завтраки</a> <h1>Товары</h1></div>
+                    <div class="col-3 d-flex justify-content-end"><span class="index-subtitle">Fish & Beer #4367</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-8 m-auto">
+
+                <a href="#" onclick="return false;" class="add-btn">+ Добавить товар</a>
+
+                <div class="products-listing">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="product-item">
+                                <div class="product--image"><img src="../../images/dist/demo.jpg" alt="Филе утки с полентой и вишневым соусом"></div>
+                                <div class="product--desc">
+                                    <div class="product--title">Филе утки с полентой и вишневым соусом</div>
+                                    <div class="product--details">
+                                        <div class="product--price">1 000 тг.</div>
+                                        <div class="product--more">
+                                            <div class="item--langs">
+                                                <span class="active">RU</span>
+                                                <span class="active">KZ</span>
+                                                <span class="no--active">EN</span>
+                                            </div>
+                                            <div class="item--btns">
+                                                <a href="#" onclick="return false;" class="setting-btn edit--btn"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6">
+                            <div class="product-item">
+                                <div class="product--image"><img src="../../images/dist/demo.jpg" alt="Пикантная курица"></div>
+                                <div class="product--desc">
+                                    <div class="product--title">Пикантная курица</div>
+                                    <div class="product--details">
+                                        <div class="product--price"><span class="price--sales">1 000 тг.</span> 1 000 тг.</div>
+                                        <div class="product--more">
+                                            <div class="item--langs">
+                                                <span class="active">RU</span>
+                                                <span class="active">KZ</span>
+                                                <span class="no--active">EN</span>
+                                            </div>
+                                            <div class="item--btns">
+                                                <a href="#" onclick="return false;" class="setting-btn edit--btn"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!--#include virtual="/parts/footer.html" -->
