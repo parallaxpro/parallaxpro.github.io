@@ -309,3 +309,86 @@ function setAddress(res) {
 // 		reader.readAsDataURL(input.files[0]);
 // 	}
 // }
+
+
+
+
+
+
+
+document.querySelectorAll('.drag-and-drop--input').forEach(inputElement => {
+    const dropZoneElement = inputElement.closest('.drag-and-drop--block');
+
+    dropZoneElement.addEventListener('click', e => {
+        inputElement.click();
+    });
+
+    inputElement.addEventListener('change', e => {
+        if (inputElement.files.length) {
+            updateThumbnail(dropZoneElement, inputElement.files[0]);
+        }
+    })
+
+    dropZoneElement.addEventListener('dragover', e => {
+        e.preventDefault();
+        dropZoneElement.classList.add('drag-and-drop--over');
+    });
+
+    ['dragleave', 'dragend'].forEach(type => {
+        dropZoneElement.addEventListener(type, e => {
+            dropZoneElement.classList.remove('drag-and-drop--over');
+        });
+    });
+
+    dropZoneElement.addEventListener('drop', e => {
+        e.preventDefault();
+        // console.log(e.dataTransfer.files);
+
+        if(e.dataTransfer.files.length) {
+            inputElement.files = e.dataTransfer.files;
+            updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+        }
+
+        dropZoneElement.classList.remove('drag-and-drop--over');
+    });
+})
+
+function updateThumbnail(dropZoneElement, file) {
+    let thumbnailElement = dropZoneElement.querySelector('.drag-and-drop--thumb');
+
+    // if(dropZoneElement.querySelector(''))
+    // First time - remove the prompt
+    if (dropZoneElement.querySelector(".drag-and-drop--image")) {
+        dropZoneElement.querySelector(".drag-and-drop--image").remove();
+    }
+
+    if (!thumbnailElement) {
+        thumbnailElement = document.createElement('div');
+        thumbnailElement.classList.add('drag-and-drop--thumb');
+        dropZoneElement.prepend(thumbnailElement);
+    }
+
+    if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            thumbnailElement.style.backgroundImage = `url('${ reader.result }')`;
+        }
+    } else {
+        thumbnailElement.style.backgroundImage = null;
+    }
+}
+
+
+$(document).on('input', '.g-input--input[maxlength]', function(e) {
+    
+    var input = $(this);
+    var maxlength = Number(input.attr('maxlength'));
+    var span = $('.g-input--maxlength[data-id='+ input.attr('id') +']')
+    var span_value = Number(span.text());
+    var value_length = input.val().length;
+
+    var minus = maxlength - value_length;
+    span.text(minus);
+})

@@ -455,8 +455,9 @@
 	user-select: none
 	margin-bottom: 15px
 	border-radius: 7px
+	cursor: pointer
 
-.drag-and-drop--image
+.drag-and-drop--image, .drag-and-drop--thumb
 	display: flex
 	align-items: center
 	justify-content: center
@@ -465,6 +466,8 @@
 	height: 150px
 	background: rgba(black, 0.05)
 	border-radius: 7px
+	background-size: cover !important
+	background-position: center !important
 
 
 .drag-and-drop--text
@@ -984,5 +987,8 @@ html .ui-button.ui-state-disabled
 
 label
 	margin-bottom: 0
+
+.drag-and-drop--input
+	display: none
 
 @import media
