@@ -64,7 +64,11 @@ $(document).ready(function() {
 		ymaps.ready(init);
 	
 	var myMap;
+
 	function init() {
+
+		var coords = $('#coordinates').val();
+
 		myMap = new ymaps.Map("map", {
 			center: [55.76, 37.64],
 			controls: ['zoomControl', 'searchControl', 'fullscreenControl'],
@@ -78,12 +82,17 @@ $(document).ready(function() {
 			provider: 'browser',
 			mapStateAutoApply: true
 		}).then(function(res) {
-			console.log(res);
-			var coord = res.geoObjects.get(0).geometry.getCoordinates();
-			myMap.setCenter(coord, 15);
 
+			console.log(coords);
+
+			if (!coords) {
+				var coord = res.geoObjects.get(0).geometry.getCoordinates();			
+			} else {
+				var coord = coords.split(',');
+			}
+
+			myMap.setCenter(coord, 15);
 			setAddress(res);
-			// ymapsContent(myMap, res);
 		});
 
 		myMap.events.add('actionbegin', function(e) {
@@ -291,8 +300,12 @@ $(document).on('click', '.multiselect-btn--minus', function(e) {
 
 function setAddress(res) {
 	var firstGeoObject = res.geoObjects.get(0),
-	address = firstGeoObject.getAddressLine();
-	console.log(address);
+	// address = firstGeoObject.getAddressLine();
+	address = firstGeoObject.properties._data.name,
+	coord = firstGeoObject.geometry.getCoordinates();
+	$('#address').val(address);
+	$('#coordinates').val(coord);
+	console.log(coord);
 }
 
 // function readURL(input) {
