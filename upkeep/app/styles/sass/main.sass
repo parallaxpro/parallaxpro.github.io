@@ -36,7 +36,7 @@
 		display: flex
 		width: 7px
 		height: 12px
-		background: url('../../images/dist/icons/arrow-black.svg')
+		background: url('../images/dist/icons/arrow-black.svg')
 		margin-right: 10px
 		transition: all 0.25s ease-in-out
 	&:hover
@@ -107,25 +107,25 @@
 			left: 25px
 			width: 30px
 			height: 18px
-			background: url('../../images/dist/icons/vk.svg')
+			background: url('../images/dist/icons/vk.svg')
 	&.google
 		&::before
 			left: 36px
 			width: 18px
 			height: 18px
-			background: url('../../images/dist/icons/google.svg')
+			background: url('../images/dist/icons/google.svg')
 	&.fb
 		&::before
 			left: 35px
 			width: 9px
 			height: 18px
-			background: url('../../images/dist/icons/fb.svg')
+			background: url('../images/dist/icons/fb.svg')
 	&.tw
 		&::before
 			left: 34px
 			width: 22px
 			height: 18px
-			background: url('../../images/dist/icons/tw.svg')
+			background: url('../images/dist/icons/tw.svg')
 
 .a-hr
 	display: flex
@@ -246,7 +246,7 @@
 	display: block
 	width: 14px
 	height: 14px
-	background: url('../../images/dist/icons/close-red.svg')
+	background: url('../images/dist/icons/close-red.svg')
 	cursor: pointer
 
 .auth-alert
@@ -308,9 +308,9 @@
 	color: black
 	&:hover
 		color: black
-		.profile-name
-			transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-			background: rgba(black, 0.05)
+		// .profile-name
+		// 	transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+		// 	background: rgba(black, 0.05)
 
 .profile-image
 	display: flex
@@ -337,7 +337,7 @@
 		display: flex
 		width: 14px
 		height: 14px
-		background: url('../../images/dist/icons/exit.svg')
+		background: url('../images/dist/icons/logout.svg')
 		opacity: 0.25
 	&:hover
 		background: rgba(black, 0.03)
@@ -540,6 +540,9 @@
 	outline: none
 
 .default-btn
+	display: flex
+	align-items: center
+	justify-content: center
 	width: 100%
 	padding: 22px !important
 	border: 0
@@ -549,10 +552,25 @@
 	background: $blue
 	border-radius: 7px
 	color: white
+	// text-align: center
 	&:hover
 		background: darken($blue, 5%)
+		color: white
 	&:active
 		opacity: 0.75
+	&.active
+		pointer-events: none
+		opacity: 0.75
+		&:before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(white, 0.5)
+			border-top: 2px solid white
+			border-radius: 50%
+			margin-right: 7px
+			animation: spin 1s linear infinite
 
 .index-header
 	margin-bottom: 40px
@@ -618,7 +636,7 @@
 			display: flex
 			width: 12px
 			height: 12px
-			background: url('../../images/dist/icons/plus-blue.svg')
+			background: url('../images/dist/icons/plus-blue.svg')
 			background-size: cover
 
 	&.multiform-btn--minus, &.multiselect-btn--minus
@@ -661,7 +679,7 @@
 	margin-bottom: 14px
 
 #marker
-	background: url('../../images/dist/icons/map_marker.svg')
+	background: url('../images/dist/icons/map_marker.svg')
 	width: 28px
 	height: 40px
 	position: absolute
@@ -789,7 +807,7 @@ html .ui-button.ui-state-disabled
 			display: flex
 			width: 16px
 			height: 16px
-			background: url('../../images/dist/icons/edit.svg')
+			background: url('../images/dist/icons/edit.svg')
 	&.delete--btn
 		&:hover
 			background: rgba($red, 0.05)
@@ -798,7 +816,7 @@ html .ui-button.ui-state-disabled
 			display: flex
 			width: 13px
 			height: 16px
-			background: url('../../images/dist/icons/delete.svg')
+			background: url('../images/dist/icons/delete.svg')
 
 .item--langs
 	font-size: 14px
@@ -877,7 +895,7 @@ html .ui-button.ui-state-disabled
 		display: flex
 		width: 6px
 		height: 12px
-		background: url('../../images/dist/icons/arrow-black.svg') no-repeat
+		background: url('../images/dist/icons/arrow-black.svg') no-repeat
 		background-size: contain
 		transform: rotate(180deg)
 		margin: 0 10px
@@ -1034,5 +1052,369 @@ label
 	cursor: pointer
 	&.active
 		box-shadow: inset 0px 0px 0px 1px #C9A334
+
+.main-business
+	margin: 60px 0
+
+.b-page--logotype img
+	height: 25px
+
+.b-page--name
+	margin: 40px 0
+
+.b-page--title
+	font-weight: bold
+	font-size: 36px
+	line-height: 100%
+	color: #333333
+
+.b-page--subtitle
+	font-weight: normal
+	font-size: 16px
+	line-height: 100%
+	color: rgba(0, 0, 0, 0.3)
+	margin-top: 14px
+
+.b-page--menu-item
+	display: flex
+	padding: 10px 0
+	margin-bottom: 5px
+	color: black
+	font-size: 16px
+	line-height: 100%
+	opacity: 0.3
+	&::before
+		content: ''
+		display: flex
+		width: 14px
+		height: 16px
+		margin-right: 10px
+		align-items: center
+	&.home::before
+		background: url('../images/dist/icons/house.svg')
+	&.catalog::before
+		background: url('../images/dist/icons/boxes.svg')
+	&.warehouse::before
+		background: url('../images/dist/icons/warehouse.svg')
+	&.setting::before
+		background: url('../images/dist/icons/gear.svg')
+	&.exit::before
+		background: url('../images/dist/icons/exit.svg')
+	&:hover
+		color: black
+		opacity: 1
+		// transform: scale(1.03)
+	&:active
+		// transform: unset !important
+	&.active
+		color: $blue
+		opacity: 1
+		&::before
+			background-position-y: bottom !important
+		
+
+.b-page--footer
+	position: absolute
+	bottom: 60px
+	right: 0
+	left: 0
+	z-index: -1
+
+.profile-footer--container
+	display: flex
+	align-items: center
+	margin-top: 14px
+
+.profile-settings--link
+	display: flex
+	flex-grow: 1
+	font-size: 14px
+	line-height: 100%
+	color: black
+	align-items: center
+	opacity: 0.3
+	&:before
+		content: ''
+		display: flex
+		width: 14px
+		height: 14px
+		margin-right: 7px
+		background: url('../images/dist/icons/gear-2.svg')
+	&:hover
+		opacity: 1
+		color: black
+
+.b-content
+	padding-top: 65px
+
+h1
+	font-weight: bold
+	font-size: 36px
+	line-height: 100%
+	margin-bottom: 35px
+
+.no-content
+	background: #F2F2F2
+	border-radius: 10px
+	&.home-page
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		padding: 50px 0
+		text-align: center
+		&::before
+			content: ''
+			display: flex
+			width: 72px
+			height: 72px
+			background: url('../images/dist/icons/building.png')
+			margin-bottom: 20px
+	&.warehouse-page
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 40px 0
+		&::before
+			content: ''
+			display: flex
+			width: 50px
+			height: 50px
+			background: url('../images/dist/icons/pen.png')
+			margin-right: 20px
+
+.no-content--text
+	font-size: 16px
+	line-height: 100%
+	color: rgba(0, 0, 0, 0.3)
+	margin: 0
+
+.warehouse--title
+	margin: 35px 0 25px
+	font-size: 24px
+	line-height: 100%
+
+.warehouse--item
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 10px
+	padding: 20px
+	margin-bottom: 7px
+
+.warehouse--item--title, .warehouse--item--time
+	font-weight: normal
+	font-size: 14px
+	line-height: 140%
+	opacity: 0.5
+
+.warehouse--item--qty.green
+	color: #2DA771
+.warehouse--item--qty.red
+	color: $red
+
+.warehouse-btn
+	display: block
+	font-size: 16px
+	line-height: 100%
+	text-align: center
+	color: #005FF9
+	background: rgba(black, 3%)
+	border-radius: 10px
+	padding: 20px 20px 18px
+
+.c-block--title
+	font-weight: normal
+	font-size: 18px
+	line-height: 100%
+	opacity: 0.6
+
+.c-block--content
+	margin-top: 20px
+
+.c-block-hr
+	display: block
+	background: rgba(0, 0, 0, 0.03)
+	width: 100%
+	height: 1px
+	margin: 15px 0
+
+.b-catalog
+	display: flex
+
+.c-categories-block
+	min-width: 222px
+	margin-right: 32px
+
+.c-products-block
+	flex-grow: 1
+
+.c-categories-link
+	display: flex
+	padding: 18px 20px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 10px
+	font-size: 14px
+	line-height: 100%
+	cursor: pointer
+	user-select: none
+	transition: $transition-fast
+	&.active
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)
+	&:hover
+		transform: translateY(-3px)
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)
+	&:active
+		transform: unset
+
+.c-categories-link--edit
+	position: relative
+	margin-bottom: 7px
+
+.c-categories-add
+	display: block
+	text-align: center
+	padding: 15px
+	font-size: 13px
+	line-height: 100%
+	background: rgba($blue, 0.1)
+	border-radius: 10px
+
+.c-categories-link--btn
+	position: absolute
+	right: 22px
+	opacity: 0.3
+	&::before
+		content: ''
+		display: flex
+		width: 16px
+		height: 16px
+		background: url('../images/dist/icons/edit-black.svg')
+		z-index: 9
+	&:hover
+		opacity: 1
+
+.c-block--content .input--container
+	flex-grow: 1
+	margin-right: 15px
+
+.input--container
+	position: relative
+	&.loading
+		&:before
+			content: ''
+			display: flex
+			position: absolute
+			top: 50%
+			left: 20px
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(black, 0.1)
+			border-top: 2px solid rgba(black, 0.4)
+			border-radius: 50%
+			animation: spin-search 1s linear infinite
+		input
+			padding-left: 45px
+			pointer-events: none
+			user-select: none
+
+
+.c-block--search
+	width: 100%
+	padding: 18px 20px
+	border-radius: 10px
+	border: 0
+	background: rgba(0, 0, 0, 0.03)
+	height: 50px
+	// margin-right: 15px
+	// &.loading:before
+	// 	content: ''
+	// 	display: flex
+	// 	position: absolute
+	// 	width: 16px
+	// 	height: 16px
+
+.c-products-add
+	display: block
+	min-width: 175px
+	text-align: center
+	padding: 18px 0
+	background: rgba($blue, 0.1)
+	border-radius: 10px
+	
+.c-block--content-products, .c-product--item--left, .c-product--item--right
+	display: flex
+	align-items: center
+
+.c-product--item
+	display: flex
+	align-items: center
+	padding: 15px 18px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 10px
+	color: black
+	margin-bottom: 10px
+	&:hover
+		color: black
+		transform: translateY(-3px)
+		background: rgba(0, 0, 0, 0.05)
+	&:active
+		transform: unset
+
+.c-product--item--image
+	display: flex
+	width: 70px
+	height: 70px
+	border-radius: 10px
+	background-size: cover !important
+	margin-right: 20px
+
+.c-product--item--title
+	max-width: 220px
+	font-size: 14px
+	line-height: 140%
+	opacity: 0.5
+
+.c-product--item--left
+	flex-grow: 1
+
+.c-product--item--price
+	margin-right: 20px
+	text-align: right
+
+.c-product--item--price--price
+	font-size: 18px
+	line-height: 100%
+
+.c-product--item--price--sales
+	font-weight: bold
+	font-size: 14px
+	line-height: 100%
+	text-align: right
+	text-decoration-line: line-through
+	color: #000000
+	opacity: 0.3
+	margin-bottom: 7px
+
+.load-more
+	display: inline-flex
+	align-items: center
+	padding: 19px 50px 18px
+	font-size: 13px
+	line-height: 100%
+	color: #000
+	background: #F2F2F2
+	border-radius: 10px
+	&.active
+		pointer-events: none
+		color: rgba(black, 0.5)
+		&:before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(black, 0.1)
+			border-top: 2px solid rgba(black, 0.4)
+			border-radius: 50%
+			margin-right: 7px
+			animation: spin 1s linear infinite
 
 @import media

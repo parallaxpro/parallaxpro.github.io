@@ -9,9 +9,10 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font
 $blue: #005FF9
 $red: #FF453A
 $transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1)
+$transition-fast: all 200ms cubic-bezier(0.19, 1, 0.22, 1)
 
 // Bootstrap compatible gutter variable => $gutter
-$grid-gutter-width: 16px
+$grid-gutter-width: 32px
 $gutter: $grid-gutter-width
 
 // IMPORT SECTION
@@ -60,10 +61,10 @@ body
 	line-height: $lineheight
 	color: $textcolor
 	min-width: 320px
-	position: relative
+	// position: relative
 	overflow-x: hidden
 	background: #F7F7F7
-	padding: 0px 0px 100px
+	padding: 0px
 
 .show--block
 	display: block !important
@@ -77,7 +78,7 @@ a
 	&:hover
 		text-decoration: none
 	&:active
-		opacity: 0.75
+		opacity: 0.75 !important
 
 @keyframes slide-top
 	0%
@@ -94,3 +95,15 @@ a
 	100%
 		transform: translateY(50px)
 		opacity: 0
+
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+@keyframes spin-search
+	0%
+		transform: translateY(-50%) rotate(0deg)
+	100%
+		transform: translateY(-50%) rotate(360deg)

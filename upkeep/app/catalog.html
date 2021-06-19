@@ -1,0 +1,146 @@
+<!--#set var="title" value="Каталог" -->
+<!--#include virtual="/parts/header.html" -->
+
+<main class="main-business">
+    <div class="c-container">
+        <div class="row">
+            <div class="col-3">
+                <aside class="b-page--menu">
+                    <a href="#" onclick="return false;" class="d-flex b-page--logotype">
+                        <img src="./images/logo.svg" alt="upkeep">
+                    </a>
+
+                    <div class="b-page--name">
+                        <div class="b-page--title">Дастархан</div>
+                        <div class="b-page--subtitle">микрорайон 12, 78</div>
+                    </div>
+
+                    <nav class="b-page--menu-items">
+                        <a href="#" onclick="return false;" class="b-page--menu-item home">Главная страница</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item catalog active">Каталог</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+                    </nav>
+                </aside>
+            </div>
+            <div class="col-8">
+                <div class="b-content">
+                    <h1>Каталог</h1>
+
+                    <div class="b-catalog">
+                        <div class="c-categories-block">
+                            <div class="c-block--title">Разделы</div>
+                            <div class="c-block--content">
+                                <span class="c-categories-link active">Вся продукция</span>
+                                <div class="c-block-hr"></div>
+                                <span class="c-categories-link c-categories-link--edit">
+                                    <div class="c-categories-link--title">Напитки</div>
+                                    <a href="#" onclick="return false;" class="c-categories-link--btn"></a>
+                                </span>
+                                <span class="c-categories-link c-categories-link--edit">
+                                    <div class="c-categories-link--title">Сладкое</div>
+                                    <a href="#" onclick="return false;" class="c-categories-link--btn"></a>
+                                </span>
+                                <a href="/" onclick="return false;" class="c-categories-add">Добавить раздел</a>
+                            </div>
+                        </div>
+                        <div class="c-products-block">
+                            <div class="c-block--title">Продукция</div>
+                            <div class="c-block--content c-block--content-products">
+                                <!-- <div class="input--container loading"> -->
+                                <div class="input--container">
+                                    <input type="text" class="c-block--search" placeholder="Поиск">
+                                </div>
+                                <a href="/" onclick="return false;" class="c-products-add">Добавить продукт</a>
+                            </div>
+                            <div class="c-block-hr"></div>
+                            <div class="c-products-list">
+
+                                <a href="/" onclick="return false;" class="c-product--item">
+                                    <div class="c-product--item--left">
+                                        <div class="c-product--item--image" style="background: url('../images/dist/demo.jpg');"></div>
+                                        <div class="c-product--item--title">Филе утки с полентой и вишневым соусом</div>
+                                    </div>
+                                    <div class="c-product--item--right">
+                                        <div class="c-product--item--price">
+                                            <div class="c-product--item--price--sales">2 000 тг.</div>
+                                            <div class="c-product--item--price--price">1 000 тг.</div>
+                                        </div>
+                                        <div class="product--more">
+                                            <div class="item--langs">
+                                                <span class="active">RU</span>
+                                                <span class="active">KZ</span>
+                                                <span class="no--active">EN</span>
+                                            </div>
+                                            <div class="item--btns">
+                                                <span class="setting-btn edit--btn"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="/" onclick="return false;" class="c-product--item">
+                                    <div class="c-product--item--left">
+                                        <div class="c-product--item--image" style="background: url('../images/dist/demo.jpg');"></div>
+                                        <div class="c-product--item--title">Пикантная курица</div>
+                                    </div>
+                                    <div class="c-product--item--right">
+                                        <div class="c-product--item--price">
+                                            <div class="c-product--item--price--price">2 580 тг.</div>
+                                        </div>
+                                        <div class="product--more">
+                                            <div class="item--langs">
+                                                <span class="active">RU</span>
+                                                <span class="active">KZ</span>
+                                                <span class="no--active">EN</span>
+                                            </div>
+                                            <div class="item--btns">
+                                                <span class="setting-btn edit--btn"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-4">
+                                <!-- <a href="/" onclick="return false;" class="load-more active">Загрузить еще</a> -->
+                                <a href="/" onclick="return false;" class="load-more">Загрузить еще</a>
+                                <!-- <a href="/" onclick="return false;" class="default-btn active">Загрузить еще</a> -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="b-page--footer">
+    <div class="c-container">
+        <div class="row">
+            <div class="col-3">
+
+                <a href="/" onclick="return false;" class="profile-button">
+                    <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+                    <div class="profile-name">Виталий Балаян</div>
+                </a>
+
+                <div class="row">
+                    <div class="col-9">
+                        <div class="profile-footer--container">
+                            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+                            <a href="/" onclick="return false;" class="profile-logout"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--#include virtual="/parts/footer.html" -->
