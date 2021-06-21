@@ -828,6 +828,7 @@ html .ui-button.ui-state-disabled
 		color: $blue
 	> *
 		margin: 0 3px
+		text-transform: uppercase
 
 .products-listing
 	margin-top: 15px
@@ -1075,6 +1076,10 @@ label
 	color: rgba(0, 0, 0, 0.3)
 	margin-top: 14px
 
+.b-page--menu, .col-sticky
+	position: sticky
+	top: 60px
+
 .b-page--menu-item
 	display: flex
 	padding: 10px 0
@@ -1114,7 +1119,7 @@ label
 		
 
 .b-page--footer
-	position: absolute
+	position: fixed
 	bottom: 60px
 	right: 0
 	left: 0
@@ -1279,8 +1284,8 @@ h1
 	border-radius: 10px
 
 .c-categories-link--btn
-	position: absolute
-	right: 22px
+	// position: absolute
+	// right: 22px
 	opacity: 0.3
 	&::before
 		content: ''
@@ -1365,6 +1370,7 @@ h1
 	height: 70px
 	border-radius: 10px
 	background-size: cover !important
+	background-position: center !important
 	margin-right: 20px
 
 .c-product--item--title
@@ -1416,5 +1422,31 @@ h1
 			border-radius: 50%
 			margin-right: 7px
 			animation: spin 1s linear infinite
+
+.c-categories-link.c-categories-link--edit
+	padding: 0
+	.c-categories-link--title
+		flex-grow: 1
+		padding: 18px 0 18px 20px
+	.c-categories-link--btn
+		padding: 17px 20px 17px 5px
+
+.c-categories-link--edit.loading
+	pointer-events: none
+	.c-categories-link--title
+		display: flex
+		align-items: center
+		opacity: 0.5
+		&::before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(black, 0.1)
+			border-top: 2px solid rgba(black, 0.4)
+			border-radius: 50%
+			margin-right: 7px
+			animation: spin 1s linear infinite
+
 
 @import media
