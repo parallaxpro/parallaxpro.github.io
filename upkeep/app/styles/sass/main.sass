@@ -1105,6 +1105,8 @@ label
 		background: url('../images/dist/icons/gear.svg')
 	&.exit::before
 		background: url('../images/dist/icons/exit.svg')
+	&.slides::before
+		background: url('../images/dist/icons/slides.svg')
 	&:hover
 		color: black
 		opacity: 1
@@ -1161,7 +1163,7 @@ h1
 .no-content
 	background: #F2F2F2
 	border-radius: 10px
-	&.home-page
+	&.home-page, &.products-page
 		display: flex
 		justify-content: center
 		align-items: center
@@ -1175,6 +1177,9 @@ h1
 			height: 72px
 			background: url('../images/dist/icons/building.png')
 			margin-bottom: 20px
+			background-size: contain !important
+	&.products-page::before
+		background: url('../images/dist/icons/no-products.png')
 	&.warehouse-page
 		display: flex
 		justify-content: center
@@ -1448,5 +1453,37 @@ h1
 			margin-right: 7px
 			animation: spin 1s linear infinite
 
+.slide--btn
+	display: block
+	position: relative
+	height: 200px
+	background-position: center !important
+	background-size: cover !important
+	border-radius: 10px
+	margin-bottom: 15px
+
+.image--btn-edit
+	position: absolute
+	display: flex
+	align-items: center
+	font-size: 13px
+	line-height: 100%
+	background: rgba(0, 0, 0, 0.75)
+	border-radius: 20px
+	padding: 7px 14px
+	color: white
+	top: 20px
+	right: 30px
+
+	&:before
+		content: ''
+		display: flex
+		width: 10px
+		height: 10px
+		background: url('../images/dist/icons/cover-edit.svg')
+		margin-right: 5px
+
+.slide--btn:hover
+	transform: translateY(-3px)
 
 @import media
