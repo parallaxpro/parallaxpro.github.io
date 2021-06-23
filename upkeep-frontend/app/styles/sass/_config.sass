@@ -1,0 +1,109 @@
+// USER VARIABLES SECTION
+
+$accent: black // Accent Color
+$fontsize: 14px // Body Font Size
+$textcolor: #000 // Text Color
+$lineheight: 100% // Document Line Height
+$userfont: Roboto, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$blue: #005FF9
+$red: #FF453A
+$transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1)
+$transition-fast: all 200ms cubic-bezier(0.19, 1, 0.22, 1)
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 32px
+$gutter: $grid-gutter-width
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1232px)
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+// @mixin font($fname, $fstyle, $fweight, $furl)
+// 	@font-face
+// 		font-family: $fname
+// 		font-style: $fstyle
+// 		font-weight: $fweight
+// 		src: url($furl) format('woff2')
+
+// @include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+// @include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+// @include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+// @include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+// *
+// 	transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1)
+
+::placeholder
+	color: #B3B3B3
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	// &:required:valid
+	// 	border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	overflow-x: hidden
+	background: #F7F7F7
+	padding: 0px
+
+.show--block
+	display: block !important
+	animation: slide-top 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+
+.close--block
+	animation: slide-down 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+
+a
+	transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+	&:hover
+		text-decoration: none
+	&:active
+		opacity: 0.75 !important
+
+@keyframes slide-top
+	0%
+		transform: translateY(50px)
+		opacity: 0
+	100%
+		transform: translateY(0px)
+		opacity: 1
+
+@keyframes slide-down
+	0%
+		transform: translateY(0px)
+		opacity: 1
+	100%
+		transform: translateY(50px)
+		opacity: 0
+
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+@keyframes spin-search
+	0%
+		transform: translateY(-50%) rotate(0deg)
+	100%
+		transform: translateY(-50%) rotate(360deg)

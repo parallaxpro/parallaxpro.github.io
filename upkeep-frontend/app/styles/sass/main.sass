@@ -1,0 +1,304 @@
+@import config
+@import "blocks/**/*"
+
+.main-header
+	margin: 40px 0
+
+.logotype
+	display: flex
+	justify-content: center
+	width: 100%
+	max-height: 100px
+
+.main-slider--container
+	position: relative
+
+	.swiper-button-next
+		right: -50px
+
+	.swiper-button-prev
+		left: -50px
+
+	.swiper-pagination-bullet
+		width: 10px
+		height: 10px
+		background: rgba(0, 0, 0, 0.5)
+		margin: 0 7px !important
+		transition: $transition
+
+	.swiper-pagination-bullet-active
+		background: #005FF9
+		width: 14px
+		height: 14px
+
+	.swiper-pagination
+		display: flex
+		align-items: center
+		justify-content: center
+		bottom: 18px
+
+.slide--item, .swiper-slide
+	display: block
+	overflow: hidden
+	border-radius: 10px
+
+.swiper-button-next, .swiper-button-prev
+	&:after
+		color: rgba(black, 0.1)
+	&:hover
+		&:after
+			color: $blue
+
+.menu--btn
+	display: flex
+	cursor: pointer
+	&:before
+		content: ''
+		display: flex
+		width: 30px
+		height: 16px
+		background: url('../images/dist/icons/menu.svg')
+	&:active
+		opacity: 0.5
+
+.cart--btn
+	display: flex
+	align-items: center
+	font-size: 16px
+	line-height: 19px
+	text-align: right
+	color: rgba(black, 0.5)
+
+	&:after
+		content: ''
+		display: block
+		width: 21px
+		height: 20px
+		background: url('../images/dist/icons/cart.svg')
+		margin-left: 10px
+
+	&:hover
+		color: $blue
+
+.main-catalog
+	margin-top: 50px
+	margin-bottom: 100px
+
+.catalog-title
+	display: flex
+	align-items: center
+	margin-bottom: 25px
+
+.catalog-title-text
+	font-size: 36px
+	line-height: 100%
+	margin: 0
+
+.catalog-title-category
+	font-weight: normal
+	font-size: 24px
+	line-height: 100%
+	margin: 0
+
+.catalog-title-arrow
+	display: flex
+	width: 11px
+	height: 20px
+	margin: 0 15px 0 20px
+	background: url('../images/dist/icons/arrow.svg')
+	opacity: 0.1
+
+.catalog-category
+	display: flex
+	font-size: 16px
+	line-height: 100%
+	color: black
+	padding: 22px 25px 21px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 10px
+	margin-bottom: 10px
+
+.catalog-category
+	&.active, &:hover
+		background: rgba(0, 95, 249, 0.07)
+
+.catalog-product--image
+	display: flex
+	width: 100%
+	height: 200px
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.catalog-product
+	background: white
+	border-radius: 10px
+	margin-bottom: 20px
+	overflow: hidden
+	transition: $transition-fast
+	&:hover
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02)
+		transform: translateY(-3px)
+
+.catalog-product--title
+	display: flex
+	align-items: center
+	padding: 20px 20px 15px
+	line-height: 150%
+	color: rgba(black, 0.5)
+	height: 80px
+	&:hover
+		color: rgba(black, 1)
+
+.catalog-product--prices
+	display: flex
+	align-items: center
+	padding: 0 20px
+
+.catalog-product--sale, .catalog-product--price
+	display: flex
+	align-items: start
+	&::after
+		content: 'тг.'
+		font-size: 14px
+		line-height: 100%
+		color: rgba(black, 0.5)
+
+.catalog-product--price::after
+	margin-left: 7px
+
+.catalog-product--sale
+	position: relative
+	margin-right: 10px
+	opacity: 0.5
+	&::after
+		margin-left: 3px
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 2px
+		background: #B2B2B2
+		top: 50%
+		transform: translateY(-50%)
+
+.catalog-product--price
+	font-size: 24px
+	line-height: 100%
+
+.catalog-product--add-cart
+	display: flex
+	justify-content: center
+	margin: 16px 20px 20px
+	padding: 10px
+	background: rgba($blue, 0.1)
+	border-radius: 10px
+	font-size: 13px
+	color: #005FF9
+	cursor: pointer
+	transition: $transition
+	&::before
+		content: ''
+		display: flex
+		width: 15px
+		height: 14px
+		background: url('../images/dist/icons/cart-btn.svg')
+		margin-right: 7px
+	&:hover
+		background: rgba($blue, 0.2)		
+
+.loadmore-btn
+	display: flex
+	justify-content: center
+	color: rgba(black, 0.5)
+	padding: 18px 18px 16px
+	background: rgba(0, 0, 0, 0.05)
+	border-radius: 100px
+	cursor: pointer
+	transition: $transition-fast
+	&:hover
+		background: rgba(0, 0, 0, 0.1)
+
+.product-image--container
+	padding: 40px
+	border-radius: 10px
+	background: rgba(242, 242, 242, 0.5)
+
+.product-image
+	width: 100%
+	height: 273px
+
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+		border-radius: 10px
+
+.product-desc
+	margin-top: 40px
+
+.product-desc--titles
+	display: flex
+	margin-bottom: 25px
+
+.product-desc-title
+	font-weight: 500
+	font-size: 24px
+	line-height: 100%
+
+.product-desc--text p
+	font-size: 14px
+	line-height: 150%
+	color: #000000
+	opacity: 0.5
+
+.product-title
+	font-size: 32px
+	line-height: 100%
+	margin-bottom: 15px
+
+.product-price
+	font-weight: normal
+	font-size: 32px
+	line-height: 100%
+	color: #005FF9
+	margin-bottom: 35px
+
+.product-qty--title
+	font-size: 16px
+	line-height: 100%
+	color: #000000
+	opacity: 0.3
+	margin-bottom: 15px
+
+	span
+		color: red
+
+.product-cart--add
+	display: flex
+	justify-content: center
+	background: #2DA771
+	color: white
+	border-radius: 7px
+	padding: 21px 20px 20px
+	border: 0
+	width: 100%
+
+	&:hover
+		background: #289564
+
+.product-qty--input
+	display: block
+	text-align: center
+	width: 100%
+	background: #FFFFFF
+	border: 0
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+	border-radius: 7px
+	font-size: 18px
+	line-height: 100%
+	padding: 17px 40px 16px
+	appearance: none
+
+@import media
