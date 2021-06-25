@@ -8,7 +8,16 @@
 	display: flex
 	justify-content: center
 	width: 100%
-	max-height: 100px
+	img
+		max-height: 100px
+
+.logotyp-text
+	font-size: 28px
+	color: black
+	font-weight: bold
+	padding: 20px 0
+	&:hover
+		color: $blue
 
 .main-slider--container
 	position: relative
@@ -40,6 +49,7 @@
 .slide--item, .swiper-slide
 	display: block
 	overflow: hidden
+	height: 320px
 	border-radius: 10px
 
 .swiper-button-next, .swiper-button-prev
@@ -68,7 +78,6 @@
 	line-height: 19px
 	text-align: right
 	color: rgba(black, 0.5)
-
 	&:after
 		content: ''
 		display: block
@@ -76,14 +85,44 @@
 		height: 20px
 		background: url('../images/dist/icons/cart.svg')
 		margin-left: 10px
-
 	&:hover
 		color: $blue
+	&.isset
+		background: $blue
+		padding: 10px 20px
+		border-radius: 10px
+		font-size: 18px
+		color: white
+		&::after
+			display: none
+		&::before
+			content: ''
+			display: flex
+			width: 21px
+			height: 20px
+			background: url('../images/dist/icons/cart.svg')
+			background-position-y: bottom
+			margin-right: 7px
+		&:hover
+			background: darken($blue, 10%)
+
 
 .main-catalog
-	margin-top: 50px
+	margin-top: 25px
 	margin-bottom: 100px
 
+.catalog-header
+	// position: sticky
+	// top: 0
+	padding-top: 25px
+	// background: rgba(247, 247, 247, 0.9)
+	// backdrop-filter: blur(25px)
+	// z-index: 9
+
+.catalog-categories
+	position: sticky
+	top: 25px
+	
 .catalog-title
 	display: flex
 	align-items: center
@@ -140,12 +179,15 @@
 	&:hover
 		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02)
 		transform: translateY(-3px)
+	&:active
+		transform: translateY(0)
 
 .catalog-product--title
 	display: flex
 	align-items: center
 	padding: 20px 20px 15px
 	line-height: 150%
+	font-size: 15px
 	color: rgba(black, 0.5)
 	height: 80px
 	&:hover
@@ -154,6 +196,7 @@
 .catalog-product--prices
 	display: flex
 	align-items: center
+	justify-content: flex-end
 	padding: 0 20px
 
 .catalog-product--sale, .catalog-product--price
@@ -190,6 +233,7 @@
 .catalog-product--add-cart
 	display: flex
 	justify-content: center
+	align-items: center
 	margin: 16px 20px 20px
 	padding: 10px
 	background: rgba($blue, 0.1)
@@ -198,6 +242,7 @@
 	color: #005FF9
 	cursor: pointer
 	transition: $transition
+	user-select: none
 	&::before
 		content: ''
 		display: flex
@@ -206,19 +251,44 @@
 		background: url('../images/dist/icons/cart-btn.svg')
 		margin-right: 7px
 	&:hover
-		background: rgba($blue, 0.2)		
+		background: rgba($blue, 0.2)
+	&.added-cart
+		background: #2DA771
+		color: white
+		&::before
+			width: 12px
+			height: 9px
+			background: url('../images/dist/icons/tick.svg')
+		&:hover
+			background: darken(#2DA771, 10%)
+
 
 .loadmore-btn
 	display: flex
 	justify-content: center
+	align-items: center
 	color: rgba(black, 0.5)
 	padding: 18px 18px 16px
 	background: rgba(0, 0, 0, 0.05)
 	border-radius: 100px
 	cursor: pointer
 	transition: $transition-fast
+	user-select: none
 	&:hover
 		background: rgba(0, 0, 0, 0.1)
+	&.loading
+		pointer-events: none
+		opacity: 0.5
+		&:before
+			content: ''
+			display: flex
+			margin-right: 7px
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(black, 0.1)
+			border-top: 2px solid rgba(black, 0.4)
+			border-radius: 50%
+			animation: spin 1s linear infinite
 
 .product-image--container
 	padding: 40px
@@ -263,7 +333,26 @@
 	font-size: 32px
 	line-height: 100%
 	color: #005FF9
+	margin-right: 14px
+
+.product-prices
+	display: flex
+	align-items: start
 	margin-bottom: 35px
+
+.product-sale_price
+	position: relative
+	opacity: 0.5
+	font-size: 18px
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		width: 100%
+		height: 2px
+		background: #808080
+		top: 50%
+		transform: translateY(-50%)
 
 .product-qty--title
 	font-size: 16px
@@ -298,7 +387,40 @@
 	border-radius: 7px
 	font-size: 18px
 	line-height: 100%
-	padding: 17px 40px 16px
+	padding: 17px 50px 16px
 	appearance: none
+
+.product-qty--minus, .product-qty--plus
+	position: absolute
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 18px
+	height: 18px
+	top: 50%
+	transform: translateY(-50%)
+	cursor: pointer
+	&::before
+		content: ''
+		display: flex
+		width: 18px
+		height: 18px
+		background: url('../images/dist/icons/cart-btns.svg')
+	
+
+.product-qty
+	position: relative
+
+.product-qty--plus
+	right: 20px
+
+.product-qty--minus
+	left: 20px
+
+.product-qty--plus:before
+	background-position-y: bottom !important
+
+.product-qty--minus:before
+	background-position-y: top !important
 
 @import media
