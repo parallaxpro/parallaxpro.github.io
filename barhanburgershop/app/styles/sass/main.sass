@@ -639,4 +639,105 @@ input
 		background: #D62631
 		border-radius: 10px
 
+.cart-block
+	padding: 70px 0 70px 70px
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 25px
+
+.cart-block--title
+	font-family: $customFont
+	font-style: normal
+	font-weight: normal
+	font-size: 48px
+	line-height: 100%
+	margin-bottom: 0
+
+.cart-block--data
+	margin-top: 40px
+
+.cart-item, .cart-item--info, .cart-item--options
+	display: flex
+	align-items: center
+
+.cart-item
+	padding: 20px 70px 20px 0
+	border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+	&:last-child
+		border-bottom: 0
+
+.cart-item--info
+	flex-grow: 1
+
+.cart-item--image
+	width: 110px
+	height: 100px
+	margin-right: 15px
+	img
+		width: 100%
+		height: 100%
+		object-fit: contain
+
+.cart-item--title
+	font-family: $customFont
+	font-style: normal
+	font-weight: normal
+	font-size: 24px
+	line-height: 100%
+	color: white
+
+.cart-item--options
+	margin-top: 15px
+
+.cart-item--option
+	display: flex
+	align-items: center
+	padding: 8px 14px
+	font-size: 13px
+	line-height: 100%
+	background: rgba(255, 255, 255, 0.15)
+	border-radius: 90px
+	margin-right: 5px
+	&::before
+		content: ''
+		display: flex
+		width: 11px
+		height: 11px
+		border-radius: 100px
+		margin-right: 5px
+	&.bun-1::before
+		background: #F4CE92
+	&.roasting-3::before
+		background: rgba(214, 38, 49, 0.7)
+
+.cart-block
+	margin-bottom: 30px
+
+.cart-input, .cart-textarea
+	display: flex
+	width: 100%
+	font-size: 16px
+	line-height: 100%
+	padding: 16px 25px 15px
+	background: rgba(255, 255, 255, 0.05)
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.03)
+	border-radius: 7px
+	border: 0
+	color: white
+	&::placeholder
+		color: rgba(white, 0.25)
+
+.cart-block--padding
+	padding-right: 70px
+
+
+.cart-block--hr
+	display: flex
+	width: 100%
+	height: 1px
+	background: rgba(white, 0.07)
+	margin: 30px 0
+
+.cart-textarea
+	height: 100px
+
 @import media

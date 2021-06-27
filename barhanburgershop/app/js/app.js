@@ -1,4 +1,8 @@
+import autosize from 'autosize';
+
 $(function () {
+
+	autosize($('textarea'));
 
 	const swiper = new Swiper('.main-slider--slider', {
 			// Optional parameters
