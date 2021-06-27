@@ -30,12 +30,12 @@
 				<div class="col-md-1 col-sm-4 col-6 align-items-center d-flex">
 					<span class="menu--btn"></span>
 					<div class="d-sm-none d-flex ml-4">
-						<a href="#" onclick="return false;" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
+						<a href="/" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
 					</div>
 				</div>
 	
 				<div class="col-xl-5 col-lx-7 col-md-8 col-4 d-sm-flex d-none align-items-center">
-					<a href="#" onclick="return false;" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
+					<a href="/" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
 					
 					<div class="header-socials d-md-flex d-none">
 						<a href="#" onclick="return false;" class="header-social--item instagram">Мы в Instagram</a>
@@ -159,7 +159,7 @@
             <div class="product-page--container">
                 <div class="container">
                     <div class="row">
-                        <div class="col-10 m-auto">
+                        <div class="col-sm-10 m-auto">
                             
                             <div class="product-page--header">
                                 <a href="#" onclick="return false;" class="product-page--title-link opacity">Меню</a>
@@ -168,11 +168,11 @@
 
                             <div class="product-page-content">
                                 <div class="row">
-                                    <div class="col-5">
+                                    <div class="col-lg-5">
                                         <div class="product-page--image">
                                             <img src="../images/dist/products/product-2.png" alt="Каспийский груз">
                                         </div>
-                                        <div class="product-page--desc">
+                                        <div class="product-page--desc d-none d-lg-block">
 
                                             <div class="product-page--desc-titles">
                                                 <div class="product-page--desc-title active" data-id="1">Описание</div>
@@ -191,7 +191,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-7">
+                                    <div class="col-lg-7">
                                         <h1 class="product-title">Каспийский груз</h1>
                                         <div class="product-prices">
                                             <h2 class="product-price">1850 ₸</h2>
@@ -201,11 +201,11 @@
                                             <div class="product-option--item">
                                                 <label class="default-label">Булочка <span>*</span></label>
                                                 <div class="row">
-                                                    <div class="col-6">
+                                                    <div class="col-sm-6">
                                                         <input type="radio" name="bun" value="bun-1" id="bun-1">
                                                         <label class="radio-btn bun-one" for="bun-1">Бриошь</label>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-sm-6 mt-sm-0 mt-2">
                                                         <input type="radio" name="bun" value="bun-2" id="bun-2">
                                                         <label class="radio-btn bun-two" for="bun-2">Черная</label>
                                                     </div>
@@ -214,15 +214,15 @@
                                             <div class="product-option--item">
                                                 <label class="default-label">Степень Прожарки <span>*</span></label>
                                                 <div class="row">
-                                                    <div class="col-4">
+                                                    <div class="col-sm-4">
                                                         <input type="radio" name="roasting" value="roasting-1" id="roasting-1">
                                                         <label class="radio-btn roasting-one" for="roasting-1">Почти</label>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-sm-4 mt-sm-0 mt-2">
                                                         <input type="radio" name="roasting" value="roasting-2" id="roasting-2">
                                                         <label class="radio-btn roasting-two" for="roasting-2">Средняя</label>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-sm-4 mt-sm-0 mt-2">
                                                         <input type="radio" name="roasting" value="roasting-3" id="roasting-3">
                                                         <label class="radio-btn roasting-three" for="roasting-3">Полная</label>
                                                     </div>
@@ -232,19 +232,37 @@
 
                                         <div class="product-option-cart">
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="col-sm-6">
                                                     <div class="product-option-cart--input">
-                                                        <div class="product-cart-btn--minus"></div>
-                                                        <input type="text" class="product-cart-btn--input" value="1">
-                                                        <div class="product-cart-btn--plus"></div>
+                                                        <div class="product-cart-btn--minus" data-cart_input="1" data-cart_minus="1"></div>
+                                                        <input type="text" class="product-cart-btn--input" value="1" data-cart_input="1">
+                                                        <div class="product-cart-btn--plus" data-cart_input="1" data-cart_plus="1"></div>
                                                     </div>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-sm-6 mt-sm-0 mt-2">
                                                     <button class="product-cart-btn--add">В корзину</button>
                                                 </div>
                                             </div>
                                         </div>
 
+                                        <div class="product-page--desc d-block d-lg-none">
+
+                                            <div class="product-page--desc-titles">
+                                                <div class="product-page--desc-title active" data-id="1">Описание</div>
+                                                <div class="product-page--desc-title" data-id="2">Состав</div>
+                                            </div>
+
+                                            <div class="product-page--desc-texts">
+                                                <div class="product-page--desc-text active" data-id="1">
+                                                    <p>Котлета из мраморной говядины с рукколой, оливками, соусом Айоли и 4 вида сыра: Дор Блю, Пармезан, Сливочный и Чеддер.</p>
+                                                    <p>*При заказе уточняйте степень прожарки. По умолчанию степень прожарки — Medium Well.</p>
+                                                </div>
+                                                <div class="product-page--desc-text" data-id="2">
+                                                    <p>Котлета из мраморной говядины с рукколой, оливками, соусом Айоли и 4 вида сыра: Дор Блю, Пармезан, Сливочный и Чеддер.</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +304,7 @@
 			</div>
 			<div class="col-12">
 
-				<section class="footer-footer">
+				<section class="footer-footer" id="footer">
 					<div class="row d-flex align-items-center">
 
 						<div class="col-xl-8">
@@ -330,7 +348,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js" integrity="sha512-VpQwrlvKqJHKtIvpL8Zv6819FkTJyE1DoVNH0L2RLn8hUPjRjkS/bCYurZs0DX9Ybwu9oHRHdBZR9fESaq8Z8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="js/app.js"></script>
+	<script src="js/app.min.js"></script>
 
 </body>
 </html>

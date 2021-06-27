@@ -118,7 +118,7 @@ $(function () {
 		$('html, body').animate({scrollTop: dn}, 500);
 	});
 
-	setActiveListElements();	
+	setActiveListElements(); updateMenuPadding();
 });
 
 function closeCartBtn(id) {
@@ -153,6 +153,10 @@ $(window).scroll(function() {
 	setActiveListElements();
 });
 
+$(window).resize(function() {
+	updateMenuPadding();
+});
+
 $(document).on('click', '.product-page--desc-title', function() {
 
 	var id = $(this).data('id');
@@ -164,4 +168,9 @@ $(document).on('click', '.product-page--desc-title', function() {
 	$('.product-page--desc-text[data-id='+ id +']').addClass('active');
 
 
-})
+});
+
+function updateMenuPadding() {
+	var footer_left = document.getElementById("footer").getBoundingClientRect().left;
+	$('.menu-catalog').css('paddingLeft', footer_left);
+}
