@@ -131,8 +131,6 @@ function closeCartBtn(id) {
 function setActiveListElements(event){
 	var windowPos = $(window).scrollTop() + 100;
 
-	console.log('windowPos: ', windowPos);
-
 	$('#menu-catalog a[href^="#"]').each(function() { 
 
 		var currentLink = $(this);
@@ -154,3 +152,16 @@ function setActiveListElements(event){
 $(window).scroll(function() {
 	setActiveListElements();
 });
+
+$(document).on('click', '.product-page--desc-title', function() {
+
+	var id = $(this).data('id');
+
+	$('.product-page--desc-text').removeClass('active');
+	$('.product-page--desc-title').removeClass('active');
+	
+	$(this).addClass('active');
+	$('.product-page--desc-text[data-id='+ id +']').addClass('active');
+
+
+})
