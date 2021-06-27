@@ -25,7 +25,7 @@ $(function () {
 		if ($(this).val().length < 1 || $(this).val() == 0) $(this).val(1);
 	});
 
-	$('.product-card--cart-qty--plus').on('click', function() {
+	$('[data-cart_plus]').on('click', function() {
 		var input = $('input[data-cart_input='+ $(this).data('cart_input') +']');
 		var value = Number(input.val()) + 1;
 		var input_minus = $('.product-card--cart-qty--minus[data-cart_input='+ $(this).data('cart_input') +']');
@@ -35,7 +35,7 @@ $(function () {
 		input.val(value);
 	});
 
-	$('.product-card--cart-qty--minus').on('click', function() {
+	$('[data-cart_minus]').on('click', function() {
 		var input = $('input[data-cart_input='+ $(this).data('cart_input') +']');
 		var value = Number(input.val());
 		var next_value = value - 1;
