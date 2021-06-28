@@ -79,9 +79,9 @@
         </a>
     </nav>
     
-    <div class="c-container">
+    <div class="c-container cart-container">
         <div class="row">
-            <div class="col-7">
+            <div class="col-xl-7">
                 
                 <div class="cart-block">
                     <h1 class="cart-block--title">Корзина</h1>
@@ -128,9 +128,9 @@
                                 <div class="cart-item--detalis">
                                     <div class="cart-item--price">1850 ₸</div>
                                     <div class="cart-item--qty">
-                                        <div class="cart-item--qty--minus" data-cart_input="1" data-cart_minus="1"></div>
-                                        <input type="text" value="1" class="cart-item--qty--input" data-cart_input="1">
-                                        <div class="cart-item--qty--plus" data-cart_input="1" data-cart_plus="1"></div>
+                                        <div class="cart-item--qty--minus" data-cart_input="3" data-cart_minus="3"></div>
+                                        <input type="text" value="1" class="cart-item--qty--input" data-cart_input="3">
+                                        <div class="cart-item--qty--plus" data-cart_input="3" data-cart_plus="3"></div>
                                     </div>
                                 </div>
                             </div>
@@ -151,9 +151,9 @@
                                 <div class="cart-item--detalis">
                                     <div class="cart-item--price">1850 ₸</div>
                                     <div class="cart-item--qty">
-                                        <div class="cart-item--qty--minus" data-cart_input="1" data-cart_minus="1"></div>
-                                        <input type="text" value="1" class="cart-item--qty--input" data-cart_input="1">
-                                        <div class="cart-item--qty--plus" data-cart_input="1" data-cart_plus="1"></div>
+                                        <div class="cart-item--qty--minus" data-cart_input="2" data-cart_minus="2"></div>
+                                        <input type="text" value="1" class="cart-item--qty--input" data-cart_input="2">
+                                        <div class="cart-item--qty--plus" data-cart_input="2" data-cart_plus="2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -170,10 +170,10 @@
                         <div class="cart-block--data">
                             <div class="cart-block--padding">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-lg-6">
                                         <input type="text" class="cart-input" placeholder="Введите имя">
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-lg-6 mt-lg-0 mt-2">
                                         <input type="text" class="cart-input" placeholder="Введите имя">
                                     </div>
                                 </div>
@@ -183,26 +183,28 @@
     
                             <div class="cart-block--padding">
                                 <div class="row" id="delivery">
-                                    <div class="col-6">
-                                        <input type="radio" name="delivery_office" id="delivery_office" class="default-radio">
-                                        <label for="delivery_office">Самовывоз</label>
+                                    <div class="col-lg-6">
+                                        <input type="radio" name="delivery" id="delivery_office" data-id="office" class="default-radio" checked>
+                                        <label for="delivery_office" class="default-label-radio">Самовывоз</label>
                                     </div>
-                                    <div class="col-6">
-                                        <input type="radio" name="delivery_courier" id="delivery_courier" class="default-radio">
-                                        <label for="delivery_courier">Курьер</label>
+                                    <div class="col-lg-6 mt-lg-0 mt-2">
+                                        <input type="radio" name="delivery" id="delivery_courier" data-id="courier" class="default-radio">
+                                        <label for="delivery_courier" class="default-label-radio">Курьер</label>
                                     </div>
                                     <div class="col-12">
-                                        <div class="delivery-step office">
+                                        <div class="delivery-step office active" data-id="office">
                                             <select class="cart-select">
                                                 <option value="0">4 мкр. — Бархан</option>
                                                 <option value="0">12 мкр. — Бархан</option>
                                             </select>
                                         </div>
-                                        <div class="delivery-step courier">
+                                        <div class="delivery-step courier" data-id="courier">
                                             <input type="text" class="cart-input" placeholder="Введите адрес доставки">
                                         </div>
                                     </div>
-                                    <p class="cart-comment">* от 3000 тг. доставка — бесплатная</p>
+                                    <div class="col-12">
+                                        <p class="cart-comment">* от 3000 тг. доставка — бесплатная</p>
+                                    </div>
                                 </div>
                             </div>
     
@@ -218,9 +220,9 @@
                 </div>
 
             </div>
-            <div class="col-5">
+            <div class="col-xl-5">
                 
-                <div class="cart-block">
+                <div class="cart-block cart-total-sticky">
                     <div class="cart-block--title">Итого</div>
                     <div class="cart-block--content">
                         <div class="cart-total">
@@ -232,15 +234,17 @@
 
                             <div class="cart-total--row">
                                 <div class="cart-total--row-text">Доставка</div>
-                                <div class="cart-total--row-value"><a href="#delivery">Самовывоз</a></div>
+                                <div class="cart-total--row-value"><a href="#delivery" id="total-devilery">Самовывоз</a></div>
                             </div>  
 
-                            <div class="cart-total--row">
+                            <div class="cart-total--row cart-total--last-row">
                                 <div class="cart-total--text">Итог:</div>
                                 <div class="cart-total--value">3200 тг.</div>
                             </div>
 
-                            <button class="cart-total--btn">Заказать</button>
+                            <div class="cart-block--padding">
+                                <button class="cart-total--btn">Заказать</button>
+                            </div>
 
                         </div>
                     </div>

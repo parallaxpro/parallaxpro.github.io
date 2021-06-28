@@ -3,6 +3,7 @@ import autosize from 'autosize';
 $(function () {
 
 	autosize($('textarea'));
+	$('select').selectmenu();
 
 	const swiper = new Swiper('.main-slider--slider', {
 			// Optional parameters
@@ -32,9 +33,12 @@ $(function () {
 	$('[data-cart_plus]').on('click', function() {
 		var input = $('input[data-cart_input='+ $(this).data('cart_input') +']');
 		var value = Number(input.val()) + 1;
-		var input_minus = $('.product-card--cart-qty--minus[data-cart_input='+ $(this).data('cart_input') +']');
 
-		if (value > 1) input_minus.addClass('close');
+		var input_close = $('.product-card--cart-qty--minus[data-cart_input='+ $(this).data('cart_input') +']');
+		var input_minus = $('.cart-item--qty--minus[data-cart_input='+ $(this).data('cart_input') +']');
+
+		if (value > 1) input_close.addClass('close');
+		if (value > 1) input_minus.addClass('minus');
 		
 		input.val(value);
 	});
@@ -43,7 +47,7 @@ $(function () {
 		var input = $('input[data-cart_input='+ $(this).data('cart_input') +']');
 		var value = Number(input.val());
 		var next_value = value - 1;
-		if (next_value === 1) $(this).removeClass('close');
+		if (next_value === 1) {$(this).removeClass('close'); $(this).removeClass('minus');}
 		
 		if (value > 1) input.val(next_value);
 		else closeCartBtn($(this).data('cart_input'));
@@ -86,20 +90,20 @@ $(function () {
 	let startX, scrollLeft;
 
 	let startDragging = function (e) {
-	mouseDown = true;
-	startX = e.pageX - slider.offsetLeft;
-	scrollLeft = slider.scrollLeft;
+		mouseDown = true;
+		startX = e.pageX - slider.offsetLeft;
+		scrollLeft = slider.scrollLeft;
 	};
 	let stopDragging = function (event) {
-	mouseDown = false;
+		mouseDown = false;
 	};
 
 	slider.addEventListener('mousemove', (e) => {
-	e.preventDefault();
-	if(!mouseDown) { return; }
-	const x = e.pageX - slider.offsetLeft;
-	const scroll = x - startX;
-	slider.scrollLeft = scrollLeft - scroll;
+		e.preventDefault();
+		if(!mouseDown) { return; }
+		const x = e.pageX - slider.offsetLeft;
+		const scroll = x - startX;
+		slider.scrollLeft = scrollLeft - scroll;
 	});
 
 	// Add the event listeners
@@ -121,6 +125,19 @@ $(function () {
 		
 		$('html, body').animate({scrollTop: dn}, 500);
 	});
+
+
+	$('input[name=delivery]').on('click', function(e) {
+		// e.preventDefault();
+
+		var id = $(this).data('id');
+		$('.delivery-step').hide();
+		$('.delivery-step[data-id='+ id +']').show();
+
+		var text = $('label[for='+ $(this).attr('id') +']').text();
+		$('#total-devilery').text(text);
+	});
+
 
 	setActiveListElements(); updateMenuPadding();
 });

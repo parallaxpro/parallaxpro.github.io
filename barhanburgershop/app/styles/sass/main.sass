@@ -302,11 +302,12 @@
 
 .product-card--cart-qty--minus
 	&::before
-		background: url('../images/dist/icons/minus.svg') no-repeat 50%
+		background: url('../images/dist/icons/plus.svg')
+		transform: rotate(45deg)
 	&.close
 		&::before
-			background: url('../images/dist/icons/plus.svg')
-			transform: rotate(45deg)
+			background: url('../images/dist/icons/minus.svg') no-repeat 50%
+			transform: rotate(0)
 
 .product-card--cart-qty--input
 	font-size: 18px
@@ -706,6 +707,8 @@ input
 		margin-right: 5px
 	&.bun-1::before
 		background: #F4CE92
+	&.roasting-2::before
+		background: rgba(214, 38, 49, 0.4)
 	&.roasting-3::before
 		background: rgba(214, 38, 49, 0.7)
 
@@ -739,5 +742,196 @@ input
 
 .cart-textarea
 	height: 100px
+
+.cart-item--price
+	font-family: $customFont
+	font-style: normal
+	font-weight: normal
+	font-size: 24px
+	line-height: 100%
+	color: $main-color
+
+.cart-item--detalis
+	display: flex
+	align-items: center
+
+.cart-item--qty
+	display: flex
+	align-items: center
+	background: #262626
+	border-radius: 7px
+	padding: 12px 15px
+	margin-left: 20px
+
+.cart-item--qty--input
+	font-family: $customFont
+	font-style: normal
+	font-weight: normal
+	font-size: 20px
+	line-height: 100%
+	text-align: center
+	color: #FFFFFF
+	background: none
+	width: 40px
+	border: 0
+	appearance: none 
+
+.cart-item--qty--minus, .cart-item--qty--plus
+	cursor: pointer
+	user-select: none
+
+.cart-item--qty--minus
+	&::before
+		content: ''
+		display: block
+		width: 14px
+		height: 14px
+		background: url('../images/dist/icons/cart-btns-2.svg')
+		background-position-y: 17px
+		background-position-x: center
+	&.minus
+		&::before
+			background-position-y: top
+
+.cart-item--qty--plus
+	&::before
+		content: ''
+		display: block
+		width: 14px
+		height: 14px
+		background: url('../images/dist/icons/plus.svg')
+		background-position-y: bottom
+		background-repeat: no-repeat
+		background-position-x: center
+		background-size: cover
+
+input[type=radio]:checked + label.default-label-radio::after
+	content: ''
+	position: absolute
+	display: flex
+	width: 12px
+	height: 12px
+	background: #FF0000
+	border-radius: 30px
+	left: 29px
+
+.default-label-radio
+	position: relative
+	display: flex
+	align-items: center
+	font-size: 15px
+	line-height: 100%
+	padding: 22px 25px
+	margin-bottom: 0
+	background: rgba(247, 247, 247, 0.05)
+	border-radius: 7px
+	cursor: pointer
+	transition: $transition-fast
+	user-select: none
+	&::before
+		content: ''
+		display: flex
+		width: 20px
+		height: 20px
+		background: white
+		border-radius: 20px
+		margin-right: 10px
+	&:hover
+		transform: translateY(-3px)
+		box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+	&:active
+		transform: translateY(0)
+
+.ui-selectmenu-button
+	width: 100% !important
+	font-size: 16px
+	line-height: 100%
+	padding: 22px 25px
+	border: 0 !important
+	border-radius: 7px
+	background: rgba(255, 255, 255, 0.05) !important
+
+.ui-selectmenu-text
+	color: white
+
+.delivery-step
+	display: none
+	margin: 25px 0
+
+	&.active
+		display: block
+
+.ui-widget.ui-widget-content
+	border: 0 !important
+	background: #292727
+	color: white
+	border-radius: 7px
+	margin-top: 10px
+
+.ui-menu .ui-menu-item-wrapper
+	padding: 15px 25px
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active
+	border: 0 !important
+	background: rgba(214, 38, 49, 0.25)
+	margin: 0 !important
+
+.ui-button
+	&:active, &.ui-state-active:hover
+		border: 0 !important
+		background: rgba(214, 38, 49, 0.25)
+		margin: 0 !important
+
+.cart-comment
+	margin: 0
+	color: rgba(255, 255, 255, 0.5)
+
+.cart-block.cart-total-sticky
+	position: sticky
+	top: 100px
+
+
+.cart-total--row
+	display: flex
+	align-items: center
+	border-bottom: 1px solid rgba(240, 235, 235, 0.07)
+	padding: 30px 0
+	font-size: 18px
+	line-height: 21px
+	padding-right: 70px
+
+.cart-total--row-text
+	flex-grow: 1
+
+.cart-total--last-row
+	border: 0
+
+.cart-total--btn
+	display: block
+	font-size: 16px
+	line-height: 19px
+	color: white
+	padding: 16px
+	width: 100%
+	background: $main-color
+	border-radius: 7px
+	border: 0
+	&:hover
+		background: darken($main-color, 10%)
+
+.cart-total--text
+	flex-grow: 1
+	font-weight: 500
+	font-size: 24px
+	line-height: 28px
+	opacity: 0.25
+
+.cart-total--value
+	font-weight: 500
+	font-size: 32px
+	line-height: 37px
+
+input[data-cart_input]
+	pointer-events: none
 
 @import media

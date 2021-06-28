@@ -19,7 +19,6 @@
     .menu-catalog
         padding-left: 0
 
-
 @media (max-width: 1200px)
     .footer-section--btn-image
         &.office-model, &.man
@@ -47,7 +46,6 @@
         margin-right: 0
         &:first-child
             margin-bottom: 15px
-
 
 @media (max-width: 768px)
     .main-header
@@ -108,6 +106,17 @@
         margin-left: 0
         margin-right: 15px
 
+    .cart-block
+        padding: 40px 0 40px 40px
+    .cart-item, .cart-block--padding, .cart-total--row
+        padding-right: 40px
+    .cart-block
+        border-radius: 0
+    .cart-container
+        padding: 0
+        > div > div
+            padding: 0
+
 @media (max-width: 576px)
     .c-container
         padding: 0 15px
@@ -120,7 +129,27 @@
         margin: 20px
         img
             width: 140px
-
+    .cart-block
+        padding: 30px 0 20px 20px
+    .cart-item, .cart-block--padding, .cart-total--row
+        padding-right: 20px
+    .cart-item--image
+        width: 65px
+        height: 60px
+        margin-right: 10px
+    .cart-item--title
+        font-size: 18px
+    .cart-item--options
+        margin-top: 7px
+    .cart-item--option
+        font-size: 9px
+        padding: 5px 8px
+        &::before
+            width: 9px
+            height: 9px
+    .cart-block--title
+        font-size: 36px
+    
 @media (max-width: 480px)
     .logotype img
         max-height: 90px
@@ -144,6 +173,16 @@
     .product-page--title-link
         font-size: 32px
         margin-right: 15px
+    // .cart-item--price
+    .cart-item--detalis
+        flex-direction: column
+        align-items: flex-end
+    .cart-item--qty
+        margin-left: 0
+        margin-top: 7px
+        padding: 5px 10px
+    .cart-item--price
+        font-size: 20px
 
 @media (max-width: 420px)
     .footer-footer
