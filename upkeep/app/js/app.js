@@ -405,3 +405,45 @@ $(document).on('input', '.g-input--input[maxlength]', function(e) {
     var minus = maxlength - value_length;
     span.text(minus);
 })
+
+$(document).on('click', '.editor-menu--item', function() {
+
+    var id = $(this).data('content');
+
+    $('.editor-menu--item').removeClass('active');
+    $(this).addClass('active');
+
+    $('.editor-content').removeClass('active');
+    $('.editor-content[data-content='+ id +']').addClass('active');
+
+});
+
+$(document).on('click', '.option-item--sum-item', function() {
+
+    var input = $('.option-item--sum-input[data-row='+ $(this).data('row') +'][data-options='+ $(this).data('options') +']');
+
+    if ($(this).hasClass('plus')) {
+        $(this).removeClass('plus');
+        $(this).addClass('minus');
+        
+        updateOptionRowSum('minus', input.val(), $(this).data('row'), $(this).data('options'));
+    } else {
+        $(this).addClass('plus');
+        $(this).removeClass('minus');
+
+        updateOptionRowSum('plus', input.val(), $(this).data('row'), $(this).data('options'));
+    }
+
+});
+
+function updateOptionRowSum(type, sum, row_id, options_id) {
+
+    var value = $('#price').val();
+    var block = $('.option-item--sum-total[data-row='+ row_id +'][data-options='+ options_id +']');
+
+    if (type === 'minus') block.text(value - sum);
+    if (type === 'plus') block.text(value + sum);
+
+    // if (value === 0) block.text(value);
+
+}
