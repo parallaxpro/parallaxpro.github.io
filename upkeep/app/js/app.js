@@ -1,3 +1,5 @@
+// const { each } = require("jquery");
+
 $(document).ready(function() {
 
     phone_mask();
@@ -56,7 +58,25 @@ $(document).ready(function() {
     $('input[data-spoiler]').on('change', function (e) {
         var id = $(this).data('spoiler');
         $('[data-spoiler_input='+ id +']').toggleClass('active');
-    })
+    });
+
+    // 
+
+    $('#price').on('keyup', function() {
+        // console.log($(this).val());
+
+        var inputs = $('.option-item--sum-input');
+
+        $.each(inputs, function(index, value) {
+
+            var type_block = $('.option-item--sum-item[data-row='+ $(value).data('row') +'][data-options='+ $(value).data('options') +']');
+            if (type_block.hasClass('plus')) var type = 'plus';
+            else var type = 'minus';
+            updateOptionRowSum(type, $(value).val(), $(value).data('row'), $(value).data('options'));
+
+        });
+
+    });
 
 });
 
@@ -442,8 +462,150 @@ function updateOptionRowSum(type, sum, row_id, options_id) {
     var block = $('.option-item--sum-total[data-row='+ row_id +'][data-options='+ options_id +']');
 
     if (type === 'minus') block.text(value - sum);
-    if (type === 'plus') block.text(value + sum);
+    if (type === 'plus') block.text(Number(value) + Number(sum));
 
     // if (value === 0) block.text(value);
+    
+}
+
+$(document).on('keyup', '.option-item--sum-input', function() {
+    // console.log($(this).val());
+
+    var type_btn = $('.option-item--sum-item[data-row='+ $(this).data('row') +'][data-options='+ $(this).data('options') +']');
+
+    // var type = () => {
+    //     if (type_btn.hasClass('plus')) return 'plus';
+    //     else 'minus';
+    // }
+
+    if (type_btn.hasClass('plus')) var type = 'plus';
+    else var type = 'minus';
+
+    updateOptionRowSum(type, $(this).val(), $(this).data('row'), $(this).data('options'));
+});
+
+$(document).on('click', '.option-item--row-add', function(e) {
+    e.preventDefault();
+
+    var options_group   = $(this).data('options');
+    var id              = $('.option-item--row[data-options='+ options_group +']').last().data('row') + 1;
+
+    var template        = '\
+    <div class="option-item--row" data-options="'+ options_group +'" data-row="'+ id +'">\
+        <div class="option-item--title">\
+            <input class="option-item--title-input" placeholder="Пункт" data-options="'+ options_group +'" data-row="'+ id +'">\
+        </div>\
+        <div class="option-item--sum">\
+            <span class="option-item--sum-item plus" data-options="'+ options_group +'" data-row="'+ id +'"></span>\
+            <input type="text" class="option-item--sum-input" placeholder="Сумма" data-options="'+ options_group +'" data-row="'+ id +'">\
+            <span class="option-item--sum-total" data-options="'+ options_group +'" data-row="'+ id +'"></span>\
+        </div>\
+        <span class="option-item--row-delete-btn multiform-btn multiform-btn--minus"></span>\
+    </div>\
+    ';
+
+    $('.option-item--rows[data-options='+ options_group +']').append(template);
+    
+});
+
+$(document).on('click', '.option-item--row-delete-btn', function(e) {
+    e.preventDefault();
+    $(this).parent('.option-item--row').remove();
+    updateOptionsResult();
+});
+
+$(document).on('click', '.option-group--delete-btn', function(e) {
+    e.preventDefault();
+
+    var id = $(this).data('options');
+    $('.option-group--container[data-options='+ id +']').remove();
+
+    updateOptionsResult();
+    
+});
+
+$(document).on('click', '.option-add', function(e) {
+
+    var next_id = $('.option-group--container').last().data('options') + 1;
+
+    if (!next_id) var next_id = 1;
+
+    var template = '\
+    <div class="option-group--container" data-options="'+ next_id +'">\
+        <div class="option-group--header">\
+            <div class="option-group--title">\
+                <input type="text" class="option-group--title-input" placeholder="Название опции" data-options="'+ next_id +'">\
+            </div>\
+            <div class="option-group--delete">\
+                <span class="option-group--delete-btn multiform-btn multiform-btn--minus" data-options="'+ next_id +'"></span>\
+            </div>\
+        </div>\
+        <div class="option-group--body">\
+            <div class="option-item--rows" data-options="'+ next_id +'">\
+                <div class="option-item--row" data-options="'+ next_id +'" data-row="1">\
+                    <div class="option-item--title">\
+                        <input class="option-item--title-input" placeholder="Пункт" data-options="'+ next_id +'" data-row="1">\
+                    </div>\
+                    <div class="option-item--sum">\
+                        <span class="option-item--sum-item plus" data-options="'+ next_id +'" data-row="1"></span>\
+                        <input type="text" class="option-item--sum-input" placeholder="Сумма" data-options="'+ next_id +'" data-row="1">\
+                        <span class="option-item--sum-total" data-options="'+ next_id +'" data-row="1"></span>\
+                    </div>\
+                    <span class="option-item--row-delete-btn multiform-btn multiform-btn--minus"></span>\
+                </div>\
+            </div>\
+            <span class="option-item--row-add" data-options="'+ next_id +'">Добавить пункт</span>\
+        </div>\
+    </div>\
+    ';
+
+    $('.options-groups').append(template);
+});
+
+function updateOptionsResult() {
+
+    var blocks = $('.option-group--container');
+    var result = [];
+
+    $.each(blocks, function(index, block) {
+
+        var id      = $(block).data('options');
+        var rows    = $('.option-item--row[data-options='+ id +']');
+        var $rows   = [];
+
+        $.each(rows, function(row_index, row_value) {
+            
+            var row_id = $(row_value).data('row');
+
+            if ($('.option-item--sum-item[data-row='+ row_id +'][data-options='+ id +']').hasClass('plus')) var type = 'plus';
+            else var type = 'minus';
+
+            $rows[row_id] = {
+                'title': $('.option-item--title-input[data-row='+ row_id +'][data-options='+ id +']').val(),
+                'type': type,
+                'sum': $('.option-item--sum-input[data-row='+ row_id +'][data-options='+ id +']').val()
+            }
+            
+        });
+
+        result.push({
+            'title': $('.option-group--title-input[data-options='+ id +']').val(),
+            'rows': $rows
+        });
+    });
+
+    
+    var to_input = JSON.stringify(result);
+    console.log(to_input);
+    console.log(result);
+    $('#options-result').val(to_input);
 
 }
+
+$(document).on('keyup', '.options-groups input', function() {
+    updateOptionsResult();
+});
+
+$(document).on('keypress', '.option-item--sum-input', function(event) {
+    return event.charCode >= 48 && event.charCode <= 57;
+});

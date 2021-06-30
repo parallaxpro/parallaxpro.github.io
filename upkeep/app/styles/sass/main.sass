@@ -1529,13 +1529,12 @@ h1
 .option-group--container
 	padding: 23px 30px 30px
 	background: white
+	margin-bottom: 10px
+	border-radius: 7px
 
 .option-item--title
-	padding: 16px 20px 15px
-	background: rgba(0, 0, 0, 0.03)
-	border-radius: 5px
 	flex-grow: 1
-	margin-right: 20px
+	margin-right: 15px
 
 .option-item--row
 	display: flex
@@ -1549,8 +1548,12 @@ h1
 	background: 0
 	border: 0
 	width: 100%
+	padding: 16px 20px 15px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 5px
 
 .option-item--sum
+	position: relative
 	display: flex
 	align-items: center
 	background: rgba(0, 0, 0, 0.03)
@@ -1598,14 +1601,40 @@ h1
 	cursor: pointer
 	user-select: none
 	margin-top: 5px
+	transition: $transition-fast
+	&:hover
+		background: rgba(0, 95, 249, 0.1)
+		
 
 .option-item--sum-total
+	position: absolute
 	font-size: 12px
 	line-height: 100%
 	opacity: 0.25
-	margin-right: 7px
+	right: 15px
 	&::before
 		content: '='
 		margin-right: 3px
+
+.option-item--row-delete-btn
+	position: relative
+	margin-left: 15px
+	right: 0
+
+.option-add
+	display: block
+	text-align: center
+	padding: 20px
+	font-size: 14px
+	line-height: 100%
+	text-align: center
+	background: rgba(0, 95, 249, 0.05)
+	border-radius: 5px
+	color: #005FF9
+	cursor: pointer
+	user-select: none
+	&:hover
+		background: rgba(0, 95, 249, 0.1)
+		
 
 @import media
