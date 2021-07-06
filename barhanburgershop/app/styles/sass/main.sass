@@ -83,7 +83,13 @@
 		font-family: $customFont
 		color: white
 		&::after
-			display: none
+			// display: none
+			content: '₸'
+			background: none
+			margin-left: 3px
+			height: unset
+			width: unset
+			min-width: unset
 		&::before
 			content: ''
 			display: flex
@@ -442,6 +448,7 @@
 .menu-catalog--item-text
 	font-size: 18px
 	color: white
+	white-space: nowrap
 
 //
 
@@ -654,7 +661,7 @@ input
 		border-radius: 10px
 
 .cart-block
-	padding: 70px 0 70px 70px
+	padding: 70px 0 50px 70px
 	background: rgba(255, 255, 255, 0.02)
 	border-radius: 25px
 
@@ -665,6 +672,9 @@ input
 	font-size: 48px
 	line-height: 100%
 	margin-bottom: 0
+
+.cart-listing
+	margin-top: 20px
 
 .cart-block--data
 	margin-top: 40px
@@ -700,7 +710,8 @@ input
 	color: white
 
 .cart-item--options
-	margin-top: 15px
+	margin-top: 10px
+	flex-wrap: wrap
 
 .cart-item--option
 	display: flex
@@ -711,7 +722,8 @@ input
 	background: rgba(255, 255, 255, 0.15)
 	border-radius: 90px
 	margin-right: 5px
-	&::before
+	margin-top: 5px
+	&.btn::before
 		content: ''
 		display: flex
 		width: 11px
@@ -763,6 +775,9 @@ input
 	font-size: 24px
 	line-height: 100%
 	color: $main-color
+	&::after
+		content: '₸'
+		margin-left: 4px
 
 .cart-item--detalis
 	display: flex
