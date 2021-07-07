@@ -114,7 +114,12 @@ $(function () {
 
 	$('a[href^="#"]').on('click', function(event) {
 		// отменяем стандартное действие
+		if ($(this).attr('href') === $(this).data('url')) {
+			return true;
+		}
+
 		event.preventDefault();
+
 		
 		var sc = $(this).attr("href"),
 			dn = $(sc).offset().top - 100;
