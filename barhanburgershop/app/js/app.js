@@ -200,3 +200,93 @@ function updateMenuPadding() {
 	var footer_left = document.getElementById("footer").getBoundingClientRect().left;
 	$('.menu-catalog').css('paddingLeft', footer_left);
 }
+
+$(window).scroll(function() {
+	var height = $(window).scrollTop();
+		
+	/*Если сделали скролл на 100px задаём новый класс для header*/
+
+	var value = $('.main-header').outerHeight(true);
+
+	// console.log(value);
+
+	if(height > value){
+		$('.aside-main').addClass('aside-fixed');
+	} else{
+		$('.aside-main').removeClass('aside-fixed');
+	}
+});
+
+var aside_menu_options = {
+	menu: $('.aside-main'),
+	content: $('.content-slided'),
+	menu_width: $('.aside-main').outerWidth(true),
+	menu_btn: $('.menu--btn'),
+	footer_left: document.getElementById("footer").getBoundingClientRect().left
+}
+
+$(document).on('click', '.open-menu', function(e) {
+	e.preventDefault();
+	openMenu(aside_menu_options);
+})
+
+$(document).keyup(function(e) {
+    if (e.keyCode === 27) { 
+        closeMenu(aside_menu_options);
+    }
+});
+
+$(document).on('click', '.menu--btn', function(e) {
+	e.preventDefault();
+
+	if ($(this).hasClass('opened')) closeMenu(aside_menu_options);
+	else 							openMenu(aside_menu_options);
+});
+
+function openMenu(options) {
+
+	// $('.menu-catalog').css('paddingLeft', footer_left);
+
+	options.menu.css('left', options.footer_left);
+
+	options.content.css({
+		'-webkit-transform':'translateX('+ options.menu_width +'px)',
+		'-ms-transform': 	'translateX('+ options.menu_width +'px)',
+		'transform': 		'translateX('+ options.menu_width +'px)',
+		'opacity': 			'0.25',
+		'pointerEvents': 	'none',
+	});
+
+	if (window.innerWidth < 576) {
+		options.content.css('display', 'none');
+	}
+
+	options.menu.css({
+		'opacity': '1',
+		'zIndex': '9999'
+	});
+
+	options.menu_btn.addClass('opened');
+}
+
+function closeMenu(options) {
+
+	options.menu.css({
+		'opacity': '0',
+		'zIndex': '-9999'
+	});
+
+	options.content.css({
+		'-webkit-transform':'translateX(0px)',
+		'-ms-transform': 	'translateX(0px)',
+		'transform': 		'translateX(0px)',
+		'opacity': 			'1',
+		'pointerEvents': 	'unset'
+	});
+
+	if (window.innerWidth < 576) {
+		options.content.css('display', 'block');
+	}
+
+	options.menu_btn.removeClass('opened');
+}

@@ -55,6 +55,10 @@
 		background: url('../images/dist/icons/menu.svg')
 	&:active
 		opacity: 0.5
+	&.opened::before
+		width: 19px
+		height: 16px
+		background: url('../images/dist/icons/arrow-menu.svg')
 
 .cart--btn
 	display: flex
@@ -982,5 +986,108 @@ input[data-cart_input]
 
 .product-page--header
 	margin-bottom: 50px
+
+.aside-main
+	position: absolute
+	z-index: -999
+	margin-right: 15px
+	opacity: 0
+	&.aside-fixed
+		position: fixed
+		top: 0
+		transition: $transition
+		padding-top: 30px
+
+.aside-block
+	width: 400px
+	background: #262222
+	border-radius: 25px
+
+.aside-title
+	font-family: $customFont
+	font-size: 32px
+	line-height: 100%
+	margin-bottom: 10px
+
+.aside-header
+	padding: 50px 50px 30px
+
+.aside-desc
+	font-size: 16px
+	line-height: 140%
+	color: rgba(255, 255, 255, 0.5)
+	margin: 0
+
+// 
+
+.main-content, .aside-main
+	transition: $transition
+	// transform: translateX(430px)
+
+// 
+
+.aside-body
+	padding-bottom: 30px
+
+.aside--item
+	padding: 20px 50px
+	border-top: 1px solid rgba(240, 235, 235, 0.07)
+	&.social-btns
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-gap: 10px
+
+.aside-item--label
+	display: flex
+	padding: 0
+	color: rgba(255, 255, 255, 0.5)
+
+.aside-item--value
+	margin: 0
+	font-size: 16px
+	margin-top: 10px
+
+.aside-item--row
+	display: flex
+	align-items: center
+	margin-bottom: 15px
+
+	.aside-item--value
+		margin: 0
+
+	.aside-item--label
+		flex-grow: 1
+
+	&:last-child
+		margin-bottom: 0
+
+.aside-social--btn
+	display: flex
+	align-items: center
+	justify-content: center
+	background: rgba(255, 255, 255, 0.1)
+	border-radius: 10px
+	padding: 12px
+	&::before
+		content: ''
+		height: 18px
+	&.vk::before
+		width: 30px
+		background: url('../images/dist/icons/socials/vk.svg')
+	&.telegram::before
+		width: 22px
+		background: url('../images/dist/icons/socials/tg.svg')
+	&.facebook::before
+		width: 9px
+		background: url('../images/dist/icons/socials/fb.svg')
+	&.instagram::before
+		width: 18px
+		background: url('../images/dist/icons/socials/inst.svg')
+	&:hover
+		background: rgba(white, 0.2)
+
+.aside--map
+	margin-bottom: 20px
+	
 
 @import media
