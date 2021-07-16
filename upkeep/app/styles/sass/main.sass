@@ -1384,6 +1384,7 @@ h1
 .c-product--item--image
 	display: flex
 	width: 70px
+	min-width: 70px
 	height: 70px
 	border-radius: 10px
 	background-size: cover !important
@@ -1636,5 +1637,38 @@ h1
 	&:hover
 		background: rgba(0, 95, 249, 0.1)
 		
+.mobile-header
+	margin-bottom: 32px
+
+.mobile-logo img
+	height: 25px
+
+.mobile-menu-btn
+	display: flex
+	align-items: center
+	// justify-content: center
+	width: 42px
+	height: 32px
+	margin-right: 5px
+	cursor: pointer
+	&::before
+		content: ''
+		width: 26px
+		height: 14px
+		background: url('../images/dist/icons/menu.svg')
+	&.opened::before
+		content: ''
+		width: 17px
+		height: 14px
+		background: url('../images/dist/icons/menu-arrow.svg')
+
+.mobile-menu
+	display: none
+	position: absolute
+	top: 60px
+	left: 15px
+	right: 15px
+	background: #f7f7f7
+	z-index: 9999
 
 @import media

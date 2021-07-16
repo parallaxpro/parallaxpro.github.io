@@ -609,3 +609,10 @@ $(document).on('keyup', '.options-groups input', function() {
 $(document).on('keypress', '.option-item--sum-input', function(event) {
     return event.charCode >= 48 && event.charCode <= 57;
 });
+
+$(document).on('click', '.mobile-menu-btn', function(e) {
+    e.preventDefault();
+    
+    $(this).toggleClass('opened');
+    $('.mobile-menu').fadeToggle(100);
+});

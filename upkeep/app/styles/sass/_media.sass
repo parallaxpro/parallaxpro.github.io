@@ -3,14 +3,29 @@
 
 @media (min-width: 1440px)
     .c-container
-        width: 1300px
+        width: 1300px !important
+        margin: 0 auto !important
+
+@media (min-width: 1280px)
+    .c-container
+        width: 1180px
         margin: 0 auto
 
-@media (max-width: 1200px)
-    //
+@media (max-width: 1280px)
+    .c-container
+        width: 100%
+        padding: 0 30px
+        
 
 @media (max-width: 992px)
-    // 
+    .b-content
+        padding-top: 0
+    .main-business
+        margin: 30px 0
+    .b-page--name
+        margin-top: 25px
+    .profile-settings--link
+        flex-grow: 0
 
 @media (max-width: 576px)
     // 

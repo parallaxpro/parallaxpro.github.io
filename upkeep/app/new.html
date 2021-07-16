@@ -3,8 +3,44 @@
 
 <main class="main-business">
     <div class="c-container">
+
+        <div class="row d-flex d-lg-none">
+            <div class="col-12">
+                <div class="mobile-header d-flex align-items-center">
+                    <span class="mobile-menu-btn"></span>
+                    <a href="/" class="mobile-logo"><img src="./images/logo.svg" alt="upkeep"></a>
+                </div>
+                <div class="mobile-menu">
+                    <div class="b-page--name">
+                        <div class="b-page--title">Дастархан</div>
+                        <div class="b-page--subtitle">микрорайон 12, 78</div>
+                    </div>
+
+                    <nav class="b-page--menu-items">
+                        <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+                    </nav>
+
+                    <div class="mt-4">
+                        <a href="/" onclick="return false;" class="profile-button">
+                            <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+                            <div class="profile-name">Виталий Балаян</div>
+                        </a>
+                        
+                        <div class="profile-footer--container">
+                            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+                            <a href="/" onclick="return false;" class="profile-logout"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-3">
+            <div class="col-lg-3 d-none d-lg-block">
                 <aside class="b-page--menu">
                     <a href="#" onclick="return false;" class="d-flex b-page--logotype">
                         <img src="./images/logo.svg" alt="upkeep">
@@ -24,7 +60,7 @@
                     </nav>
                 </aside>
             </div>
-            <div class="col-7">
+            <div class="col-xl-7 col-lg-9">
                 <div class="b-content">
                     <h1>Главная страница</h1>
 
@@ -38,7 +74,7 @@
     </div>
 </main>
 
-<footer class="b-page--footer">
+<footer class="b-page--footer d-none d-lg-block">
     <div class="c-container">
         <div class="row">
             <div class="col-3">
