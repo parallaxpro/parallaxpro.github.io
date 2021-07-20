@@ -1,39 +1,131 @@
 @media (max-height: 480px)
-    // 
+	// 
 
 @media (min-width: 1440px)
-    .c-container
-        width: 1300px !important
-        margin: 0 auto !important
+	.c-container
+		width: 1300px !important
+		margin: 0 auto !important
 
 @media (min-width: 1280px)
-    .c-container
-        width: 1180px
-        margin: 0 auto
+	.c-container
+		width: 1180px
+		margin: 0 auto
 
 @media (max-width: 1280px)
-    .c-container
-        width: 100%
-        padding: 0 30px
-        
+	.c-container
+		width: 100%
+		padding: 0 30px
+		
 
 @media (max-width: 992px)
-    .b-content
-        padding-top: 0
-    .main-business
-        margin: 30px 0
-    .b-page--name
-        margin-top: 25px
-    .profile-settings--link
-        flex-grow: 0
+	.mobile-header
+		display: block
+	.b-content
+		padding-top: 0
+	.main-business
+		margin: 100px 0
+	.b-page--name
+		margin-top: 25px
+	.profile-settings--link
+		flex-grow: 0
+
+@media (max-width: 768px)
+	.c-categories-block, .data-spoiler
+		display: none
+	.data-spoiler.active
+		display: block
+	.catalog-footer
+		display: flex
+	.c-categories-block
+		width: 100%
+		margin: 0
 
 @media (max-width: 576px)
-    // 
+	.c-container
+		padding: 0 15px
+	.c-product--item
+		flex-direction: column
+		align-items: start
+	.c-product--item--title
+		max-width: 100%
+	.c-product--item--price
+		display: flex
+		align-items: center
+		flex-grow: 1
+		// width: 100%
+	.c-product--item--price--sales
+		margin-bottom: 0
+		margin-right: 7px
+	.c-product--item--right
+		width: 100%
+		margin-top: 7px
+	.c-product--item--image
+		width: 60px
+		height: 60px
+		min-width: 60px
+		margin-right: 15px
+	.c-block--content-products
+		flex-direction: column
+		align-items: start
+		> *
+			width: 100%
+	.c-products-add
+		margin-top: 10px
+	.c-block--content .input--container
+		margin-right: 0
+	.drag-and-drop--block
+		flex-direction: column
+		padding: 15px
+	.drag-and-drop--text
+		padding: 0
+		margin-top: 10px
+	.drag-and-drop--image, .drag-and-drop--thumb
+		width: 100%
+	.b-input
+		font-size: 14px
+		padding: 17px 20px
+	.label-control
+		padding: 17px 20px
+	.label-control--text
+		font-size: 14px
+	h1
+		font-size: 32px
+		margin-bottom: 25px
+		line-height: 130%
+	.option-item--row
+		flex-wrap: wrap
+		padding-bottom: 10px
+		margin-bottom: 10px
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+	.option-item--title
+		width: 100%
+		margin-right: 0
+		margin-bottom: 10px
+	.option-item--sum
+		flex-grow: 1
+	.option-item--sum-input
+		width: 100%
+	.option-item--sum-item
+		min-width: 36px
+	.option-item--sum
+		width: calc(100% - 47px)
+	.a-container, .u-container
+		width: 100%
+		padding: 0 15px
+	.socials-btns-row
+		flex-wrap: wrap
+	.social-btn
+		width: 100%
+	.u-container
+		display: flex
+		justify-content: center
+	.u-header-logo
+		margin-left: 0
 
 @media (max-width: 340px)
-    // 
+	// 
 
 @media (max-height: 768px)
-    .b-page--footer
-        position: relative
-        padding-top: 50px
+	.b-page--footer
+		position: relative
+		padding-top: 50px

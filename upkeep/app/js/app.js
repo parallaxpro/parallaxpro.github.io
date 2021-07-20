@@ -5,6 +5,8 @@ $(document).ready(function() {
     phone_mask();
     $(".default-select").selectmenu();
 
+    autosize($('textarea'));
+
     $(document).mouseup(function (e) {
 		var container = $('.dropdown-btn');
 		var dropdown = $('.dropdown-list');
@@ -614,5 +616,34 @@ $(document).on('click', '.mobile-menu-btn', function(e) {
     e.preventDefault();
     
     $(this).toggleClass('opened');
-    $('.mobile-menu').fadeToggle(100);
+    $('.mobile-menu').toggleClass('active');
+    $('.overlay').fadeToggle();
+    $('.mobile-header').toggleClass('fixed');
 });
+
+$(document).on('click', '.catalog-footer--item', function(e) {
+    var id = $(this).data('id');
+
+    $('.catalog-footer--item').removeClass('active');
+    $(this).toggleClass('active');
+    $('.data-spoiler').removeClass('active');
+
+
+    $('.data-spoiler[data-id='+ id +']').addClass('active');
+});
+
+
+$(document).on('click', '.overlay', function(e) {
+
+    handleClickOverlay();
+
+})
+
+function handleClickOverlay() {
+    
+    $('.overlay').fadeToggle();
+    $('.mobile-menu').toggleClass('active');
+    $('.mobile-header').toggleClass('fixed');
+    $('.mobile-menu-btn').toggleClass('opened');
+
+}

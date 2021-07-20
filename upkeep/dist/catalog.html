@@ -24,10 +24,46 @@
 
 	
 
+<div class="mobile-header">
+    <div class="c-container">
+        <div class="d-flex align-items-center">
+            <span class="mobile-menu-btn"></span>
+            <a href="/" class="mobile-logo"><img src="./images/logo.svg" alt="upkeep"></a>
+        </div>
+    </div>
+</div>
+
+<div class="mobile-menu">
+    <div class="b-page--name">
+        <div class="b-page--title">Дастархан</div>
+        <div class="b-page--subtitle">микрорайон 12, 78</div>
+    </div>
+
+    <nav class="b-page--menu-items">
+        <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+    </nav>
+
+    <div class="mt-4">
+        <a href="/" onclick="return false;" class="profile-button">
+            <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+            <div class="profile-name">Виталий Балаян</div>
+        </a>
+        
+        <div class="profile-footer--container">
+            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+            <a href="/" onclick="return false;" class="profile-logout"></a>
+        </div>
+    </div>
+</div>
+
 <main class="main-business">
     <div class="c-container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-lg-3 d-none d-lg-block">
                 <aside class="b-page--menu">
                     <a href="#" onclick="return false;" class="d-flex b-page--logotype">
                         <img src="./images/logo.svg" alt="upkeep">
@@ -47,12 +83,13 @@
                     </nav>
                 </aside>
             </div>
-            <div class="col-8">
+            <div class="col-lg-9">
                 <div class="b-content">
+                    
                     <h1>Каталог</h1>
 
                     <div class="b-catalog">
-                        <div class="c-categories-block">
+                        <div class="data-spoiler c-categories-block" data-id="categories">
                             <div class="col-sticky">
                                 <div class="c-block--title">Разделы</div>
                                 <div class="c-block--content">
@@ -70,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="c-products-block">
+                        <div class="data-spoiler c-products-block active" data-id="products">
                             <div class="c-block--title">Продукция</div>
                             <div class="c-block--content c-block--content-products">
                                 <!-- <div class="input--container loading"> -->
@@ -318,13 +355,18 @@
                         </div>
                     </div>
 
+                    <div class="catalog-footer">
+                        <a href="#" class="catalog-footer--item products active" data-id="products">Продукция</a>
+                        <a href="#" class="catalog-footer--item categories" data-id="categories">Разделы</a>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </main>
 
-<footer class="b-page--footer">
+<footer class="b-page--footer d-none d-lg-block">
     <div class="c-container">
         <div class="row">
             <div class="col-3">
@@ -348,6 +390,8 @@
     </div>
 </footer>
 
+
+	<div class="overlay"></div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
