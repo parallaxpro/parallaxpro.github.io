@@ -1,0 +1,127 @@
+<!--#set var="title" value="Главная страница" -->
+<!--#include virtual="/parts/header.html" -->
+
+<main class="main-content content-slided">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+
+                <h2 class="page-title">Корзина</h2>
+
+                <div class="cart-items">
+
+                    <div class="cart-item">
+                        <div class="cart-item--left">
+                            <div class="cart-item--image">
+                                <img src="../images/dist/demo.jpg" alt="demo.jpg">
+                            </div>
+                            <div class="cart-item--text">
+                                <div class="cart-item--title">COCА-COLA / 2 Литра</div>
+                            </div>
+                        </div>
+                        <div class="cart-item--right">
+
+                            <div class="cart-item--price">1850</div>
+                            <div class="cart-item--count">
+                                <span class="handle-cart-btn handle-cart-btn--remove cart-item--count--remove" data-cart_minus="99"></span>
+                                <input type="text" class="handle-cart-input cart-btn--input" value="1" data-cart_input="99">
+                                <span class="handle-cart-btn handle-cart-btn--add cart-item--count--add" data-cart_plus="99"></span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cart-hr"></div>
+
+                <h2 class="page-title">Ваши данные</h2>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <input type="text" class="default-input" placeholder="Введите имя">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" class="default-input phone" placeholder="Введите номер телефона">
+                    </div>
+                </div>
+
+                <div class="cart-hr"></div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="page-title">Доставка</h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- <div class="page-title-desc">* от 3000 тг. доставка — бесплатная</div> -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-3 mb-lg-0">
+                        <input type="radio" name="delivery" id="delivery_office" data-id="office" class="default-radio" checked>
+                        <label for="delivery_office" class="default-label-radio">Самовывоз</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="radio" name="delivery" id="delivery_courier" data-id="courier" class="default-radio">
+                        <label for="delivery_courier" class="default-label-radio">Курьер</label>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="delivery-step office active" data-id="office">
+                            <select class="cart-select">
+                                <option value="0">4 мкр. — Бархан</option>
+                                <option value="0">12 мкр. — Бархан</option>
+                            </select>
+                        </div>
+                        <div class="delivery-step courier" data-id="courier">
+                            <input type="text" class="default-input" placeholder="Введите адрес доставки">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-hr"></div>
+
+                <h2 class="page-title">Комментарий</h2>
+
+                <textarea class="default-input textarea" placeholder="Введите комментарий"></textarea>
+
+            </div>
+            <div class="col-lg-4">
+
+                <h2 class="page-title">Итого</h2>
+
+                <div class="col-sticky">
+
+                    <div class="cart-total">
+
+                        <div class="cart-total--row">
+                            <div class="cart-total--row-text">Товары, 2 шт.</div>
+                            <div class="cart-total--row-value">3200 тг.</div>
+                        </div>
+
+                        <div class="cart-total--row">
+                            <div class="cart-total--row-text">Доставка</div>
+                            <div class="cart-total--row-value"><a href="#delivery" id="total-devilery">Самовывоз</a></div>
+                        </div>  
+
+                        <div class="cart-total--row cart-total--last-row">
+                            <div class="cart-total--text">Итог:</div>
+                            <div class="cart-total--value">3200 тг.</div>
+                        </div>
+
+                        <div class="cart-block--padding">
+                            <button class="cart-total--btn">Заказать</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!--#include virtual="/parts/footer.html" -->

@@ -122,6 +122,43 @@
 	.u-header-logo
 		margin-left: 0
 
+	.g-input--label
+		position: absolute
+		padding: 0
+		top: 50%
+		left: 15px
+		transform: translateY(-50%)
+		transition: $transition-fast
+	.g-input--input
+		padding: 25px
+		height: unset
+		font-size: 14px
+	
+	.g-input.label-animate
+		.g-input--label
+			top: 15px
+			transform: unset
+			font-size: 12px
+		.g-input--input
+			padding: 35px 15px 15px
+	.g-input.domain
+		label
+			position: unset
+			transform: unset
+			top: unset
+			padding: 22px 15px
+		input
+			padding: 0
+			padding-left: 15px
+
+	// .g-input--label.label-bg
+	// 	position: unset
+	// 	padding: 22px 25px
+	// 	font-size: unset
+	// 	+ input
+	// 		padding: 0
+	// 		padding-left: 25px
+
 @media (max-width: 340px)
 	// 
 

@@ -1,26 +1,27 @@
 <!--#set var="title" value="Главная страница" -->
 <!--#include virtual="/parts/header.html" -->
 
-<nav class="main-menu"></nav>
-
-<main class="main-content">
-
-    <header class="main-header">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-3">
-                    <span class="menu--btn"></span>
-                </div>
-                <div class="col-6 d-flex justify-content-center">
+<header class="main-header">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-sm-4 col-6 align-items-center d-flex">
+                <span class="menu--btn"></span>
+                <div class="d-sm-none d-flex ml-4">
                     <a href="#" onclick="return false;" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
                 </div>
-                <div class="col-3 d-flex justify-content-end">
-                    <!-- <a href="#" onclick="return false;" class="cart--btn">Товаров нет</a> -->
-                    <a href="#" onclick="return false;" class="cart--btn isset">3200 тг.</a>
-                </div>
+            </div>
+            <div class="col-4 d-sm-flex d-none align-items-center">
+                <a href="#" onclick="return false;" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
+            </div>
+            <div class="col-sm-4 col-6 d-flex justify-content-end align-items-center">
+                <!-- <a href="#" onclick="return false;" class="cart--btn">Товаров нет</a> -->
+                <a href="#" onclick="return false;" class="cart--btn isset">3200 тг.</a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
+
+<main class="main-content content-slided">
 
     <section class="main-slider">
         <div class="container">
@@ -47,12 +48,15 @@
         <div class="catalog-header">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-9">
                         <div class="catalog-title">
                             <h1 class="catalog-title-text">Каталог</h1>
                             <span class="catalog-title-arrow"></span>
                             <h2 class="catalog-title-category">Стейки</h2>
                         </div>
+                    </div>
+                    <div class="col-3 d-lg-none d-flex justify-content-end align-items-center">
+                        <span class="catalog-btn">Раскрыть</span>
                     </div>
                 </div>
             </div>
@@ -61,7 +65,7 @@
         <div class="container">
             <div class="row">
    
-                <div class="col-3">
+                <div class="col-3 d-none d-lg-block">
                     <nav class="catalog-categories">
                         <a href="#" onclick="return false;" class="catalog-category active">Стейки</a>
                         <a href="#" onclick="return false;" class="catalog-category">Бургеры</a>
@@ -76,10 +80,10 @@
                     </nav>
                 </div>
 
-                <div class="col-9">
+                <div class="col-lg-9">
                     <div class="catalog-products">
                         <div class="row" id="products">
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -90,11 +94,31 @@
                                             <div class="catalog-product--sale">500</div>
                                             <div class="catalog-product--price">450</div>
                                         </span>
-                                        <span class="catalog-product--add-cart added-cart">Добавлено</span>
+                                        <span class="catalog-product--add-cart added-cart" data-added_text="Добавлено">Добавлено</span>
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
+                                <article class="catalog-product">
+                                    <a href="#" onclick="return false;" class="catalog-product--image">
+                                        <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
+                                    </a>
+                                    <div class="catalog-product--content">
+                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
+                                        <span class="catalog-product--prices">
+                                            <div class="catalog-product--sale">500</div>
+                                            <div class="catalog-product--price">450</div>
+                                        </span>
+                                        <span class="catalog-product--add-cart" data-added_text="Добавлено" data-cart_text="В корзину" data-id="99">В корзину</span>
+                                        <span class="catalog-product--add-cart-count" data-id="99">
+                                            <span class="handle-cart-btn handle-cart-btn--remove cart-btn--remove" data-cart_minus="99"></span>
+                                            <input type="text" class="handle-cart-input cart-btn--input" value="1" data-cart_input="99">
+                                            <span class="handle-cart-btn handle-cart-btn--add cart-btn--add" data-cart_plus="99"></span>
+                                        </span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -109,67 +133,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
-                                <article class="catalog-product">
-                                    <a href="#" onclick="return false;" class="catalog-product--image">
-                                        <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
-                                    </a>
-                                    <div class="catalog-product--content">
-                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
-                                        <span class="catalog-product--prices">
-                                            <div class="catalog-product--sale">500</div>
-                                            <div class="catalog-product--price">450</div>
-                                        </span>
-                                        <span class="catalog-product--add-cart">В корзину</span>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-4">
-                                <article class="catalog-product">
-                                    <a href="#" onclick="return false;" class="catalog-product--image">
-                                        <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
-                                    </a>
-                                    <div class="catalog-product--content">
-                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
-                                        <span class="catalog-product--prices">
-                                            <div class="catalog-product--sale">500</div>
-                                            <div class="catalog-product--price">450</div>
-                                        </span>
-                                        <span class="catalog-product--add-cart">В корзину</span>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-4">
-                                <article class="catalog-product">
-                                    <a href="#" onclick="return false;" class="catalog-product--image">
-                                        <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
-                                    </a>
-                                    <div class="catalog-product--content">
-                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
-                                        <span class="catalog-product--prices">
-                                            <div class="catalog-product--sale">500</div>
-                                            <div class="catalog-product--price">450</div>
-                                        </span>
-                                        <span class="catalog-product--add-cart">В корзину</span>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-4">
-                                <article class="catalog-product">
-                                    <a href="#" onclick="return false;" class="catalog-product--image">
-                                        <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
-                                    </a>
-                                    <div class="catalog-product--content">
-                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
-                                        <span class="catalog-product--prices">
-                                            <div class="catalog-product--sale">500</div>
-                                            <div class="catalog-product--price">450</div>
-                                        </span>
-                                        <span class="catalog-product--add-cart">В корзину</span>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -184,7 +148,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -199,7 +163,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -214,7 +178,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -229,7 +193,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -244,7 +208,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -259,7 +223,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -274,7 +238,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -289,7 +253,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -304,7 +268,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -319,7 +283,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -334,7 +298,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -349,7 +313,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -364,7 +328,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -379,7 +343,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -394,7 +358,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -409,7 +373,7 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -424,7 +388,52 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-4">
+                            <div class="col-xl-4 col-sm-6">
+                                <article class="catalog-product">
+                                    <a href="#" onclick="return false;" class="catalog-product--image">
+                                        <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
+                                    </a>
+                                    <div class="catalog-product--content">
+                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
+                                        <span class="catalog-product--prices">
+                                            <div class="catalog-product--sale">500</div>
+                                            <div class="catalog-product--price">450</div>
+                                        </span>
+                                        <span class="catalog-product--add-cart">В корзину</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
+                                <article class="catalog-product">
+                                    <a href="#" onclick="return false;" class="catalog-product--image">
+                                        <img src="../images/dist/demo.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
+                                    </a>
+                                    <div class="catalog-product--content">
+                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
+                                        <span class="catalog-product--prices">
+                                            <div class="catalog-product--sale">500</div>
+                                            <div class="catalog-product--price">450</div>
+                                        </span>
+                                        <span class="catalog-product--add-cart">В корзину</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
+                                <article class="catalog-product">
+                                    <a href="#" onclick="return false;" class="catalog-product--image">
+                                        <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
+                                    </a>
+                                    <div class="catalog-product--content">
+                                        <a href="#" onclick="return false;" class="catalog-product--title">Яйцо Бенедикт с лососем и авокадо</a>
+                                        <span class="catalog-product--prices">
+                                            <div class="catalog-product--sale">500</div>
+                                            <div class="catalog-product--price">450</div>
+                                        </span>
+                                        <span class="catalog-product--add-cart">В корзину</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
                                 <article class="catalog-product">
                                     <a href="#" onclick="return false;" class="catalog-product--image">
                                         <img src="../images/dist/demo-1.jpg" class="catalog-product--image" alt="Яйцо Бенедикт с лососем и авокадо">
@@ -441,7 +450,7 @@
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-3">
+                            <div class="col-lg-3">
                                 <span class="loadmore-btn loading">Загрузить еще</span>
                             </div>
                         </div>
@@ -449,6 +458,20 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+
+    <div class="cart-mobile--btn-container">
+        <div class="container">
+            <a href="#" onclick="return false;" class="cart-mobile--btn">
+                <span class="cart-mobile--btn--left">
+                    <span class="cart-mobile--btn--price">3200 тг.</span>
+                    <span class="cart-mobile--btn--products">Товаров, <span id="cart-mobile--btn--items">15</span> шт.</span>
+                </span>
+                <span class="cart-mobile--btn--right">
+                    <span class="cart-mobile--btn--text">Купить</span>
+                </span>
+            </a>
         </div>
     </div>
 

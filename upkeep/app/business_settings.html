@@ -1,195 +1,289 @@
-<!--#set var="title" value="Заведения" -->
+<!--#set var="title" value="Каталог" -->
 <!--#include virtual="/parts/header.html" -->
 
-<header class="header">
-    <div class="container">
-        <div class="row d-flex align-items-center">
-            <div class="col-6">
-                <a href="/" class="logo"><img src="./images/logo.svg" alt="upkeep"></a>
+<div class="mobile-header">
+    <div class="c-container">
+        <div class="d-flex align-items-center">
+            <span class="mobile-menu-btn"></span>
+            <a href="/" class="mobile-logo"><img src="./images/logo.svg" alt="upkeep"></a>
+        </div>
+    </div>
+</div>
+
+<div class="mobile-menu">
+    <div class="b-page--name">
+        <div class="b-page--title">Дастархан</div>
+        <div class="b-page--subtitle">микрорайон 12, 78</div>
+    </div>
+
+    <nav class="b-page--menu-items">
+        <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+    </nav>
+
+    <div class="mt-4">
+        <a href="/" onclick="return false;" class="profile-button">
+            <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+            <div class="profile-name">Виталий Балаян</div>
+        </a>
+        
+        <div class="profile-footer--container">
+            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+            <a href="/" onclick="return false;" class="profile-logout"></a>
+        </div>
+    </div>
+</div>
+
+<main class="main-business">
+    <div class="c-container">
+        <div class="row">
+            <div class="col-lg-3 d-none d-lg-block">
+                <aside class="b-page--menu">
+                    <a href="#" onclick="return false;" class="d-flex b-page--logotype">
+                        <img src="./images/logo.svg" alt="upkeep">
+                    </a>
+
+                    <div class="b-page--name">
+                        <div class="b-page--title">Дастархан</div>
+                        <div class="b-page--subtitle">микрорайон 12, 78</div>
+                    </div>
+
+                    <nav class="b-page--menu-items">
+                        <a href="#" onclick="return false;" class="b-page--menu-item home">Главная страница</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item catalog active">Каталог</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+                    </nav>
+                </aside>
             </div>
-            <div class="col-6 d-flex justify-content-end align-items-center">
+            <div class="col-lg-9">
+                <div class="b-content">
+                    
+                    <h1>Настройки</h1>
+
+                    <div class="row">
+                        <div class="col-lg-9">
+            
+                            <div class="data-spoiler editor-content active" data-content="main" data-id="main">
+                                <div class="drag-and-drop--block">
+                                    <div class="drag-and-drop--image">
+                                        <svg width="41" height="32" viewBox="0 0 41 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g opacity="0.25">
+                                            <path d="M39.6359 4.98551C38.8175 4.13527 37.6873 3.63285 36.4011 3.63285H29.9316V3.55556C29.9316 2.58937 29.5418 1.66184 28.8793 1.04348C28.2167 0.386473 27.3203 0 26.346 0H14.654C13.6407 0 12.7443 0.386473 12.0817 1.04348C11.4192 1.70048 11.0295 2.58937 11.0295 3.55556V3.63285H4.59886C3.31274 3.63285 2.18251 4.13527 1.36407 4.98551C0.545627 5.7971 0 6.95652 0 8.19324V27.4396C0 28.715 0.506654 29.8357 1.36407 30.6473C2.18251 31.4589 3.35171 32 4.59886 32H36.4011C37.6873 32 38.8175 31.4976 39.6359 30.6473C40.4544 29.8357 41 28.6763 41 27.4396V8.19324C41 6.91787 40.4933 5.7971 39.6359 4.98551ZM38.9734 27.4396H38.9344C38.9344 28.1353 38.6616 28.7536 38.1939 29.2174C37.7262 29.6812 37.1027 29.9517 36.4011 29.9517H4.59886C3.89734 29.9517 3.27376 29.6812 2.80608 29.2174C2.3384 28.7536 2.06559 28.1353 2.06559 27.4396V8.19324C2.06559 7.49758 2.3384 6.87923 2.80608 6.41546C3.27376 5.95169 3.89734 5.68116 4.59886 5.68116H12.1207C12.7053 5.68116 13.173 5.21739 13.173 4.63768V3.51691C13.173 3.09179 13.3289 2.70531 13.6017 2.43478C13.8745 2.16425 14.2643 2.00966 14.693 2.00966H26.346C26.7747 2.00966 27.1644 2.16425 27.4373 2.43478C27.7101 2.70531 27.866 3.09179 27.866 3.51691V4.63768C27.866 5.21739 28.3337 5.68116 28.9183 5.68116H36.4401C37.1416 5.68116 37.7652 5.95169 38.2329 6.41546C38.7006 6.87923 38.9734 7.49758 38.9734 8.19324V27.4396Z" fill="black"/>
+                                            <path d="M20.4999 8.30908C17.8497 8.30908 15.4334 9.39121 13.7186 11.0917C11.9648 12.8308 10.9125 15.1883 10.9125 17.8163C10.9125 20.4443 12.0037 22.8405 13.7186 24.541C15.4724 26.2801 17.8497 27.3236 20.4999 27.3236C23.1501 27.3236 25.5665 26.2414 27.2813 24.541C29.0351 22.8018 30.0874 20.4443 30.0874 17.8163C30.0874 15.1883 28.9961 12.7922 27.2813 11.0917C25.5665 9.39121 23.1501 8.30908 20.4999 8.30908ZM25.8003 23.111C24.4362 24.425 22.5655 25.2753 20.4999 25.2753C18.4343 25.2753 16.5636 24.425 15.1995 23.111C13.8355 21.7584 13.017 19.9033 13.017 17.855C13.017 15.8067 13.8745 13.9516 15.1995 12.5989C16.5636 11.2463 18.4343 10.4347 20.4999 10.4347C22.5655 10.4347 24.4362 11.2849 25.8003 12.5989C27.1644 13.9516 27.9828 15.8067 27.9828 17.855C28.0218 19.9033 27.1644 21.7584 25.8003 23.111Z" fill="black"/>
+                                            <path d="M34.3744 12.0579C35.4291 12.0579 36.2841 11.2101 36.2841 10.1642C36.2841 9.11836 35.4291 8.27051 34.3744 8.27051C33.3197 8.27051 32.4647 9.11836 32.4647 10.1642C32.4647 11.2101 33.3197 12.0579 34.3744 12.0579Z" fill="black"/>
+                                            </g>
+                                        </svg>                                    
+                                    </div>
+                                    <div class="drag-and-drop--text">
+                                        <div class="drag-and-drop--title">Перетащите изображение сюда или нажмите, чтобы загрузить.</div>
+                                        <div class="drag-and-drop--subtitle">Только JPG / PNG файлы. Максимальный размер: 30 MB</div>
+                                    </div>
+                                </div>
+                
+                                <div class="g-input">
+                                    <label for="name" class="g-input--label">Название заведения</label>
+                                    <input type="text" id="name" class="g-input--input input-animate" value="BARHAN">
+                                </div>
+                
+                                <div class="g-input">
+                                    <label for="desc" class="g-input--label">Краткое описание</label>
+                                    <input type="text" id="desc" class="g-input--input input-animate" maxlength="10">
+                                    <span class="g-input--maxlength" data-id="desc">10</span>
+                                </div>
+                
+                                <select name="category" class="default-select">
+                                    <option value="0">Магазин</option>
+                                </select>
+                
+                                <div class="g-input domain">
+                                    <label for="slug" class="g-input--label label-bg">upkeep.kz/</label>
+                                    <input type="text" id="slug" class="g-input--input">
+                                </div>
+                                <p class="g-input--desc">Только латинские символы в нижнем регистре, цифры, тире (-) и нижнее подчеркивание (_)</p>
+                
+                                <hr class="form-hr">
+                
+                                <div class="c-multiform" data-multiform="phone">
+                                    <div class="g-input" data-id="1">
+                                        <label for="phone_1" class="g-input--label">Номер телефона</label>
+                                        <input type="text" name="phone[1]" id="phone_1" class="g-input--input input-animate" data-multiform="phone" data-mask="phone">
+                                        <span class="multiform-btn multiform-btn--plus" data-multiform="phone"></span>
+                                    </div>
+                                </div>
+                
+                                <hr class="form-hr">
+                
+                                <div class="c-multiform" data-multiform="whatsapp">
+                                    <div class="g-input" data-id="1">
+                                        <label for="whatsapp_1" class="g-input--label">WhatsApp</label>
+                                        <input type="text" name="whatsapp[1]" id="whatsapp_1" class="g-input--input input-animate" data-multiform="whatsapp" data-mask="phone">
+                                        <span class="multiform-btn multiform-btn--plus" data-multiform="whatsapp"></span>
+                                    </div>
+                                </div>
+                
+                                <hr class="form-hr">
+                
+                                <div class="c-multiform" data-multiform="telegram">
+                                    <div class="g-input" data-id="1">
+                                        <label for="telegram_1" class="g-input--label">Telegram</label>
+                                        <input type="text" name="telegram[1]" id="telegram_1" class="g-input--input input-animate" data-multiform="telegram">
+                                        <span class="multiform-btn multiform-btn--plus" data-multiform="telegram"></span>
+                                    </div>
+                                </div>
+                
+                                <hr class="form-hr">
+                
+                                <div class="c-multiform" data-multiform="email">
+                                    <div class="g-input" data-id="1">
+                                        <label for="email_1" class="g-input--label">Email</label>
+                                        <input type="text" name="email[1]" id="email_1" class="g-input--input input-animate" data-multiform="email">
+                                        <span class="multiform-btn multiform-btn--plus" data-multiform="email"></span>
+                                    </div>
+                                </div>
+                
+                                <hr class="form-hr">
+                
+                                <div class="c-multiselect" data-multiselect="socials">
+                                    
+                                    <div class="multiselect-item" data-id="1">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <select id="socials" name="socials[1][select]" class="default-select">
+                                                    <option value="vk">VK</option>
+                                                    <option value="instagram">Instagram</option>
+                                                    <option value="facebook">Facebook</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="g-input">
+                                                    <label for="link_1" class="g-input--label">Ссылка</label>
+                                                    <input type="text" name="socials[1][value]" id="link_1" class="g-input--input input-animate">
+                                                    <span class="multiselect-btn multiselect-btn--plus" data-multiselect="socials" data-id="1"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                
+                                <!-- <hr class="form-hr"> -->
+                
+                                <!-- <div class="editor--block-map">
+                
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="editor--map-first">
+                                                <select name="region_id" id="region" class="default-select selectpicker" data-live-search="true">
+                                                    <option value="1">123</option>
+                                                    <option value="1">321</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="editor--map-address">
+                                                <div class="g-input">
+                                                    <label for="address" class="g-input--label">Адрес</label>
+                                                    <input type="text" name="address" id="address" class="g-input--input input-animate">
+                                                    <input type="hidden" id="coordinates">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="editor--map">
+                                        <div id="map"></div>
+                                        <div id="marker"></div>
+                                    </div>
+                                    
+                                </div> -->
+                            </div>
+            
+                            <div class="data-spoiler editor-content" data-content="addresses" data-id="addresses">
+                                <div class="row">
+            
+                                    <div class="col-12">
+                                        123
+                                    </div>
+                                    
+                                </div>
+                            </div>
+            
+                        </div>
+                        <div class="col-lg-3 d-none d-lg-block">
+                            
+                            <div class="col-sticky">
+                                <div class="dropdown-btn language-select--editor">
+                                    <div class="dropdown-item">Русский язык</div>
+                                    <div class="dropdown-list">
+                                        <a href="/" onclick="return false;">Казахский язык</a>
+                                        <a href="/" onclick="return false;">Английский язык</a>
+                                    </div>
+                                </div>
+                
+                                <div class="editor--hr"></div>
+                
+                                <div class="editor-menu">
+                                    <div class="editor-menu--item active" data-content="main">Основные</div>
+                                    <div class="editor-menu--item" data-content="addresses">Адреса</div>
+                                </div>
+                
+                                <div class="editor--hr"></div>
+                
+                                <label for="is_public" class="label-control mini">
+                                    <span class="label-control--text">Активно</span>
+                                    <label class="cl-checkbox">
+                                        <input type="checkbox" name="is_public" id="is_public">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </label>
+                
+                                <div class="editor--hr"></div>
+                
+                                <button type="submit" class="default-btn">Сохранить</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                    
+
+                    <div class="catalog-footer">
+                        <a href="#" class="catalog-footer--item products active" data-id="main">Продукция</a>
+                        <a href="#" class="catalog-footer--item categories" data-id="addresses">Разделы</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="b-page--footer d-none d-lg-block">
+    <div class="c-container">
+        <div class="row">
+            <div class="col-3">
 
                 <a href="/" onclick="return false;" class="profile-button">
                     <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
                     <div class="profile-name">Виталий Балаян</div>
                 </a>
 
-                <a href="/" onclick="return false;" class="profile-logout"></a>
-
-                <div class="dropdown-btn language-select">
-                    <div class="dropdown-item">ru</div>
-                    <div class="dropdown-list">
-                        <a href="/" onclick="return false;">kz</a>
-                        <a href="/" onclick="return false;">en</a>
-                        <a href="/" onclick="return false;">ch</a>
+                <div class="row">
+                    <div class="col-9">
+                        <div class="profile-footer--container">
+                            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+                            <a href="/" onclick="return false;" class="profile-logout"></a>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-</header>
-
-<main class="main">
-    <div class="container">
-        
-        <div class="row index-header">
-            <div class="col-xl-8 m-auto">
-                <div class="row d-flex align-items-end">
-                    <div class="col-9"><h1>Настройки заведения</h1></div>
-                    <div class="col-3 d-flex justify-content-end"><span class="index-subtitle">Fish & Beer #4367</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-8 m-auto">
-
-                <div class="drag-and-drop--block">
-                    <div class="drag-and-drop--image">
-                        <svg width="41" height="32" viewBox="0 0 41 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g opacity="0.25">
-                            <path d="M39.6359 4.98551C38.8175 4.13527 37.6873 3.63285 36.4011 3.63285H29.9316V3.55556C29.9316 2.58937 29.5418 1.66184 28.8793 1.04348C28.2167 0.386473 27.3203 0 26.346 0H14.654C13.6407 0 12.7443 0.386473 12.0817 1.04348C11.4192 1.70048 11.0295 2.58937 11.0295 3.55556V3.63285H4.59886C3.31274 3.63285 2.18251 4.13527 1.36407 4.98551C0.545627 5.7971 0 6.95652 0 8.19324V27.4396C0 28.715 0.506654 29.8357 1.36407 30.6473C2.18251 31.4589 3.35171 32 4.59886 32H36.4011C37.6873 32 38.8175 31.4976 39.6359 30.6473C40.4544 29.8357 41 28.6763 41 27.4396V8.19324C41 6.91787 40.4933 5.7971 39.6359 4.98551ZM38.9734 27.4396H38.9344C38.9344 28.1353 38.6616 28.7536 38.1939 29.2174C37.7262 29.6812 37.1027 29.9517 36.4011 29.9517H4.59886C3.89734 29.9517 3.27376 29.6812 2.80608 29.2174C2.3384 28.7536 2.06559 28.1353 2.06559 27.4396V8.19324C2.06559 7.49758 2.3384 6.87923 2.80608 6.41546C3.27376 5.95169 3.89734 5.68116 4.59886 5.68116H12.1207C12.7053 5.68116 13.173 5.21739 13.173 4.63768V3.51691C13.173 3.09179 13.3289 2.70531 13.6017 2.43478C13.8745 2.16425 14.2643 2.00966 14.693 2.00966H26.346C26.7747 2.00966 27.1644 2.16425 27.4373 2.43478C27.7101 2.70531 27.866 3.09179 27.866 3.51691V4.63768C27.866 5.21739 28.3337 5.68116 28.9183 5.68116H36.4401C37.1416 5.68116 37.7652 5.95169 38.2329 6.41546C38.7006 6.87923 38.9734 7.49758 38.9734 8.19324V27.4396Z" fill="black"/>
-                            <path d="M20.4999 8.30908C17.8497 8.30908 15.4334 9.39121 13.7186 11.0917C11.9648 12.8308 10.9125 15.1883 10.9125 17.8163C10.9125 20.4443 12.0037 22.8405 13.7186 24.541C15.4724 26.2801 17.8497 27.3236 20.4999 27.3236C23.1501 27.3236 25.5665 26.2414 27.2813 24.541C29.0351 22.8018 30.0874 20.4443 30.0874 17.8163C30.0874 15.1883 28.9961 12.7922 27.2813 11.0917C25.5665 9.39121 23.1501 8.30908 20.4999 8.30908ZM25.8003 23.111C24.4362 24.425 22.5655 25.2753 20.4999 25.2753C18.4343 25.2753 16.5636 24.425 15.1995 23.111C13.8355 21.7584 13.017 19.9033 13.017 17.855C13.017 15.8067 13.8745 13.9516 15.1995 12.5989C16.5636 11.2463 18.4343 10.4347 20.4999 10.4347C22.5655 10.4347 24.4362 11.2849 25.8003 12.5989C27.1644 13.9516 27.9828 15.8067 27.9828 17.855C28.0218 19.9033 27.1644 21.7584 25.8003 23.111Z" fill="black"/>
-                            <path d="M34.3744 12.0579C35.4291 12.0579 36.2841 11.2101 36.2841 10.1642C36.2841 9.11836 35.4291 8.27051 34.3744 8.27051C33.3197 8.27051 32.4647 9.11836 32.4647 10.1642C32.4647 11.2101 33.3197 12.0579 34.3744 12.0579Z" fill="black"/>
-                            </g>
-                        </svg>                                    
-                    </div>
-                    <div class="drag-and-drop--text">
-                        <div class="drag-and-drop--title">Перетащите изображение сюда или нажмите, чтобы загрузить.</div>
-                        <div class="drag-and-drop--subtitle">Только JPG / PNG файлы. Максимальный размер: 30 MB</div>
-                    </div>
-                </div>
-
-                <div class="g-input">
-                    <label for="name" class="g-input--label">Название заведения</label>
-                    <input type="text" id="name" class="g-input--input">
-                </div>
-
-                <div class="g-input">
-                    <label for="desc" class="g-input--label">Краткое описание</label>
-                    <input type="text" id="desc" class="g-input--input" maxlength="10">
-                    <span class="g-input--maxlength" data-id="desc">10</span>
-                </div>
-
-                <select name="category" class="default-select">
-                    <option value="0">Магазин</option>
-                </select>
-
-                <div class="g-input">
-                    <label for="slug" class="g-input--label label-bg">upkeep.kz/</label>
-                    <input type="text" id="slug" class="g-input--input">
-                </div>
-                <p class="g-input--desc">Только латинские символы в нижнем регистре, цифры, тире (-) и нижнее подчеркивание (_)</p>
-
-                <hr class="form-hr">
-
-                <div class="c-multiform" data-multiform="phone">
-                    <div class="g-input" data-id="1">
-                        <label for="phone_1" class="g-input--label">Номер телефона</label>
-                        <input type="text" name="phone[1]" id="phone_1" class="g-input--input" data-multiform="phone" data-mask="phone">
-                        <span class="multiform-btn multiform-btn--plus" data-multiform="phone"></span>
-                    </div>
-                </div>
-
-                <hr class="form-hr">
-
-                <div class="c-multiform" data-multiform="whatsapp">
-                    <div class="g-input" data-id="1">
-                        <label for="whatsapp_1" class="g-input--label">WhatsApp</label>
-                        <input type="text" name="whatsapp[1]" id="whatsapp_1" class="g-input--input" data-multiform="whatsapp" data-mask="phone">
-                        <span class="multiform-btn multiform-btn--plus" data-multiform="whatsapp"></span>
-                    </div>
-                </div>
-
-                <hr class="form-hr">
-
-                <div class="c-multiform" data-multiform="telegram">
-                    <div class="g-input" data-id="1">
-                        <label for="telegram_1" class="g-input--label">Telegram</label>
-                        <input type="text" name="telegram[1]" id="telegram_1" class="g-input--input" data-multiform="telegram">
-                        <span class="multiform-btn multiform-btn--plus" data-multiform="telegram"></span>
-                    </div>
-                </div>
-
-                <hr class="form-hr">
-
-                <div class="c-multiform" data-multiform="email">
-                    <div class="g-input" data-id="1">
-                        <label for="email_1" class="g-input--label">Email</label>
-                        <input type="text" name="email[1]" id="email_1" class="g-input--input" data-multiform="email">
-                        <span class="multiform-btn multiform-btn--plus" data-multiform="email"></span>
-                    </div>
-                </div>
-
-                <hr class="form-hr">
-
-                <div class="c-multiselect" data-multiselect="socials">
-                    
-                    <div class="multiselect-item" data-id="1">
-                        <div class="row">
-                            <div class="col-3">
-                                <select id="socials" name="socials[1][select]" class="default-select">
-                                    <option value="vk">VK</option>
-                                    <option value="instagram">Instagram</option>
-                                    <option value="facebook">Facebook</option>
-                                </select>
-                            </div>
-                            <div class="col-9">
-                                <div class="g-input">
-                                    <label for="link_1" class="g-input--label">Ссылка</label>
-                                    <input type="text" name="socials[1][value]" id="link_1" class="g-input--input">
-                                    <span class="multiselect-btn multiselect-btn--plus" data-multiselect="socials" data-id="1"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <hr class="form-hr">
-
-                <div class="editor--block-map">
-
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="editor--map-first">
-                                <select name="region_id" id="region" class="default-select selectpicker" data-live-search="true">
-                                    <option value="1">123</option>
-                                    <option value="1">321</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-9">
-                            <div class="editor--map-address">
-                                <div class="g-input">
-                                    <label for="address" class="g-input--label">Адрес</label>
-                                    <input type="text" name="address" id="address" class="g-input--input">
-                                    <input type="hidden" id="coordinates">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="editor--map">
-                        <div id="map"></div>
-                        <div id="marker"></div>
-                    </div>
-                    
-                </div>
-
-                <hr class="form-hr">
-
-                <h2>Настройки графика</h2>
-
-                <div class="work-schedule">
-                     
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</main>
+</footer>
 
 <!--#include virtual="/parts/footer.html" -->

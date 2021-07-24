@@ -82,8 +82,37 @@ $(document).ready(function() {
 
 });
 
+$(document).on('click', '.input-animate', function() {
+    
+    $(this).parent().addClass("label-animate");
+    
+    $(this).blur(function() {
+        
+        if ($(this).val() == '') $(this).parent().removeClass("label-animate");
+    
+    });
+
+})
+
+$(function() {
+    
+    // $(".input-animate").on('click', function() {
+    // });
+    
+    $.each($('input.input-animate'), function(index, value) {
+        if ($(value).val() != '') updateInputsLabel($(this));
+    });
+
+    // $('input.input-animate').blur
+
+});
+
+function updateInputsLabel(input) {
+    $(input).parent().addClass('label-animate');
+}
+
 $(document).ready(function() {
-		ymaps.ready(init);
+	ymaps.ready(init);
 	
 	var myMap;
 
@@ -235,7 +264,7 @@ function multiformAddInput(multiform) {
     var label       = last_input.children('label').text();
     var mask        = last_input.children('input').data('mask');
 
-    console.log(mask);
+    // console.log(mask);
 
     last_input.children('.multiform-btn').removeClass('multiform-btn--plus').addClass('multiform-btn--minus');
 
@@ -245,7 +274,7 @@ function multiformAddInput(multiform) {
         <input type="text" \
             name="'+ multiform +'['+ next_id +']" \
             id="'+ multiform +'_'+ next_id +'" \
-            class="g-input--input" \
+            class="g-input--input input-animate" \
             data-mask="'+ mask +'" \
             data-multiform="'+ multiform +'"> \
         <span class="multiform-btn multiform-btn--plus" data-multiform="'+ multiform +'"></span>\
