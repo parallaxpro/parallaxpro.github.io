@@ -386,18 +386,18 @@
 	&:hover
 		background: #289564
 
-.product-qty--input
-	display: block
-	text-align: center
-	width: 100%
-	background: #FFFFFF
-	border: 0
-	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
-	border-radius: 7px
-	font-size: 18px
-	line-height: 100%
-	padding: 17px 50px 16px
-	appearance: none
+// .product-qty--input
+// 	display: block
+// 	text-align: center
+// 	width: 100%
+// 	background: #FFFFFF
+// 	border: 0
+// 	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+// 	border-radius: 7px
+// 	font-size: 18px
+// 	line-height: 100%
+// 	padding: 17px 50px 16px
+// 	appearance: none
 
 .product-qty--minus, .product-qty--plus
 	position: absolute
@@ -419,6 +419,13 @@
 
 .product-qty
 	position: relative
+	display: flex
+	align-items: center
+	height: 55px
+	background: #FFFFFF
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+	border-radius: 7px
+
 
 .product-qty--plus
 	right: 20px
@@ -459,6 +466,24 @@
 		color: white
 		background: darken(#005FF9, 5%)
 		opacity: 1 !important
+	&.empty
+		position: relative
+		pointer-events: none
+		overflow: hidden
+		background: #F2F2F2
+		&::before
+			content: 'Товаров нет'
+			position: absolute
+			display: flex
+			align-items: center
+			justify-content: center
+			color: rgba(black,0.5)
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			background: #F2F2F2
+			z-index: 9
 
 .cart-mobile--btn--left, .cart-mobile--btn--right
 	display: flex
@@ -887,5 +912,30 @@ input.default-input
 
 .aside--map
 	margin-bottom: 20px
+
+
+.catalog-btn
+	font-size: 13px
+	display: flex
+	align-items: center
+	line-height: 100%
+	color: #005FF9
+	cursor: pointer
+	user-select: none
+	transition: $transition
+	&::after
+		content: ''
+		display: flex
+		width: 4px
+		height: 7px
+		margin-left: 4px
+		background: url('../images/dist/icons/arrows.svg')
+		background-repeat: no-repeat
+		background-size: cover
+	&.active::after
+		transform: rotate(90deg)
+
+.mobile-nav
+	display: none
 
 @import media

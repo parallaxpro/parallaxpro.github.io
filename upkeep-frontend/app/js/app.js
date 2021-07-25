@@ -179,3 +179,13 @@ function closeMenu(options) {
 
 	options.menu_btn.removeClass('opened');
 }
+
+$(document).on('click', '.catalog-btn', function(e) {
+	e.preventDefault();
+
+	$(this).toggleClass('active');
+	if ($(this).hasClass('active')) $(this).text($(this).data('hide_text'));
+	else $(this).text($(this).data('show_text'));
+
+	$('.mobile-nav').slideToggle();
+})

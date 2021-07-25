@@ -23,25 +23,94 @@
 
 <body>
 
+	<header class="main-header">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<div class="col-sm-4 col-6 align-items-center d-flex">
+					<span class="menu--btn"></span>
+					<div class="d-sm-none d-flex ml-4">
+						<a href="#" onclick="return false;" class="logotype"><img src="../images/logo_1.png" alt="logotype"></a>
+					</div>
+				</div>
+				<div class="col-4 d-sm-flex d-none align-items-center">
+					<a href="#" onclick="return false;" class="logotype"><img src="../images/logo_1.png" alt="logotype"></a>
+				</div>
+				<div class="col-sm-4 col-6 d-flex justify-content-end align-items-center">
+					<!-- <a href="#" onclick="return false;" class="cart--btn">Товаров нет</a> -->
+					<a href="#" onclick="return false;" class="cart--btn isset">3200 тг.</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<aside class="aside-main">
+
+		<div class="aside-block">
+			<div class="aside-header">
+				<div class="aside-title">Бархан Burger Shop</div>
+				<p class="aside-desc">Место, где Вы сможете съесть стейки и бургеры из мраморной говядины!</p>
+			</div>
+			<div class="aside-body">
+				
+				<div class="aside--item">
+					<span class="aside-item--label">График работы</span>
+					<p class="aside-item--value">Пн-Сб — 08:00 - 23:00</p>
+				</div>
+	
+				<div class="aside--item">
+					<div class="aside-item--row">
+						<span class="aside-item--label">Телефон #1</span>
+						<a href="tel:+77077777777" class="aside-item--value">+7 (707) 777-77-77</a>
+					</div>
+					<div class="aside-item--row">
+						<span class="aside-item--label">Телефон #2</span>
+						<a href="tel:+77077777777" class="aside-item--value">+7 (707) 777-77-77</a>
+					</div>
+				</div>
+	
+				<div class="aside--item">
+					<div class="aside-item--row">
+						<span class="aside-item--label">WhatsApp #1</span>
+						<a href="https://wa.me/+7(708)622-11-00" class="aside-item--value">+7 (708) 622-11-00</a>
+					</div>
+				</div>
+	
+				<div class="aside--item">
+					<div class="aside-item--row">
+						<span class="aside-item--label">Email #1</span>
+						<a href="mailto:info@barhanburgershop.com" class="aside-item--value">info@barhanburgershop.com</a>
+					</div>
+				</div>
+	
+				<div class="aside--item social-btns">
+					<a href="#" onclick="return false;" class="aside-social--btn vk"></a>
+					<a href="#" onclick="return false;" class="aside-social--btn telegram"></a>
+					<a href="#" onclick="return false;" class="aside-social--btn facebook"></a>
+					<a href="#" onclick="return false;" class="aside-social--btn instagram"></a>
+				</div>
+	
+				<div class="aside--item">
+	
+					<div class="aside--address">
+						<div class="aside--map"></div>
+						<span class="aside-item--label">Актау, 4-й микрорайон, 73</span>
+					</div>
+	
+					<div class="aside--address">
+						<div class="aside--map"></div>
+						<span class="aside-item--label">Актау, 12-й микрорайон, 34</span>
+					</div>
+	
+				</div>
+	
+			</div>
+		</div>
+	
+	</aside>
+
 	
 
 <main class="main-content">
-
-    <header class="main-header">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-                <div class="col-3">
-                    <span class="menu--btn"></span>
-                </div>
-                <div class="col-6 d-flex justify-content-center">
-                    <a href="#" onclick="return false;" class="logotype"><img src="../images/logo.svg" alt="logotype"></a>
-                </div>
-                <div class="col-3 d-flex justify-content-end">
-                    <a href="#" onclick="return false;" class="cart--btn">Товаров нет</a>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <section class="main-slider">
         <div class="container">
@@ -64,18 +133,26 @@
     </section>
 
     <div class="main-catalog">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="catalog-title">
-                        <h1 class="catalog-title-text">Каталог</h1>
-                        <span class="catalog-title-arrow"></span>
-                        <h2 class="catalog-title-category">Стейки</h2>
+        <div class="catalog-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="catalog-title">
+                            <h1 class="catalog-title-text">Каталог</h1>
+                            <span class="catalog-title-arrow"></span>
+                            <h2 class="catalog-title-category">Стейки</h2>
+                        </div>
+                    </div>
+                    <div class="col-3 d-lg-none d-flex justify-content-end align-items-center">
+                        <span class="catalog-btn" data-show_text="Раскрыть" data-hide_text="Скрыть">Раскрыть</span>
                     </div>
                 </div>
-    
-                    
-                <div class="col-3">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-3 d-lg-block d-none">
                     <nav class="catalog-categories">
                         <a href="#" onclick="return false;" class="catalog-category">Стейки</a>
                         <a href="#" onclick="return false;" class="catalog-category">Бургеры</a>
@@ -90,18 +167,89 @@
                     </nav>
                 </div>
 
-                <div class="col-9">
+                <div class="col-lg-9">
+
+                    <div class="mobile-nav">
+                        <nav class="catalog-categories">
+                            <a href="#" onclick="return false;" class="catalog-category">Стейки</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Бургеры</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Салаты</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Ролл</a>
+                            <a href="#" onclick="return false;" class="catalog-category">WOK-Лапша</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Хот-дог</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Закуски</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Десерты</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Напитки</a>
+                            <a href="#" onclick="return false;" class="catalog-category">Соусы</a>
+                        </nav>
+                    </div>
+
                     <div class="catalog-products">
                         
                         <div class="product-page">
                             <div class="row">
-                                <div class="col-5">
-                                    <div class="product-image--container">
+                                <div class="col-lg-5">
+                                    <div class="product-image--container mb-4 mb-lg-none">
                                         <div class="product-image">
                                             <img src="../images/dist/demo-1.jpg" alt="COCА-COLA / 2 ЛИТРА">
                                         </div>
                                     </div>
 
+                                    <div class="product-desc d-none d-lg-block">
+
+                                        <div class="product-desc--titles">
+                                            <div class="product-desc-title">
+                                                Описание
+                                            </div>
+                                        </div>
+
+                                        <div class="product-desc--texts">
+                                            <div class="product-desc--text">
+                                                <p>Котлета из мраморной говядины с рукколой, оливками, соусом Айоли и 4 вида сыра: Дор Блю, Пармезан, Сливочный и Чеддер.</p>
+                                                <p>*При заказе уточняйте степень прожарки. По умолчанию степень прожарки — Medium Well.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+
+                                    <h2 class="product-title">COCА-COLA / 2 ЛИТРА</h2>
+
+                                    <div class="product-prices">
+                                        <h3 class="product-price">1850 ₸</h3>
+                                        <h3 class="product-sale_price">2000 ₸</h3>
+                                    </div>
+
+                                    <div class="product-options">
+
+                                        <div class="product-options--footer">
+                                            <div class="row d-flex align-items-end">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <div class="product-qty--container">
+                                                        <label for="qty" class="product-qty--title">Кол-во <span>*</span></label>
+                                                        <div class="product-qty">
+
+                                                            <span class="handle-cart-btn handle-cart-btn--remove cart-btn--remove" data-cart_minus="99"></span>
+                                                            <input type="text" class="handle-cart-input cart-btn--input product-qty--input" value="1" data-cart_input="99">
+                                                            <span class="handle-cart-btn handle-cart-btn--add cart-btn--add" data-cart_plus="99"></span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="product-cart">
+                                                        <button class="product-cart--add">В корзину</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 d-flex d-lg-none">
                                     <div class="product-desc">
 
                                         <div class="product-desc--titles">
@@ -119,41 +267,6 @@
 
                                     </div>
                                 </div>
-                                <div class="col-7">
-
-                                    <h2 class="product-title">COCА-COLA / 2 ЛИТРА</h2>
-
-                                    <div class="product-prices">
-                                        <h3 class="product-price">1850 ₸</h3>
-                                        <h3 class="product-sale_price">2000 ₸</h3>
-                                    </div>
-
-                                    <div class="product-options">
-
-                                        <div class="product-options--footer">
-                                            <div class="row d-flex align-items-end">
-                                                <div class="col-6">
-                                                    <div class="product-qty--container">
-                                                        <label for="qty" class="product-qty--title">Кол-во <span>*</span></label>
-                                                        <div class="product-qty">
-                                                            <span class="product-qty--minus" data-cart_input="1"></span>
-                                                            <input type="text" class="product-qty--input" value="1" data-cart_input="1">
-                                                            <span class="product-qty--plus" data-cart_input="1"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="product-cart">
-                                                        <button class="product-cart--add">В корзину</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
 
@@ -167,11 +280,16 @@
 </main>
 
 
+	<div class="container">
+		<div id="footer"></div>
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js" integrity="sha512-VpQwrlvKqJHKtIvpL8Zv6819FkTJyE1DoVNH0L2RLn8hUPjRjkS/bCYurZs0DX9Ybwu9oHRHdBZR9fESaq8Z8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/autosize@5.0.1/dist/autosize.min.js"></script>
 	<script src="js/app.js"></script>
 
 </body>
