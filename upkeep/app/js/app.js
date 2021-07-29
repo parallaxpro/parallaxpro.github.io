@@ -80,6 +80,11 @@ $(document).ready(function() {
 
     });
 
+    $('input.mask-time').inputmask({
+        "placeholder": "__:__ — __:__",
+        'alias':'datetime', 'inputFormat':'HH:MM — HH:MM',
+    });
+
 });
 
 $(document).on('click', '.input-animate', function() {
@@ -122,7 +127,7 @@ $(document).ready(function() {
 
 		myMap = new ymaps.Map("map", {
 			center: [55.76, 37.64],
-			controls: ['zoomControl', 'searchControl', 'fullscreenControl'],
+			controls: [],
 			zoom: 11
 		}, {
 			balloonMaxWidth: 200,
@@ -238,7 +243,11 @@ function closePopups() {
 }
 
 $('body').keydown(function(e) {
-    if (e.keyCode == 27) closePopups();
+    if (e.keyCode == 27) {
+        closePopups();
+
+        $('.address-popup').toggleClass('active');
+    }
 });
 
 $(document).on('click', '.bussiness-add', function(e) {
@@ -356,7 +365,7 @@ function setAddress(res) {
 	coord = firstGeoObject.geometry.getCoordinates();
 	$('#address').val(address);
 	$('#coordinates').val(coord);
-	console.log(coord);
+	// console.log(coord);
 }
 
 // function readURL(input) {
@@ -373,11 +382,6 @@ function setAddress(res) {
 // 		reader.readAsDataURL(input.files[0]);
 // 	}
 // }
-
-
-
-
-
 
 
 document.querySelectorAll('.drag-and-drop--input').forEach(inputElement => {
@@ -676,3 +680,90 @@ function handleClickOverlay() {
     $('.mobile-menu-btn').toggleClass('opened');
 
 }
+
+$(document).on('click', '.add-domain', function(e) {
+    e.preventDefault();
+
+    $('.url_slug').toggleClass('active');
+    $('.url_domain').toggleClass('active');
+});
+
+$(document).on('click', '.remove-domain', function(e) {
+    e.preventDefault();
+
+    $('.url_slug').toggleClass('active');
+    $('.url_domain').toggleClass('active');
+
+    $('#domain').val('');
+});
+
+$(document).on('keydown', '.addresses-coord', function(e) {
+    return false;
+});
+
+$(document).on('click', '.select-to-map', function(e) {
+    e.preventDefault();
+
+    var id = $(this).data('id');
+    $('.address-popup').toggleClass('active');
+    $('#map-button').data('id', id);
+});
+
+$(document).mouseup(function (e) {
+    var container = $(".address-block");
+    if (container.has(e.target).length === 0){
+        $('.address-popup').removeClass('active');
+    }
+});
+
+$(document).on('click', '#map-button', function(e) {
+    e.preventDefault();
+
+    var id = $(this).data('id');
+    $('input[data-address='+ id +']').val($('#address').val());
+    $('input[data-coordinates='+ id +']').val($('#coordinates').val());
+
+    $('.address-popup').toggleClass('active');
+
+    // console.log($(this).data('id'));
+});
+
+// $(document).on('click', '.add-address', function(e) {
+//     e.preventDefault();
+//     createAddressBlock();
+// });
+
+// function createAddressBlock() {
+//     var last_id = $('.addresses-item').last().data('id'); if (last_id == null) last_id = 0;
+//     var next_id = last_id + 1;
+
+//     var template = '<div class="addresses-item" data-id="'+ next_id +'">\
+//                         <div class="addresses-item--coordinates">\
+//                             <div class="row">\
+//                                 <div class="col-12 mb-3">\
+//                                     <select class="default-select">\
+//                                         <option value="0">Актау</option>\
+//                                     </select>\
+//                                 </div>\
+//                                 <div class="col-sm-8">\
+//                                     <div class="default-input input-container input-container-btn">\
+//                                         <input type="text" class="input-dummy" placeholder="Адрес" name="address['+ next_id +'][address]" data-address="'+ next_id +'" data-id="'+ next_id +'" required>\
+//                                         <span class="input-btn select-to-map" data-id="'+ next_id +'">Открыть карту</span>\
+//                                     </div>\
+//                                 </div>\
+//                                 <div class="col-sm-4 mt-sm-0 mt-3">\
+//                                     <input type="text" class="default-input addresses-coord" name="address['+ next_id +'][coordinates]" placeholder="Координаты" data-coordinates="'+ next_id +'" data-id="'+ next_id +'" required>\
+//                                 </div>\
+//                             </div>\
+//                         </div>\
+//                         <div class="addresses-item--work_schedule">\
+//                             <div class="addresses-item--work_schedule--title">График работы</div>\
+//                             <input type="text" class="default-input" name="address['+ next_id +'][work_schedule]" placeholder="Введите график">\
+//                         </div>\
+//                         <span class="delete-btn address-delete" data-id="'+ next_id +'">Удалить адрес</span>\
+//                     </div>';
+
+    
+//     $('#addresses').append(template);
+//     $(".default-select").selectmenu();    
+// }

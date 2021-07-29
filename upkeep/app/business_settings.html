@@ -100,11 +100,24 @@
                                     <option value="0">Магазин</option>
                                 </select>
                 
-                                <div class="g-input domain">
-                                    <label for="slug" class="g-input--label label-bg">upkeep.kz/</label>
-                                    <input type="text" id="slug" class="g-input--input">
+                                <div class="url_slug active mt-3">
+                                    <div class="g-input">
+                                        <label for="slug" class="g-input--label label-bg">upkeep.kz/</label>
+                                        <input type="text" id="slug" class="g-input--input">
+                                        <span class="input-btn add-domain">Прикрепить домен</span>
+                                    </div>
+                                    <p class="g-input--desc">Только латинские символы в нижнем регистре, цифры, тире (-) и нижнее подчеркивание (_)</p>
                                 </div>
-                                <p class="g-input--desc">Только латинские символы в нижнем регистре, цифры, тире (-) и нижнее подчеркивание (_)</p>
+
+                                <div class="url_domain mt-3">
+                                    <div class="g-input">
+                                        <label for="domain" class="g-input--label">Введите домен</label>
+                                        <input type="text" id="domain" class="g-input--input input-animate">
+                                        <span class="input-btn remove-domain">Открепить домен</span>
+                                    </div>
+                                    <div class="domain-desc">Описание доабвления домена</div>
+                                </div>
+
                 
                                 <hr class="form-hr">
                 
@@ -205,11 +218,15 @@
             
                             <div class="data-spoiler editor-content" data-content="addresses" data-id="addresses">
                                 <div class="row">
-            
                                     <div class="col-12">
-                                        123
+                                        
+                                        <div id="addresses">
+                                        </div>
+
+
+                                        <span class="default-btn ghost mt-3 add-address">Добавить адрес</a>
+
                                     </div>
-                                    
                                 </div>
                             </div>
             
@@ -253,7 +270,7 @@
 
                     <div class="catalog-footer">
                         <a href="#" class="catalog-footer--item products active" data-id="main">Продукция</a>
-                        <a href="#" class="catalog-footer--item categories" data-id="addresses">Разделы</a>
+                        <a href="#" class="catalog-footer--item addresses" data-id="addresses">Адреса</a>
                     </div>
 
                 </div>
@@ -261,6 +278,38 @@
         </div>
     </div>
 </main>
+
+<div class="address-popup">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto">
+                <div class="address-block">
+                    <div class="address-map">
+                        <div class="editor--map">
+                            <div id="map"></div>
+                            <div id="marker"></div>
+                        </div>
+                        <div class="address-inputs">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <input type="text" class="default-input white-bg" id="address" placeholder="Адрес">
+                                </div>
+                                <div class="col-md-5 mt-md-0 mt-2">
+                                    <input type="text" class="default-input addresses-coord" id="coordinates" placeholder="Координаты">
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <span class="default-btn ghost" id="map-button">Отправить</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <footer class="b-page--footer d-none d-lg-block">
     <div class="c-container">
@@ -287,3 +336,55 @@
 </footer>
 
 <!--#include virtual="/parts/footer.html" -->
+
+<!-- <div class="addresses-item" data-id="1">
+    
+    <div class="addresses-item--coordinates">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <select class="default-select">
+                    <option value="0">Актау</option>
+                </select>
+            </div>
+            <div class="col-7">
+                <input type="text" class="default-input" placeholder="Адрес" data-address="1" data-id="1" required>
+            </div>
+            <div class="col-5">
+                <input type="text" class="default-input addresses-coord" placeholder="Координаты" value="123" data-coordinates="1" data-id="1" required>
+            </div>
+            <div class="col-12 mt-3">
+                <span class="default-btn ghost select-to-map" data-id="1">Отметить на карте</a>
+            </div>
+        </div>
+    </div>
+    <div class="addresses-item--work_schedule">
+        <div class="addresses-item--work_schedule--title">График работы</div>
+
+        <input type="text" class="default-input" placeholder="Введите график">
+        
+        <div class="addresses-item--work_schedule-rows">
+
+            <div class="addresses-item--work_schedule-row" data-id="1">
+                <div class="addresses-item--work_schedule-content">
+                    <div class="row">
+                        <div class="col-4">
+                            123
+                        </div>
+                        <div class="col-4">
+                            <input type="text" class="default-input input-time mask-time" placeholder="Рабочее время">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" class="default-input input-break mask-time" placeholder="Обед">
+                        </div>
+                    </div>
+                </div>
+                <span class="multiform-btn multiform-btn--minus"></span>
+            </div>
+
+        </div>
+
+        <span class="default-btn ghost mt-3" data-id="1">Добавить строку</a>
+
+    </div>
+
+</div> -->

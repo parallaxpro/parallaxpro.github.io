@@ -536,7 +536,7 @@
 	border: 0
 	appearance: none
 	padding: 22px 25px
-	margin-bottom: 15px
+	// margin-bottom: 15px
 	border-radius: 7px
 	outline: none
 
@@ -553,6 +553,7 @@
 	background: $blue
 	border-radius: 7px
 	color: white
+	transition: $transition-fast
 	// text-align: center
 	&:hover
 		background: darken($blue, 5%)
@@ -572,6 +573,22 @@
 			border-radius: 50%
 			margin-right: 7px
 			animation: spin 1s linear infinite
+	&.ghost
+		background: rgba($blue, 0.1)
+		border-radius: 7px
+		font-size: 14px
+		line-height: 100%
+		color: #005FF9
+		user-select: none
+		cursor: pointer
+		&:hover
+			background: rgba($blue, 0.2)
+		&.active
+			opacity: 1
+			color: rgba($blue, 0.5)
+			&::before
+				border: 2px solid rgba($blue, 0.5)
+				border-top: 2px solid $blue
 
 .index-header
 	margin-bottom: 40px
@@ -657,7 +674,7 @@
 	display: block
 	width: 100%
 	height: 1px
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border: none
 	margin: 25px 0
 
@@ -674,7 +691,7 @@
 
 .editor--map
 	position: relative
-	border: 1px solid rgba(0, 0, 0, 0.07)
+	border: 1px solid rgba(black, 0.07)
 	border-radius: 5px
 	overflow: hidden
 	margin-bottom: 14px
@@ -699,7 +716,7 @@
 	border: 0
 	background: white
 	font-size: 15px
-	line-height: 100%
+	// line-height: 100%
 	padding: 22px
 	border-radius: 7px
 
@@ -717,7 +734,7 @@ html .ui-button.ui-state-disabled
 
 .ui-selectmenu-button.ui-button
 	width: 100%
-	margin-bottom: 15px
+	// margin-bottom: 15px
 
 .c-multiselect
 	.ui-selectmenu-button.ui-button
@@ -741,7 +758,7 @@ html .ui-button.ui-state-disabled
 	padding: 10px 15px
 
 .ui-selectmenu-menu .ui-menu
-	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.02)
+	box-shadow: 0px 5px 15px rgba(black, 0.02)
 	border-radius: 7px
 	margin-top: 7px
 	padding: 7px 0
@@ -963,7 +980,7 @@ html .ui-button.ui-state-disabled
 	background: white
 	border-radius: 10px
 	left: 2px
-	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06)
+	box-shadow: 0px 3px 8px rgba(black, 0.15), 0px 3px 1px rgba(black, 0.06)
 	transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1)
 
 .cl-checkbox
@@ -989,7 +1006,7 @@ html .ui-button.ui-state-disabled
 		margin-bottom: 0
 
 	&:hover
-		box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.01)
+		box-shadow: 0px 7px 7px rgba(black, 0.01)
 		transform: translateY(-3px)
 
 	&:active
@@ -1021,7 +1038,7 @@ label
 	.dropdown-item
 		padding: 20px
 		background: #FFFFFF
-		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.03)
+		box-shadow: inset 0px 0px 0px 1px rgba(black, 0.03)
 		border-radius: 3px
 		cursor: pointer
 		user-select: none
@@ -1041,7 +1058,7 @@ label
 .editor--hr
 	width: 100%
 	height: 1px
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	margin: 20px 0
 
 .editor-menu--item
@@ -1058,11 +1075,11 @@ label
 		background: rgba($blue, 0.05)
 		box-shadow: inset 0px 0px 0px 1px $blue
 		&:hover
-			box-shadow: inset 0px 0px 0px 1px $blue, 0px 7px 7px rgba(0, 0, 0, 0.01)
+			box-shadow: inset 0px 0px 0px 1px $blue, 0px 7px 7px rgba(black, 0.01)
 	&:last-child
 		margin-bottom: 0
 	&:hover
-		box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.01)
+		box-shadow: 0px 7px 7px rgba(black, 0.01)
 		transform: translateY(-3px)
 	&:active
 		transform: translateY(0)
@@ -1086,7 +1103,7 @@ label
 	font-weight: normal
 	font-size: 16px
 	line-height: 100%
-	color: rgba(0, 0, 0, 0.3)
+	color: rgba(black, 0.3)
 	margin-top: 14px
 
 .b-page--menu, .col-sticky
@@ -1209,7 +1226,7 @@ h1
 .no-content--text
 	font-size: 16px
 	line-height: 100%
-	color: rgba(0, 0, 0, 0.3)
+	color: rgba(black, 0.3)
 	margin: 0
 
 .warehouse--title
@@ -1218,7 +1235,7 @@ h1
 	line-height: 100%
 
 .warehouse--item
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border-radius: 10px
 	padding: 20px
 	margin-bottom: 7px
@@ -1234,15 +1251,15 @@ h1
 .warehouse--item--qty.red
 	color: $red
 
-.warehouse-btn
-	display: block
-	font-size: 16px
-	line-height: 100%
-	text-align: center
-	color: #005FF9
-	background: rgba(black, 3%)
-	border-radius: 10px
-	padding: 20px 20px 18px
+// .warehouse-btn
+// 	display: block
+// 	font-size: 16px
+// 	line-height: 100%
+// 	text-align: center
+// 	color: $blue
+// 	background: rgba(black, 3%)
+// 	border-radius: 10px
+// 	padding: 20px 20px 18px
 
 .c-block--title
 	font-weight: normal
@@ -1255,7 +1272,7 @@ h1
 
 .c-block-hr
 	display: block
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	width: 100%
 	height: 1px
 	margin: 15px 0
@@ -1273,7 +1290,7 @@ h1
 .c-categories-link
 	display: flex
 	padding: 18px 20px
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border-radius: 10px
 	font-size: 14px
 	line-height: 100%
@@ -1281,10 +1298,10 @@ h1
 	user-select: none
 	transition: $transition-fast
 	&.active
-		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)
+		box-shadow: inset 0px 0px 0px 1px rgba(black, 0.2)
 	&:hover
 		transform: translateY(-3px)
-		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05), inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)
+		box-shadow: 0px 5px 15px rgba(black, 0.05), inset 0px 0px 0px 1px rgba(black, 0.2)
 	&:active
 		transform: unset
 
@@ -1345,7 +1362,7 @@ h1
 	padding: 18px 20px
 	border-radius: 10px
 	border: 0
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	height: 50px
 	// margin-right: 15px
 	// &.loading:before
@@ -1371,14 +1388,14 @@ h1
 	display: flex
 	align-items: center
 	padding: 15px 18px
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border-radius: 10px
 	color: black
 	margin-bottom: 10px
 	&:hover
 		color: black
 		transform: translateY(-3px)
-		background: rgba(0, 0, 0, 0.05)
+		background: rgba(black, 0.05)
 	&:active
 		transform: unset
 
@@ -1485,7 +1502,7 @@ h1
 	align-items: center
 	font-size: 13px
 	line-height: 100%
-	background: rgba(0, 0, 0, 0.75)
+	background: rgba(black, 0.75)
 	border-radius: 20px
 	padding: 7px 14px
 	color: white
@@ -1551,14 +1568,14 @@ h1
 	border: 0
 	width: 100%
 	padding: 16px 20px 15px
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border-radius: 5px
 
 .option-item--sum
 	position: relative
 	display: flex
 	align-items: center
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border-radius: 5px
 	padding: 7px
 
@@ -1568,7 +1585,7 @@ h1
 	justify-content: center
 	width: 36px
 	height: 36px
-	background: rgba(0, 0, 0, 0.03)
+	background: rgba(black, 0.03)
 	border-radius: 5px
 	font-size: 24px
 	line-height: 100%
@@ -1589,7 +1606,7 @@ h1
 	border: 0
 
 .option-item--sum-item:hover
-	background: rgba(0, 0, 0, 0.15)
+	background: rgba(black, 0.15)
 
 .option-item--row-add
 	display: block
@@ -1597,7 +1614,7 @@ h1
 	text-align: center
 	font-size: 13px
 	line-height: 100%
-	color: #005FF9
+	color: $blue
 	border-radius: 5px
 	background: rgba(0, 95, 249, 0.05)
 	cursor: pointer
@@ -1632,7 +1649,7 @@ h1
 	text-align: center
 	background: rgba(0, 95, 249, 0.05)
 	border-radius: 5px
-	color: #005FF9
+	color: $blue
 	cursor: pointer
 	user-select: none
 	&:hover
@@ -1694,7 +1711,7 @@ h1
 	left: 0
 	right: 0
 	background: white
-	box-shadow: inset 0 -1px 0 1px rgba(0, 0, 0, 0.05)
+	box-shadow: inset 0 -1px 0 1px rgba(black, 0.05)
 	border-top: 1px solid rgba(black, 0.075)
 
 .catalog-footer--item
@@ -1722,6 +1739,8 @@ h1
 		background: url('../images/dist/icons/main.svg')
 	&.options:before
 		background: url('../images/dist/icons/options.svg')
+	&.addresses:before
+		background: url('../images/dist/icons/addresses.svg')
 	&.active, &:hover
 		color: $blue
 		opacity: 1
@@ -1758,8 +1777,288 @@ h1
 	line-height: 100%
 	background: rgba(255, 69, 58, 0.1)
 	border-radius: 7px
+	transition: $transition-fast
+	cursor: pointer
 	color: #FF453A
+	user-select: none
 	&:hover
 		background: rgba(255, 69, 58, 0.2)
+	&.loading
+		pointer-events: none
+		color: rgba($red, 0.5)
+		&:before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			border: 2px solid rgba($red, 0.5)
+			border-top: 2px solid $red
+			border-radius: 50%
+			margin-right: 7px
+			animation: spin 1s linear infinite
+
+
+.input-btn
+	border: 1px solid $blue
+	box-sizing: border-box
+	border-radius: 10px
+	padding: 10px 12px
+	font-size: 12px
+	line-height: 100%
+	color: $blue
+	cursor: pointer
+	user-select: none
+	white-space: nowrap
+	&:hover
+		background: rgba($blue, 0.05)
+	&:active
+		background: rgba($blue, 0.1)
+
+.add-domain, .remove-domain
+	margin-right: 15px
+
+.url_slug
+	display: none
+	&.active
+		display: block
+
+.url_domain
+	display: none
+	padding: 25px
+	background: rgba(black, 0.03)
+	border-radius: 7px
+	&.active
+		display: block
+
+.addresses-item
+	background: rgba(black, 0.02)
+	border-radius: 7px
+	margin-bottom: 20px
+
+.addresses-item--coordinates
+	padding: 20px
+
+.default-input
+	padding: 22px 25px
+	background: #FFFFFF
+	border-radius: 7px
+	border: 0
+	width: 100%
+	font-size: 15px
+	line-height: 100%
+	appearance: none
+	transition: $transition
+	&:focus
+		box-shadow: 0px 0px 0px 2px rgba($blue, 0.2)
+	&.addresses-coord
+		background: rgba(black, 0.04)
+		user-select: none
+		// pointer-events: none
+		color: rgba(0, 0, 0, 0.2)
+	&.input-container-btn
+		padding: 14px 25px
+
+.address-popup
+	position: fixed
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	// display: flex
+	display: none
+	align-items: center
+	justify-content: center
+	background: rgba(black, 0.7)
+	z-index: 99999
+	&.active
+		display: flex
+
+.address-map
+	background: white
+	padding: 20px
+	border-radius: 7px
+
+.white-bg
+	background: rgba(black, 0.04)
+
+.addresses-item--work_schedule
+	border-top: 1px solid rgba(black, 0.03)
+	padding: 20px
+
+.addresses-item--work_schedule--title
+	font-size: 14px
+	line-height: 100%
+	color: rgba(0, 0, 0, 0.5)
+	margin-bottom: 20px
+
+.addresses-item--work_schedule-row
+	display: flex
+	align-items: center
+	.multiform-btn
+		position: relative
+		right: unset
+		margin-left: 25px
+
+.addresses-item--work_schedule-content
+	flex-grow: 1
+
+.address-delete
+	border-radius: 0 0 7px 7px
+
+.input-container
+	display: flex
+	input
+		flex-grow: 1
+
+.input-dummy
+	width: 100%
+	border: 0
+	padding: 0
+
+.warehouse-select
+	padding: 30px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 10px
+	.ui-button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+		padding: 17px 20px
+		font-size: 14px
+
+.warehouse-label
+	font-size: 14px
+	line-height: 100%
+	color: rgba(0, 0, 0, 0.5)
+	margin-bottom: 15px
+
+.warehouse-editor--row
+	display: flex
+	align-items: center
+	margin-bottom: 10px
+	> *
+		margin-right: 20px
+		&:last-child
+			margin-right: 0px
+
+.warehouse-row--title
+	position: relative
+	display: flex
+	align-items: center
+	flex-grow: 1
+	padding: 17px 20px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 5px
+
+.warehouse-row--delete
+	position: relative
+	right: unset
+
+.warehouse-row--title-input
+	font-size: 16px
+	width: 100%
+	line-height: 100%
+	background: unset
+	border: 0
+	padding: 0
+	margin-right: 20px
+
+.warehouse-row--title-price
+	font-size: 14px
+	line-height: 100%
+	color: rgba(0, 0, 0, 0.25)
+
+.warehouse-row--quantity
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 5px
+	padding: 7px
+	max-width: 220px
+
+.warehouse-row--quantity-input
+	font-size: 16px
+	line-height: 100%
+	// color: rgba(0, 0, 0, 0.25)
+	background: unset
+	width: 100%
+	padding: 0
+	line-height: 100%
+	border: 0
+
+.warehouse-row--quantity
+	display: flex
+	align-items: center
+
+.warehouse-row--quantity-toggle
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 36px
+	min-width: 36px
+	height: 36px
+	font-size: 24px
+	line-height: 100%
+	margin-right: 10px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 5px
+	cursor: pointer
+	user-select: none
+	&.plus
+		&::before
+			content: '+'
+	&::before
+		opacity: 0.5
+	&:hover
+		background: rgba(0, 0, 0, 0.06)
+
+.warehouse-row--quantity-total
+	font-size: 12px
+	line-height: 100%
+	color: #000000
+	opacity: 0.25
+	&::before
+		content: '='
+		margin-right: 7px
+
+.warehouse-hr
+	width: 100%
+	height: 1px
+	background: rgba(0, 0, 0, 0.03)
+	border: 0
+	margin: 30px 0
+
+.success-btn
+	display: flex
+	align-items: center
+	justify-content: center
+	background: #27AE60
+	border-radius: 7px
+	font-size: 14px
+	line-height: 100%
+	text-align: center
+	color: #FFFFFF
+	border: 0
+	width: 100%
+	padding: 20px 0
+	transition: $transition-fast
+	&:hover
+		background: darken(#27AE60, 7%)
+
+
+.warehouse-row--products-dropdown
+	position: absolute
+	top: 60px
+	left: 0
+	right: 0
+
+.warehouse-row--products-dropdown
+	display: none
+	background: white
+	border-radius: 5px
+	overflow: hidden
+
+.warehouse-row--products-dropdown-item
+	padding: 17px 20px
+	cursor: pointer
+	user-select: none
+	transition: $transition-fast
+	&:hover
+		background: rgba($blue, 0.1)
 
 @import media
