@@ -426,6 +426,7 @@
 	border-radius: 10px
 	padding: 40px
 	margin: 100px 0
+	width: 100%
 	z-index: 999
 
 .popup-item--title
@@ -589,6 +590,8 @@
 			&::before
 				border: 2px solid rgba($blue, 0.5)
 				border-top: 2px solid $blue
+	&.warehouse-add
+		padding: 18px !important
 
 .index-header
 	margin-bottom: 40px
@@ -1193,7 +1196,7 @@ h1
 .no-content
 	background: #F2F2F2
 	border-radius: 10px
-	&.home-page, &.products-page
+	&.home-page, &.products-page, &.no-warehouse
 		display: flex
 		justify-content: center
 		align-items: center
@@ -1210,6 +1213,8 @@ h1
 			background-size: contain !important
 	&.products-page::before
 		background: url('../images/dist/icons/no-products.png')
+	&.no-warehouse::before
+		background: url('../images/dist/icons/no-warehouse.png')
 	&.warehouse-page
 		display: flex
 		justify-content: center
@@ -1796,6 +1801,8 @@ h1
 			border-radius: 50%
 			margin-right: 7px
 			animation: spin 1s linear infinite
+	&.warehouse-add
+		padding: 18px !important
 
 
 .input-btn
@@ -1946,6 +1953,21 @@ h1
 	padding: 17px 20px
 	background: rgba(0, 0, 0, 0.03)
 	border-radius: 5px
+	&.loading
+		pointer-events: none
+		&::before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(black, 0.1)
+			border-top: 2px solid rgba(black, 0.4)
+			border-radius: 50%
+			margin-right: 7px
+			animation: spin 1s linear infinite
+		.warehouse-row--title-input
+			color: rgba(black, 0.5)
+
 
 .warehouse-row--delete
 	position: relative
@@ -1999,9 +2021,10 @@ h1
 	border-radius: 5px
 	cursor: pointer
 	user-select: none
-	&.plus
-		&::before
-			content: '+'
+	&.plus::before
+		content: '+'
+	&.minus::before
+		content: '-'
 	&::before
 		opacity: 0.5
 	&:hover
@@ -2012,6 +2035,7 @@ h1
 	line-height: 100%
 	color: #000000
 	opacity: 0.25
+	white-space: nowrap
 	&::before
 		content: '='
 		margin-right: 7px
@@ -2060,5 +2084,7 @@ h1
 	transition: $transition-fast
 	&:hover
 		background: rgba($blue, 0.1)
+
+
 
 @import media

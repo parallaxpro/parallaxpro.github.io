@@ -258,6 +258,14 @@ $(document).on('click', '.bussiness-add', function(e) {
     $('.popup-item[data-id='+ popup_id +']').addClass('show--block');
 });
 
+$(document).on('click', '.popup-open', function(e) {
+    e.preventDefault();
+    var popup_id = $(this).data('popup');
+    
+    $('#popups').show(); $('.popup-overlay').fadeIn();
+    $('.popup-item[data-id='+ popup_id +']').addClass('show--block');
+});
+
 $(document).on('click', '.multiform-btn--plus', function(e) {
     e.preventDefault();
 
@@ -766,4 +774,41 @@ $(document).on('click', '#map-button', function(e) {
     
 //     $('#addresses').append(template);
 //     $(".default-select").selectmenu();    
+// }
+
+
+// $(document).on('click', '.warehouse-row--delete', function(e) {
+//     e.preventDefault();
+//     $('.warehouse-editor--row[data-id='+ $(this).data('id') +']').remove();
+// });
+
+// $(document).on('click', '.add-warehouse-item', function(e) {
+//     e.preventDefault();
+//     createWarehouseRow();
+// });
+
+// function createWarehouseRow() {
+
+//     var last_id = $('.warehouse-editor--row').last().data('id'); if (last_id == null) last_id = 0;
+//     var next_id = last_id + 1;
+    
+//     var template = '<div class="warehouse-editor--row" data-id="'+ next_id +'">\
+//                         <div class="warehouse-row--title">\
+//                             <input type="text" class="warehouse-row--title-input" placeholder="Найти товар">\
+//                             <input type="hidden" class="warehouse-row--id">\
+//                             <span class="warehouse-row--title-price">3000</span>\
+//                             <div class="warehouse-row--products-dropdown">\
+//                                 <div class="warehouse-row--products-dropdown-item">Тигровые креветки</div>\
+//                             </div>\
+//                         </div>\
+//                         <div class="warehouse-row--quantity">\
+//                             <span class="warehouse-row--quantity-toggle plus"></span>\
+//                             <input type="text" class="warehouse-row--quantity-input" placeholder="Кол-во">\
+//                             <span class="warehouse-row--quantity-total"></span>\
+//                         </div>\
+//                         <span class="multiform-btn multiform-btn--minus warehouse-row--delete" data-id="'+ next_id +'"></span>\
+//                     </div>';
+
+//     $('.warehouse-editor-list').append(template);
+
 // }
