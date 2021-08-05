@@ -65,7 +65,7 @@
 			color: $blue
 
 .menu--btn
-	display: flex
+	display: block
 	cursor: pointer
 	&:before
 		content: ''
@@ -376,15 +376,33 @@
 .product-cart--add
 	display: flex
 	justify-content: center
+	align-items: center
 	background: #2DA771
 	color: white
 	border-radius: 7px
 	padding: 21px 20px 20px
 	border: 0
 	width: 100%
-
+	transition: $transition-fast
 	&:hover
 		background: #289564
+	&.loading
+		pointer-events: none
+		opacity: 0.75
+		&::before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			border: 2px solid rgba(white, 0.5)
+			border-top: 2px solid white
+			border-radius: 50%
+			margin-right: 7px
+			animation: spin 1s linear infinite
+	&.added
+		pointer-events: none
+		background: rgba(black, 0.1)
+		color: rgba(black, 0.5)
 
 // .product-qty--input
 // 	display: block
@@ -937,5 +955,27 @@ input.default-input
 
 .mobile-nav
 	display: none
+
+.order-container
+	display: flex
+	flex-direction: column
+	align-items: center
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 25px
+	padding: 80px
+
+.order-image img
+	height: 100px
+	margin-bottom: 30px
+
+.order-title h1
+	font-size: 48px
+	line-height: 100%
+	margin-bottom: 20px
+
+.order-desc
+	color: rgba(0, 0, 0, 0.5)
+	font-size: 16px
+	line-height: 100%
 
 @import media

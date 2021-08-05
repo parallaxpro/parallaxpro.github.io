@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
 	<meta charset="utf-8">
-	<title><!--#echo var="title" --> | UPKEEP</title>
+	<title>Главная страница | UPKEEP</title>
 	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -108,3 +109,45 @@
 	</aside>
 
 	
+
+<main class="main-content content-slided">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                    
+                <div class="order-container">
+
+                    <div class="order-image">
+                        <img src="../images/dist/icons/check-mark-button_2705.png" alt="Спасибо за заказ!">
+                    </div>
+
+                    <div class="order-title">
+                        <h1>Спасибо за заказ!</h1>
+                    </div>
+
+                    <p class="order-desc">Номер заказа #{{ session('order_id') }}. Вернутся на <a href="{{ $business->route_index() }}">главную?</a></p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+	<div class="container">
+		<div id="footer"></div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js" integrity="sha512-VpQwrlvKqJHKtIvpL8Zv6819FkTJyE1DoVNH0L2RLn8hUPjRjkS/bCYurZs0DX9Ybwu9oHRHdBZR9fESaq8Z8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/autosize@5.0.1/dist/autosize.min.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>

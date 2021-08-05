@@ -939,6 +939,7 @@ input[type=radio]:checked + label.default-label-radio::after
 .cart-block.cart-total-sticky
 	position: sticky
 	top: 100px
+	transition: $transition-fast
 
 
 .cart-total--row
@@ -1089,5 +1090,30 @@ input[data-cart_input]
 .aside--map
 	margin-bottom: 20px
 	
+
+.order-container
+	display: flex
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 25px
+	flex-direction: column
+	align-items: center
+	padding: 80px
+	margin-bottom: 50px
+
+.order-image img
+	margin-bottom: 30px
+
+.order-title h1
+	font-size: 48px
+	line-height: 100%
+	color: #FFFFFF
+	font-family: $customFont
+	margin-bottom: 20px
+
+.order-desc
+	color: rgba(255, 255, 255, 0.5)
+	font-size: 16px
+	line-height: 100%
+	margin-bottom: 0
 
 @import media

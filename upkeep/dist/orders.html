@@ -5,7 +5,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Заведения | UPKEEP</title>
+	<title>Заказы | UPKEEP</title>
 	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -43,7 +43,6 @@
                         <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
-                        <a href="#" onclick="return false;" class="b-page--menu-item orders">Заказы</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
                     </nav>
@@ -80,19 +79,67 @@
                         <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
-                        <a href="#" onclick="return false;" class="b-page--menu-item orders">Заказы</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
                         <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
                     </nav>
                 </aside>
             </div>
-            <div class="col-xl-7 col-lg-9">
+            <div class="col-xl-9">
                 <div class="b-content">
-                    <h1>Главная страница</h1>
+                    <h1>Заказы</h1>
+                    
+                    <div class="orders-content">
 
-                    <div class="no-content products-page">
-                    <!-- <div class="no-content home-page"> -->
-                        <p class="no-content--text">Страница на разработке</p>
+                        <div class="order-search-block">
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <input type="text" class="c-block--search" placeholder="Поиск">
+                                </div>
+                                <div class="col-lg-3">
+                                    <button class="default-btn ghost search-btn">Поиск</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-list">
+
+                            <div class="order-item">
+                                <div class="row">
+                                    <div class="col-1"><span class="order-id">#16</span></div>
+                                    <div class="col-3"><span class="order-title">Виталий Балаян</span></div>
+                                    <div class="col-3"><span class="order-status status-0">Ожидается</span></div>
+                                    <div class="col-2"><span class="order-price">20000 тг.</span></div>
+                                    <div class="col-3 d-flex justify-content-end"><span class="order-time">25.10.2021 15:00</span></div>
+                                </div>
+                            </div>
+
+
+                            <div class="order-item">
+                                <div class="row">
+                                    <div class="col-1"><span class="order-id">#16</span></div>
+                                    <div class="col-3"><span class="order-title">Виталий Балаян</span></div>
+                                    <div class="col-3"><span class="order-status status-1">Доставляется</span></div>
+                                    <div class="col-2"><span class="order-price">20000 тг.</span></div>
+                                    <div class="col-3 d-flex justify-content-end"><span class="order-time">25.10.2021 15:00</span></div>
+                                </div>
+                            </div>
+
+                            <div class="order-item">
+                                <div class="row">
+                                    <div class="col-1"><span class="order-id">#16</span></div>
+                                    <div class="col-3"><span class="order-title">Виталий Балаян</span></div>
+                                    <div class="col-3"><span class="order-status status-2">Завершен</span></div>
+                                    <div class="col-2"><span class="order-price">20000 тг.</span></div>
+                                    <div class="col-3 d-flex justify-content-end"><span class="order-time">25.10.2021 15:00</span></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center">
+                            <a href="/" onclick="return false;" class="load-more">Загрузить еще</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -100,7 +147,8 @@
     </div>
 </main>
 
-<footer class="b-page--footer d-none d-lg-block">
+
+<footer class="b-page--footer">
     <div class="c-container">
         <div class="row">
             <div class="col-3">

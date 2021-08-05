@@ -1,0 +1,239 @@
+<!--#set var="title" value="Детализация заказа" -->
+<!--#include virtual="/parts/header.html" -->
+
+<main class="main-business">
+    <div class="c-container">
+
+        <div class="row d-flex d-lg-none">
+            <div class="col-12">
+                <div class="mobile-header d-flex align-items-center">
+                    <span class="mobile-menu-btn"></span>
+                    <a href="/" class="mobile-logo"><img src="./images/logo.svg" alt="upkeep"></a>
+                </div>
+                <div class="mobile-menu">
+                    <div class="b-page--name">
+                        <div class="b-page--title">Дастархан</div>
+                        <div class="b-page--subtitle">микрорайон 12, 78</div>
+                    </div>
+
+                    <nav class="b-page--menu-items">
+                        <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+                    </nav>
+
+                    <div class="mt-4">
+                        <a href="/" onclick="return false;" class="profile-button">
+                            <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+                            <div class="profile-name">Виталий Балаян</div>
+                        </a>
+                        
+                        <div class="profile-footer--container">
+                            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+                            <a href="/" onclick="return false;" class="profile-logout"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 d-none d-lg-block">
+                <aside class="b-page--menu">
+                    <a href="#" onclick="return false;" class="d-flex b-page--logotype">
+                        <img src="./images/logo.svg" alt="upkeep">
+                    </a>
+
+                    <div class="b-page--name">
+                        <div class="b-page--title">Дастархан</div>
+                        <div class="b-page--subtitle">микрорайон 12, 78</div>
+                    </div>
+
+                    <nav class="b-page--menu-items">
+                        <a href="#" onclick="return false;" class="b-page--menu-item website">Перейти на сайт</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item home active">Главная страница</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item catalog">Каталог</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item warehouse">Склад</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item setting">Настройки заведения</a>
+                        <a href="#" onclick="return false;" class="b-page--menu-item exit">Выйти из заведения</a>
+                    </nav>
+                </aside>
+            </div>
+            <div class="col-xl-9">
+                <div class="b-content">
+                    <h1>Детализация заказа #15</h1>
+                    
+                    <div class="order_edit-content">
+
+                        <div class="order_edit-list">
+                            <div class="order_edit-item">
+                                <div class="order_item--left">
+                                    <div class="order_item--image" style="background: url('../images/dist/demo.jpg');"></div>
+                                    <div class="order_item--desc">
+                                        <div class="order_item--title">COCА-COLA / 2 Литра</div>
+                                        <div class="order_item--options">
+                                            <span class="order_item--option_item">Полная прожарка</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order_item--right">
+
+                                    <div class="order_item--price">1850 ₸</div>
+                                    <div class="order_item--qty">
+
+                                        <span class="order_item--qty-btn" data-minus="88"></span>
+                                        <input type="text" class="order_item--qty-input" value="1" data-qty="88">
+                                        <span class="order_item--qty-btn" data-plus="88"></span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="order_edit-item">
+                                <div class="order_item--left">
+                                    <div class="order_item--image" style="background: url('../images/dist/demo.jpg');"></div>
+                                    <div class="order_item--desc">
+                                        <div class="order_item--title">COCА-COLA / 2 Литра</div>
+                                    </div>
+                                </div>
+                                <div class="order_item--right">
+
+                                    <div class="order_item--price">1850 ₸</div>
+                                    <div class="order_item--qty">
+
+                                        <span class="order_item--qty-btn" data-minus="99"></span>
+                                        <input type="text" class="order_item--qty-input" value="1" data-qty="99">
+                                        <span class="order_item--qty-btn" data-plus="99"></span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order_edit-block">
+
+                            <h3 class="order_edit-title">Заказчик</h3>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="g-input">
+                                        <label for="name" class="g-input--label">Имя</label>
+                                        <input type="text" id="name" class="g-input--input input-animate" value="BARHAN">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-lg-0 mt-3">
+                                    <div class="g-input">
+                                        <label for="phone" class="g-input--label">Телефон</label>
+                                        <input type="text" id="phone" class="g-input--input input-animate" value="BARHAN">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="order_edit-block">
+
+                            <h3 class="order_edit-title">Доставка</h3>
+                            <div class="row">
+                                <div class="col-lg-6 mb-3 mb-lg-0">
+                                    <input type="radio" name="delivery" id="delivery_office" data-id="office" class="default-radio" checked>
+                                    <label for="delivery_office" class="default-label-radio">Самовывоз</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="radio" name="delivery" id="delivery_courier" data-id="courier" class="default-radio">
+                                    <label for="delivery_courier" class="default-label-radio">Курьер</label>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <div class="delivery-step office active" data-id="office">
+                                        <select class="default-select">
+                                            <option value="0">4 мкр. — Бархан</option>
+                                            <option value="0">12 мкр. — Бархан</option>
+                                        </select>
+                                    </div>
+                                    <div class="delivery-step courier" data-id="courier">
+                                        <input type="text" class="default-input" placeholder="Введите адрес доставки">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="order_edit-block">
+
+                            <h3 class="order_edit-title">Комментарий</h3>
+                            <textarea class="default-textarea default-input"></textarea>
+
+                        </div>
+
+                        <hr class="order-hr">
+
+                        <div class="order_edit-block">
+
+                            <h3 class="order_edit-title">Статус</h3>
+                            <select class="default-select">
+                                <option value="0">4 мкр. — Бархан</option>
+                                <option value="0">12 мкр. — Бархан</option>
+                            </select>
+
+                        </div>
+
+                        <div class="order_edit-block">
+
+                            <h3 class="order_edit-title">Финансы</h3>
+                            <div class="order_edit--total-block">
+                                <div class="row">
+                                    <div class="col-md-6">Итого с учетом доставки</div>
+                                    <div class="col-md-6 d-flex justify-content-md-end mt-md-0 mt-2">= 25 000 тг.</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="order_edit-block">
+
+                            <h3 class="order_edit-title">Списать со склада</h3>
+                            <select class="default-select">
+                                <option value="0">Основной склад</option>
+                            </select>
+
+                        </div>
+
+                        <hr class="order-hr">
+
+                        <button type="submit" class="success-btn">Сохранить</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<footer class="b-page--footer">
+    <div class="c-container">
+        <div class="row">
+            <div class="col-3">
+
+                <a href="/" onclick="return false;" class="profile-button">
+                    <div class="profile-image" style="background: url('./images/dist/no-image.jpg');"></div>
+                    <div class="profile-name">Виталий Балаян</div>
+                </a>
+
+                <div class="row">
+                    <div class="col-9">
+                        <div class="profile-footer--container">
+                            <a href="/" onclick="return false;" class="profile-settings--link">Настройки</a>
+                            <a href="/" onclick="return false;" class="profile-logout"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--#include virtual="/parts/footer.html" -->
