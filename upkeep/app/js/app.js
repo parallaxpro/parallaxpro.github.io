@@ -46,7 +46,7 @@ $(document).ready(function() {
 					$.each(value, function(error_index, error) {
 						showAlertError(error);							
 					});
-					console.log(value);
+					// console.log(value);
 				})
 			}
         });
@@ -87,7 +87,7 @@ $(document).ready(function() {
 
 });
 
-$(document).on('click', '.input-animate', function() {
+$(document).on('click touchstart', '.input-animate', function() {
     
     $(this).parent().addClass("label-animate");
     
@@ -126,7 +126,7 @@ $(document).ready(function() {
 		var coords = $('#coordinates').val();
 
 		myMap = new ymaps.Map("map", {
-			center: [55.76, 37.64],
+			center: [43.635601,51.168254],
 			controls: [],
 			zoom: 11
 		}, {
@@ -139,7 +139,7 @@ $(document).ready(function() {
 			mapStateAutoApply: true
 		}).then(function(res) {
 
-			console.log(coords);
+			// console.log(coords);
 
 			if (!coords) {
 				var coord = res.geoObjects.get(0).geometry.getCoordinates();			
@@ -281,9 +281,7 @@ function multiformAddInput(multiform) {
     var label       = last_input.children('label').text();
     var mask        = last_input.children('input').data('mask');
 
-    // console.log(mask);
-
-    last_input.children('.multiform-btn').removeClass('multiform-btn--plus').addClass('multiform-btn--minus');
+    last_input.children('.multiform-btns').children('.multiform-btn--plus').remove();
 
     var template = '\
     <div class="g-input" data-id="'+ next_id +'">\
@@ -294,25 +292,50 @@ function multiformAddInput(multiform) {
             class="g-input--input input-animate" \
             data-mask="'+ mask +'" \
             data-multiform="'+ multiform +'"> \
-        <span class="multiform-btn multiform-btn--plus" data-multiform="'+ multiform +'"></span>\
+        <div class="multiform-btns">\
+            <span class="multiform-btn multiform-btn--minus" data-multiform="'+ multiform +'"></span>\
+            <span class="multiform-btn multiform-btn--plus" data-multiform="'+ multiform +'"></span>\
+        </div>\
     </div>';
 
     $container.append(template);
 
     if (multiform === 'phone' || multiform === 'whatsapp') phone_mask();
+
+    if (last_input.data('id') === $container.children('.g-input').first().data('id')) {
+        last_input.children('.multiform-btns').append('<span class="multiform-btn multiform-btn--minus" data-multiform="'+ multiform +'"></span>');
+    }
+
 }
 
 $(document).on('click', '.multiform-btn--minus', function(e) {
     e.preventDefault();
 
     var multiform   = $(this).data('multiform');
-    var id          = $(this).parent('.g-input').data('id');
+    var id          = $(this).parent('.multiform-btns').parent('.g-input').data('id');
+
+    var last_id     = $('.c-multiform[data-multiform='+ multiform +'] .g-input').last().data('id');
 
     multiformRemoveInput(multiform, id);
+
+    if (last_id === id) {
+        $('.c-multiform[data-multiform='+ multiform +'] .g-input').last().children('.multiform-btns').append('<span class="multiform-btn multiform-btn--plus" data-multiform="'+ multiform +'"></span>');
+    }
+        
+    if ($('.c-multiform[data-multiform='+ multiform +'] .g-input').length === 1) {
+
+        console.log($('.c-multiform[data-multiform='+ multiform +'] .g-input').last());
+
+        $('.c-multiform[data-multiform='+ multiform +'] .g-input').last().children('.multiform-btns').children('.multiform-btn--minus').remove();
+
+    }
+
 });
 
 function multiformRemoveInput(multiform, id) {
+    
     $('.c-multiform[data-multiform='+ multiform +']').children('.g-input[data-id='+ id +']').remove();
+
 }
 
 function phone_mask() {
@@ -332,18 +355,21 @@ $(document).on('click', '.multiselect-btn--plus', function(e) {
     var template    = '\
     <div class="multiselect-item" data-id="'+ next_id +'">\
         <div class="row">\
-            <div class="col-3">\
+            <div class="col-sm-3 mb-sm-0 mb-2">\
                 <select id="'+ multiselect +'_'+ next_id +'" name="'+ multiselect +'['+ next_id +'][select]" class="default-select">\
                     <option value="vk">VK</option>\
                     <option value="instagram">Instagram</option>\
                     <option value="facebook">Facebook</option>\
                 </select>\
             </div>\
-            <div class="col-9">\
+            <div class="col-sm-9">\
                 <div class="g-input">\
                     <label for="link_'+ next_id +'" class="g-input--label">Ссылка</label>\
                     <input type="text" name="'+ multiselect +'['+ next_id +'][value]" id="link_'+ next_id +'" class="g-input--input">\
-                    <span class="multiselect-btn multiselect-btn--plus" data-multiselect="'+ multiselect +'" data-id="'+ next_id +'"></span>\
+                    <div class="multiform-btns" data-id="'+ next_id +'">\
+                        <span class="multiselect-btn multiselect-btn--minus" data-multiselect="'+ multiselect +'" data-id="'+ next_id +'"></span>\
+                        <span class="multiselect-btn multiselect-btn--plus" data-multiselect="'+ multiselect +'" data-id="'+ next_id +'"></span>\
+                    </div>\
                 </div>\
             </div>\
         </div>\
@@ -351,8 +377,16 @@ $(document).on('click', '.multiselect-btn--plus', function(e) {
     ';
 
     container.append(template);
-    $('.multiselect-btn[data-multiselect='+ multiselect +'][data-id='+ id +']').removeClass('multiselect-btn--plus').addClass('multiselect-btn--minus');
+    
+    
+    $('.multiselect-btn.multiselect-btn--plus[data-multiselect='+ multiselect +'][data-id='+ id +']').remove();
+    
+    // console.log(last_select);
 
+    if (id === $('.c-multiselect[data-multiselect='+ multiselect +'] .multiselect-item').first().data('id')) {
+        $('.multiform-btns[data-id='+ id +']').append('<span class="multiselect-btn multiselect-btn--minus" data-multiselect="'+ multiselect +'" data-id="'+ id +'"></span>');
+    }
+    
     $('.default-select').selectmenu();
 });
 
@@ -361,9 +395,27 @@ $(document).on('click', '.multiselect-btn--minus', function(e) {
 
     var multiselect = $(this).data('multiselect');
     var container   = $('.c-multiselect[data-multiselect='+ multiselect +']');
+
     var id          = $(this).data('id');
+    var last_id     = $('.c-multiselect[data-multiselect='+ multiselect +'] .multiselect-item').last().data('id');
+
+    // if ($('.c-multiselect[data-multiselect='+ multiselect +'] .multiselect-item').last().data('id'))
 
     container.children('.multiselect-item[data-id='+ id +']').remove();
+
+    if (id === last_id) {
+
+        var current_id = $('.c-multiselect[data-multiselect='+ multiselect +'] .multiselect-item').last().data('id');
+
+        $('.multiform-btns[data-id='+ current_id +']').append('<span class="multiselect-btn multiselect-btn--plus" data-multiselect="'+ multiselect +'" data-id="'+ current_id +'"></span>')
+
+    }
+
+
+    if ($('.c-multiselect[data-multiselect='+ multiselect +'] .multiselect-item').length === 1) {
+        var first_id = $('.c-multiselect[data-multiselect='+ multiselect +'] .multiselect-item').first().data('id');
+        $('.multiselect-btn--minus[data-id='+ first_id +']').remove();
+    }
 });
 
 function setAddress(res) {
@@ -639,8 +691,8 @@ function updateOptionsResult() {
 
     
     var to_input = JSON.stringify(result);
-    console.log(to_input);
-    console.log(result);
+    // console.log(to_input);
+    // console.log(result);
     $('#options-result').val(to_input);
 
 }

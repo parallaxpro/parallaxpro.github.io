@@ -125,7 +125,11 @@
                                     <div class="g-input" data-id="1">
                                         <label for="phone_1" class="g-input--label">Номер телефона</label>
                                         <input type="text" name="phone[1]" id="phone_1" class="g-input--input input-animate" data-multiform="phone" data-mask="phone">
-                                        <span class="multiform-btn multiform-btn--plus" data-multiform="phone"></span>
+
+                                        <div class="multiform-btns">
+                                            <span class="multiform-btn multiform-btn--plus" data-multiform="phone"></span>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                 
@@ -135,7 +139,9 @@
                                     <div class="g-input" data-id="1">
                                         <label for="whatsapp_1" class="g-input--label">WhatsApp</label>
                                         <input type="text" name="whatsapp[1]" id="whatsapp_1" class="g-input--input input-animate" data-multiform="whatsapp" data-mask="phone">
-                                        <span class="multiform-btn multiform-btn--plus" data-multiform="whatsapp"></span>
+                                        <div class="multiform-btns">
+                                            <span class="multiform-btn multiform-btn--plus" data-multiform="whatsapp"></span>
+                                        </div>
                                     </div>
                                 </div>
                 
@@ -145,7 +151,9 @@
                                     <div class="g-input" data-id="1">
                                         <label for="telegram_1" class="g-input--label">Telegram</label>
                                         <input type="text" name="telegram[1]" id="telegram_1" class="g-input--input input-animate" data-multiform="telegram">
-                                        <span class="multiform-btn multiform-btn--plus" data-multiform="telegram"></span>
+                                        <div class="multiform-btns">
+                                            <span class="multiform-btn multiform-btn--plus" data-multiform="telegram"></span>
+                                        </div>
                                     </div>
                                 </div>
                 
@@ -155,7 +163,9 @@
                                     <div class="g-input" data-id="1">
                                         <label for="email_1" class="g-input--label">Email</label>
                                         <input type="text" name="email[1]" id="email_1" class="g-input--input input-animate" data-multiform="email">
-                                        <span class="multiform-btn multiform-btn--plus" data-multiform="email"></span>
+                                        <div class="multiform-btns">
+                                            <span class="multiform-btn multiform-btn--plus" data-multiform="email"></span>
+                                        </div>
                                     </div>
                                 </div>
                 
@@ -176,13 +186,18 @@
                                                 <div class="g-input">
                                                     <label for="link_1" class="g-input--label">Ссылка</label>
                                                     <input type="text" name="socials[1][value]" id="link_1" class="g-input--input input-animate">
-                                                    <span class="multiselect-btn multiselect-btn--plus" data-multiselect="socials" data-id="1"></span>
+
+                                                    <div class="multiform-btns" data-id="1">
+                                                        <span class="multiselect-btn multiselect-btn--plus" data-multiselect="socials" data-id="1"></span>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                 
                                 </div>
+                                
                 
                                 <!-- <hr class="form-hr"> -->
                 
@@ -229,6 +244,29 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="data-spoiler editor-content" data-content="access" data-id="access">
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+                                        <div id="access-list">
+                                            <div class="g-input" data-id="1">
+                                                <label for="email_1" class="g-input--label">Введите Email</label>
+                                                <input type="text" id="email_1" class="g-input--input input-animate">
+                                                <span class="multiform-btn multiform-btn--plus"></span>
+                                            </div>
+                                            <div class="g-input" data-id="2">
+                                                <label for="email_2" class="g-input--label">Введите Email</label>
+                                                <input type="text" id="email_2" class="g-input--input input-animate">
+                                                <span class="multiform-btn multiform-btn--minus"></span>
+                                            </div>
+                                        </div>
+
+                                        <span class="default-btn ghost mt-3 add-access">Добавить доступ</a>
+
+                                    </div>
+                                </div>
+                            </div>
             
                         </div>
                         <div class="col-lg-3 d-none d-lg-block">
@@ -247,6 +285,7 @@
                                 <div class="editor-menu">
                                     <div class="editor-menu--item active" data-content="main">Основные</div>
                                     <div class="editor-menu--item" data-content="addresses">Адреса</div>
+                                    <div class="editor-menu--item" data-content="access">Доступ</div>
                                 </div>
                 
                                 <div class="editor--hr"></div>
@@ -271,6 +310,9 @@
                     <div class="catalog-footer">
                         <a href="#" class="catalog-footer--item products active" data-id="main">Продукция</a>
                         <a href="#" class="catalog-footer--item addresses" data-id="addresses">Адреса</a>
+                        <a href="#" class="catalog-footer--item access" data-id="access">Доступ</a>
+                        <a href="#" class="catalog-footer--item seo" data-id="seo">SEO</a>
+                        <a href="#" class="catalog-footer--item analytics" data-id="analytics">Аналитика</a>
                     </div>
 
                 </div>

@@ -1,0 +1,359 @@
+@import config
+
+.navigation--right-langs
+	position: relative
+	margin-left: 7.5px
+
+.languages-list--dropdown
+	position: absolute
+	top: 100%
+	width: 100%
+	display: none
+	margin-top: 5px
+	background: white
+	border-radius: 0 5px 0 5px
+	box-shadow: 0px 3px 3px rgba(43, 57, 144, 0.07)
+	overflow: hidden
+	z-index: 999
+	a
+		display: flex
+		justify-content: center
+		padding: 12px 10px
+		color: $accent
+		font-size: 16px
+		&:hover
+			background: rgba($accent, 0.1)
+	&.show
+		display: block
+		animation: slide-top 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+	&.close
+		animation: slide-down 0.25s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+.main-header
+	margin: 60px 0 25px
+
+.header-menu a
+	display: inline-flex
+	color: rgba(22, 38, 18, 0.5)
+	margin: 3px 7.5px
+	&:hover
+		color: $accent
+		
+.languages-button
+	background: #EEF4E6
+	border-radius: 0px 10px
+	padding: 12px 10px
+	color: #87B550
+	font-size: 16px
+	cursor: pointer
+	&:hover
+		background: darken(#EEF4E6, 5%)
+		
+.title_title
+	font-weight: 700
+	font-size: 32px
+	line-height: 130%
+	margin-bottom: 10px
+	
+
+.title_desc
+	font-size: 16px
+	line-height: 130%
+	color: rgba(22, 38, 18, 0.5)
+	margin: 0
+
+.city_block
+	display: flex
+	justify-content: center
+	align-items: center
+	border-radius: 0px 10px
+	height: 400px
+	background-size: cover !important
+	background-position: center !important
+
+.city_block-title
+	display: flex
+	font-weight: bold
+	font-size: 36px
+	line-height: 100%
+	text-align: center
+	color: #FFFFFF
+
+.cities_list
+	margin-top: 30px
+
+.production
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 50px
+
+.main-main
+	padding-bottom: 124px
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: url('../images/dist/bg_1.png') no-repeat
+		background-size: contain
+		z-index: -1
+	&::after
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: url('../images/dist/bg_2.png') no-repeat
+		background-size: contain
+		background-position-y: bottom
+		z-index: -1
+		
+
+.prod-link
+	opacity: 0.15
+	&:hover
+		opacity: 0.5
+
+.quiz_block-image
+	display: flex
+	width: 100%
+	height: 180px
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.quiz_block
+	display: block
+	padding: 20px
+	background: #FFFFFF
+	box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03)
+	border-radius: 0px 10px
+	&:hover
+		transform: translateY(-5px)
+		box-shadow: 0px 3px 10px rgba(57, 100, 47, 0.05)
+
+.quiz_block-title
+	display: block
+	font-size: 16px
+	line-height: 130%
+	color: #162612
+	margin-top: 20px
+
+.quizzes_list
+	margin-top: 30px
+
+.page-image
+	display: block
+	width: 100%
+	border-radius: 0px 10px
+	overflow: hidden
+	margin: 25px 0
+	img
+		width: 100%
+
+.page-content, .title_desc
+	font-size: 18px
+	line-height: 170%
+
+.form-default
+	background: #FFFFFF
+	box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03)
+	border-radius: 0px 10px
+	padding: 50px
+	margin-bottom: 30px
+	margin-top: 40px
+
+.default-btn
+	width: 100%
+	background: #87B550
+	border-radius: 3px
+	border: 0
+	color: white
+	padding: 18px
+	appearance: none
+	&:hover
+		background: darken(#87B550, 5%)
+	&.ghost
+		background: rgba(135, 181, 80, 0.1)
+		color: #87B550
+		&:hover
+			background: rgba(135, 181, 80, 0.2)
+			
+
+.default-input
+	width: 100%
+	height: 60px
+	font-size: 16px
+	line-height: 100%
+	background: rgba(0, 0, 0, 0.04)
+	border-radius: 5px
+	border: 0
+	padding: 22px 25px
+	appearance: none
+	&:hover
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+	&:focus
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+		background: white
+
+
+.video-block
+	position: relative
+	display: block
+	height: 250px
+	border-radius: 0px 10px
+	overflow: hidden
+	background-size: cover !important
+	background-position: center !important
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		top: 25px
+		left: 25px
+		width: 40px
+		height: 40px
+		background: url('../images/dist/icons/play.svg')
+	&:hover
+		transform: translateY(-5px)
+
+.video-block_title
+	position: absolute
+	display: block
+	left: 25px
+	right: 25px
+	bottom: 25px
+	font-size: 18px
+	line-height: 140%
+	color: #FFFFFF
+
+
+.videos_list
+	margin-top: 25px
+
+.quiz-question-block--image
+	display: block
+	width: 100%
+	height: 300px
+	border-radius: 0px 10px
+	overflow: hidden
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.quiz-header
+	padding: 50px 0 40px
+
+.quiz-header_title
+	margin: 0
+	font-size: 16px
+	line-height: 130%
+	color: #162612
+	opacity: 0.5
+
+.btn-close
+	display: block
+	width: 32px
+	height: 32px
+	background: url('../images/dist/icons/close.svg')
+	opacity: 0.3
+	&:hover
+		opacity: 0.7
+
+.quiz-question
+	display: none
+	&.active
+		display: block
+
+.quiz-question-block
+	padding: 50px
+	background: #FFFFFF
+	box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03)
+	border-radius: 0px 10px
+
+.quiz-question--block-text
+	font-size: 16px
+	line-height: 160%
+	margin-top: 20px
+	
+.quiz-question-answers
+	margin-top: 20px
+
+.answer-radio
+	display: none
+	&:checked+label
+		&::after
+			content: ''
+			position: absolute
+			top: 24px
+			left: 24px
+			width: 12px
+			height: 12px
+			background: #87B550
+			border-radius: 50px
+
+.answer-item
+	position: relative
+	display: flex
+	align-content: center
+	font-size: 14px
+	line-height: 160%
+	color: rgba(0, 0, 0, 0.5)
+	padding: 20px
+	background: #FFFFFF
+	box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03)
+	border-radius: 0px 10px
+	cursor: pointer
+	user-select: none
+	&::before
+		content: ''
+		display: flex
+		width: 20px
+		height: 20px
+		background: rgba(0, 0, 0, 0.1)
+		border-radius: 50px
+		margin-right: 14px
+	&.selected::after
+		content: ''
+		position: absolute
+		top: 24px
+		left: 24px
+		width: 12px
+		height: 12px
+		border-radius: 50px
+	&.success
+		box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03), inset 0px 0px 0px 1px rgba(135, 181, 80, 0.5)
+		&.selected::after
+			background: #87B550
+	&.error
+		box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03), inset 0px 0px 0px 1px #B55050
+		&.selected::after
+			background: #B55050
+
+label.answer-item:hover
+	box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03), inset 0px 0px 0px 1px rgba(135, 181, 80, 0.5)
+
+.quiz-failed--answers
+	background: #F3F5F0
+	border-radius: 0px 0px 0px 10px
+	padding: 40px 50px
+	.answer-item
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	
+.quiz-failed
+	margin-top: 40px
+
+.quiz-failed--question
+	margin-bottom: 30px
+
+@import media

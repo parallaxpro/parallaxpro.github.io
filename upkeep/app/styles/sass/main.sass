@@ -401,13 +401,13 @@
 	border-radius: 7px
 
 #popups
-	position: fixed
+	position: absolute
 	display: none
 	top: 0
 	bottom: 0
 	left: 0
 	right: 0
-	overflow-y: scroll
+	// overflow-y: scroll
 
 .popup-overlay
 	position: fixed
@@ -467,8 +467,9 @@
 	height: 150px
 	background: rgba(black, 0.05)
 	border-radius: 7px
-	background-size: cover !important
+	background-size: contain !important
 	background-position: center !important
+	background-repeat: no-repeat !important
 
 
 .drag-and-drop--text
@@ -1200,7 +1201,7 @@ h1
 .no-content
 	background: #F2F2F2
 	border-radius: 10px
-	&.home-page, &.products-page, &.no-warehouse
+	&.home-page, &.products-page, &.no-warehouse, &.telegram-bot
 		display: flex
 		justify-content: center
 		align-items: center
@@ -1219,6 +1220,8 @@ h1
 		background: url('../images/dist/icons/no-products.png')
 	&.no-warehouse::before
 		background: url('../images/dist/icons/no-warehouse.png')
+	&.telegram-bot::before
+		background: url('../images/dist/icons/robot.png')
 	&.warehouse-page
 		display: flex
 		justify-content: center
@@ -1723,6 +1726,7 @@ h1
 	background: white
 	box-shadow: inset 0 -1px 0 1px rgba(black, 0.05)
 	border-top: 1px solid rgba(black, 0.075)
+	z-index: 9999
 
 .catalog-footer--item
 	display: flex
@@ -1753,6 +1757,12 @@ h1
 		background: url('../images/dist/icons/addresses.svg')
 	&.devilery:before
 		background: url('../images/dist/icons/devilery.svg')
+	&.seo:before
+		background: url('../images/dist/icons/seo.svg')
+	&.access:before
+		background: url('../images/dist/icons/access.svg')
+	&.analytics:before
+		background: url('../images/dist/icons/analytics.svg')
 	&.active, &:hover
 		color: $blue
 		opacity: 1
@@ -2284,5 +2294,163 @@ hr.order-hr
 
 .default-textarea 
 	min-height: 100px
+
+.multiform-btns
+	position: absolute
+	right: 25px
+	display: flex
+	> .multiform-btn, > .multiselect-btn
+		position: relative
+		right: unset
+		margin-left: 5px
+
+.ui-selectmenu-menu
+	z-index: 999999
+
+.dad-block
+	position: relative
+	background: rgba(0, 0, 0, 0.05)
+	border-radius: 7px
+	padding: 30px 30px 20px
+	overflow: hidden
+	&.dad--over
+		border: 2px dashed rgba(black, 0.1)
+		&::after
+			content: 'Перетащите изображение сюда'
+			position: absolute
+			display: flex
+			align-items: center
+			justify-content: center
+			color: rgba(black, 0.5)
+			font-size: 18px
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background: rgba(#f7f7f7, 0.95)
+			z-index: 99
+
+
+.dad-block--title
+	font-size: 15px
+	line-height: 100%
+	opacity: 0.5
+
+.dad-block--header
+	margin-bottom: 25px
+
+.dad-item
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 100px
+	height: 100px
+	background: rgba(0, 0, 0, 0.05)
+	border-radius: 10px
+	margin: 0 5px 10px
+
+.dad-block--body
+	display: flex
+	flex-wrap: wrap
+	margin: 0 -5px
+
+.dad-image--item
+	display: flex
+	width: 84px
+	height: 84px
+	border-radius: 10px
+	background-repeat: no-repeat !important
+	background-size: contain !important
+	background-position: center !important
+
+
+.data-image
+	// position: relative
+	overflow: hidden
+	cursor: pointer
+	user-select: none
+	&:hover
+		transition: $transition
+		&::before
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			display: flex
+			width: 18px
+			height: 18px
+			transform: translate(-50%, -50%) rotate(45deg)
+			background: url(../images/dist/icons/dad-icon.svg)
+			background-position-y: bottom
+			background-size: cover
+			z-index: 99
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			background: rgba(black, 0.7)
+			transition: $transition
+			z-index: 9
+	&.loading
+		pointer-events: none
+		&::before
+			content: ''
+			position: absolute
+			display: flex
+			top: 50%
+			left: 50%
+			width: 24px
+			height: 24px
+			border: 2px solid rgba(white, 0.5)
+			border-top: 2px solid rgba(white, 1)
+			border-radius: 50%
+			animation: spin-dad 1s linear infinite
+			z-index: 99
+		&:hover
+			&::before
+				background: none
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			bottom: 0
+			background: rgba(black, 0.7)
+			transition: $transition
+			z-index: 9
+
+.dad-add
+	position: relative
+	cursor: pointer
+	&::before
+		content: ''
+		display: flex
+		width: 18px
+		height: 18px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		background: url(../images/dist/icons/dad-icon.svg)
+		background-position-y: top
+		background-size: cover
+		opacity: 0.25
+	&:hover
+		background: rgba(black, 0.1)
+
+
+.order-status
+	&.status-2
+		color: #219653
+	&.status-1
+		color: #005FF9
+	&.status-0
+		color: #BF9F3C
+
 
 @import media

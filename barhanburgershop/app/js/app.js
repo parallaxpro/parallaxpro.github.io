@@ -120,7 +120,7 @@ $(function () {
 
 		event.preventDefault();
 
-		
+		k
 		var sc = $(this).attr("href"),
 			dn = $(sc).offset().top - 100;
 		/*
@@ -143,6 +143,7 @@ $(function () {
 		$('#total-devilery').text(text);
 	});
 
+	$('input[data-mask="phone"]').inputmask("mask", {"mask": "+7 (999) 999-99-99"});
 
 	setActiveListElements(); updateMenuPadding();
 });
@@ -290,3 +291,31 @@ function closeMenu(options) {
 
 	options.menu_btn.removeClass('opened');
 }
+
+
+// 
+
+
+$(document).on('click', '.cabinet-order--item', function(e) {
+
+	var id = $(this).data('id');
+	var detalis = $('.cabinet-order--detalis[data-id='+ id +']');
+
+	if (detalis.is(':visible')) {
+		detalis.slideUp();
+	} else {
+		detalis.slideDown();
+	}
+	// $('.cabinet-order--detalis[data-id='+ id +']').slideDown();
+
+});
+
+$(document).on('click', '.cabinet-order--detalis-hide', function(e) {
+
+	var id = $(this).data('id');
+	var detalis = $('.cabinet-order--detalis[data-id='+ id +']');
+	
+	detalis.slideUp();
+
+})
+

@@ -1116,4 +1116,266 @@ input[data-cart_input]
 	line-height: 100%
 	margin-bottom: 0
 
+.main-slider--slider
+	overflow: hidden
+
+.auth-title
+	font-family: $customFont
+	font-size: 48px
+	line-height: 100%
+	text-align: center
+	color: #FFFFFF
+	margin-bottom: 40px
+
+.auth-form > *
+	margin-bottom: 15px
+	&:last-child
+		margin-bottom: 0
+
+.default-input
+	width: 100%
+	height: 60px
+	background: rgba(255, 255, 255, 0.05)
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.04)
+	border: 0
+	border-radius: 10px
+	padding: 23px 25px 21px
+	font-size: 16px
+	line-height: 100%
+	color: white
+	transition: $transition-fast
+	// margin-bottom: 15px
+	&:hover
+		background: rgba(255, 255, 255, 0.075)
+	&:focus
+		box-shadow: inset 0px 0px 0px 1px #D62631
+	&:disabled
+		color: rgba(white, 0.5)
+		box-shadow: inset 0px 0px 0px 1px rgba(white, 0.05)
+
+.input-forgot
+	position: relative
+	> input
+		padding-right: 150px
+
+.link-forgot
+	position: absolute
+	top: 50%
+	right: 5px
+	transform: translateY(-50%)
+	padding: 20px
+
+.default-button
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100%
+	font-size: 16px
+	line-height: 100%
+	color: #FFFFFF
+	padding: 23px 25px 21px
+	background: #D62631
+	border-radius: 10px
+	border: 0
+	transition: $transition-fast
+	&:hover
+		background: darken(#D62631, 10%)
+	&.loading
+		pointer-events: none
+		opacity: 0.75
+		&::before
+			content: ''
+			display: flex
+			width: 16px
+			height: 16px
+			margin-right: 7px
+			border: 2px solid rgba(white, 0.3)
+			border-top: 2px solid rgba(white, 1)
+			border-radius: 50%
+			animation: spin 1s linear infinite
+
+.auth-desc
+	font-size: 13px
+	line-height: 140%
+	color: rgba(255, 255, 255, 0.25)
+	margin-top: 20px
+	margin-bottom: 0
+
+.auth-container
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 25px
+	padding: 70px
+	margin-bottom: 50px
+
+
+.cabinet-order--detalis
+	.cart-item
+		padding: 0
+		border-bottom: 0
+	.cart-item--qty
+		margin-left: 0
+		margin-right: 20px
+
+.cabinet-title
+	font-family: $customFont
+	font-size: 48px
+	line-height: 100%
+	color: #FFFFFF
+	flex-grow: 1
+
+.cabinet-header
+	display: flex
+	align-items: center
+	margin-bottom: 40px
+
+.cabinet-settings
+	display: flex
+	align-items: center
+	font-size: 18px
+	line-height: 100%
+	text-align: right
+	color: #D62631
+	cursor: pointer
+	&::after
+		content: ''
+		display: block
+		width: 14px
+		height: 14px
+		background: url('../images/dist/icons/setting.svg')
+		margin-left: 5px
+
+.cabinet-profile
+	display: flex
+	align-items: center
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 15px
+	padding: 20px
+
+.cabinet-profile--image
+	display: flex
+	width: 90px
+	height: 90px
+	border-radius: 90px
+	overflow: hidden
+	margin-right: 20px
+	img
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.cabinet-profile--name
+	font-size: 18px
+	line-height: 100%
+	margin-bottom: 10px
+
+.cabinet-profile--phone
+	font-size: 14px
+	line-height: 100%
+	opacity: 0.5
+
+.cabinet-profile--data
+	flex-grow: 1
+
+.cabinet-profile--logout
+	display: flex
+	width: 20px
+	height: 20px
+	background: url('../images/dist/icons/exit.svg')
+
+
+.cabinet-bonus
+	display: flex
+	align-items: center
+	// justify-content: center
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 15px
+	height: 130px
+	padding: 0 50px
+
+.cabinet-bonus--title
+	font-size: 18px
+	line-height: 100%
+	color: #FFFFFF
+	flex-grow: 1
+	opacity: 0.3
+
+.cabinet-bonus--count
+	font-weight: bold
+	font-size: 28px
+	line-height: 100%
+	color: #FFFFFF
+
+.cabinet-orders
+	margin-top: 30px
+
+.cabinet-orders--title
+	font-size: 18px
+	line-height: 100%
+	color: #FFFFFF
+	opacity: 0.2
+	margin-bottom: 20px
+
+.cabinet-order
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 10px
+	margin-bottom: 15px
+
+.cabinet-order--item
+	display: flex
+	align-items: center
+	padding: 32px 30px
+	cursor: pointer
+		
+
+.cabinet-order--item-id
+	width: 70px
+	opacity: 0.3
+
+.cabinet-order--item-date
+	width: 200px
+
+.cabinet-order--item-price
+	display: flex
+	flex-grow: 1
+	justify-content: flex-end
+	font-size: 16px
+	line-height: 100%
+	color: #D62631
+	font-weight: bold
+
+.cabinet-order--item-status
+	.status-0
+		color: #FF9C00
+	.status-2
+		color: #2DA771
+
+.cabinet-order--detalis
+	display: none
+	border-top: 1px solid rgba(240, 235, 235, 0.07)
+	padding: 30px
+
+.cabinet-order--detalis-hide
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 10px
+	font-size: 13px
+	line-height: 100%
+	color: rgba(255, 255, 255, 0.15)
+	background: rgba(0, 0, 0, 0.2)
+	border-radius: 20px
+	cursor: pointer
+	transition: $transition-fast
+	margin-top: 20px
+	user-select: none
+	&:hover
+		background: rgba(0, 0, 0, 0.1)
+		
+
+.cabinet-container
+	background: rgba(255, 255, 255, 0.02)
+	border-radius: 25px
+	padding: 70px
+	margin-bottom: 50px
+
 @import media
