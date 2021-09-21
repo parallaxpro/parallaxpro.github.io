@@ -774,6 +774,10 @@ input
 	color: white
 	&::placeholder
 		color: rgba(white, 0.25)
+	&.disabled
+		color: rgba(white, 0.5)
+		box-shadow: inset 0px 0px 0px 1px rgba(white, 0.05)
+		pointer-events: none
 
 .cart-block--padding
 	padding-right: 70px

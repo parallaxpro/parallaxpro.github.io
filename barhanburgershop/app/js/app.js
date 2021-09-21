@@ -143,7 +143,8 @@ $(function () {
 		$('#total-devilery').text(text);
 	});
 
-	$('input[data-mask="phone"]').inputmask("mask", {"mask": "+7 (999) 999-99-99"});
+	// $('input[data-mask="phone"]').inputmask("mask", {"mask": "+7 (999) 999-99-99"});
+	
 
 	setActiveListElements(); updateMenuPadding();
 });

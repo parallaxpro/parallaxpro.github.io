@@ -296,7 +296,7 @@
                                         <input type="text" class="cart-input" placeholder="Введите имя">
                                     </div>
                                     <div class="col-lg-6 mt-lg-0 mt-2">
-                                        <input type="text" class="cart-input" placeholder="Введите имя">
+                                        <input type="text" id="phone" class="cart-input" placeholder="Введите имя">
                                     </div>
                                 </div>
                             </div>
@@ -379,6 +379,7 @@
 </main>
 
 
+
 <footer class="main-footer content-slided">
 	<div class="c-container">
 		<div class="row">
@@ -448,9 +449,20 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js" integrity="sha512-VpQwrlvKqJHKtIvpL8Zv6819FkTJyE1DoVNH0L2RLn8hUPjRjkS/bCYurZs0DX9Ybwu9oHRHdBZR9fESaq8Z8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="libs/imask.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="js/app.min.js"></script>
+
+	<script>
+		var phoneMask = IMask(
+			document.getElementById('phone'), {
+				mask: '+{7}(000)000-00-00'
+			}
+		);
+
+		// document.getElementsByTagName('input[data-mask=phone]')
+	</script>
 
 </body>
 </html>
