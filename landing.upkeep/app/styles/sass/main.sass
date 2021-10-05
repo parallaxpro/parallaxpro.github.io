@@ -1,0 +1,292 @@
+@import config
+@import "blocks/**/*"
+
+.main-first-block
+	display: flex
+	align-items: center
+	width: 100%
+	background: #E6EAED
+	border-radius: 15px
+	max-height: 400px
+	height: 400px
+	overflow: hidden
+	padding: 70px
+
+.first-block--title
+	font-weight: bold
+	font-size: 32px
+	line-height: 125%
+	color: #000000
+	margin-bottom: 15px
+	&.addon
+		display: flex
+		align-items: center
+		span
+			font-weight: bold
+			font-size: 22px
+			line-height: 100%
+			// height: 40px !important
+			padding: 9px 18px
+			margin-left: 15px
+			background: #005FF9
+			border-radius: 10px
+
+.row-block--desc
+	font-size: 16px
+	line-height: 150%
+	color: #000000
+	opacity: 0.5
+	margin-bottom: 25px
+
+.default-btn
+	display: inline-flex
+	font-weight: normal
+	font-size: 14px
+	line-height: 100%
+	text-align: center
+	padding: 13px 20px
+	border-radius: 10px
+	&.blue-btn
+		background: #005FF9
+		color: #FFFFFF
+		&:hover
+			background: darken(#005FF9, 5%)
+	&.white-btn
+		background: #FFFFFF
+		color: #005FF9
+		&:hover
+			background: darken(#FFFFFF, 5%)
+	&:active
+		opacity: 0.75
+
+.first-block--image
+	position: absolute
+	transition: all .4s cubic-bezier(0.19,1,0.22,1) !important
+	// &:hover
+	// 	margin: -20px 0
+
+.first-block--image-preview-1
+	top: -50px
+	z-index: 1
+	left: 60px
+	animation: te 3s ease-in-out infinite alternate
+
+.first-block--image-preview-2
+	bottom: -100px
+	right: 0
+	z-index: 0
+	animation: te 3s ease-in-out infinite alternate
+
+// .first-block--image-preview-3
+	// animation: 10s ease-in-out 10s infinite reverse both running wave
+	// animation: te 3s ease-in-out infinite alternate
+	
+
+.main-header
+	padding: 40px 0
+
+.join-btn
+	display: inline-flex
+	font-size: 14px
+	line-height: 100%
+	text-align: center
+	padding: 13px 40px
+	background: #E6ECF7
+	border-radius: 10px
+
+// body
+// 	margin-bottom: 70px
+
+.second-block
+	position: relative
+	display: flex
+	align-items: center
+	background: #E6ECF7
+	color: black
+	border-radius: 15px
+	max-height: 300px
+	height: 300px
+	overflow: hidden
+	padding: 50px
+	transition: all 0.2s ease-in-out
+	&:hover
+		color: black
+		background: darken(#E6ECF7, 3%)
+		transform: translateY(-5px)
+
+.second-block--title
+	font-weight: bold
+	font-size: 28px
+	line-height: 120%
+	margin-bottom: 16px
+
+.second-block-desc
+	font-weight: normal
+	font-size: 14px
+	line-height: 150%
+	color: #000000
+	opacity: 0.5
+	margin: 0
+
+.second-block--img
+	transition: all .4s cubic-bezier(0.19,1,0.22,1) !important
+	&.img-second
+		position: absolute
+		top: -190px
+		right: -480px
+		z-index: 0
+	&.img-three
+		position: absolute
+		right: -70px
+		top: 20px
+	&:hover
+		margin: -20px 0
+		
+
+// .second-block--img.img-three
+// 	position: absolute
+// 	right: -70px
+// 	top: 20px
+
+.second-block--content
+	max-width: 235px
+	z-index: 1
+
+.first-block--image-preview-3
+	top: -120px
+	left: -100px
+
+.first-block--image-preview-4
+	right: -370px
+	bottom: -400px
+	animation: te 3s ease-in-out infinite alternate
+
+.blue-section
+	.main-first-block
+		background: #005FF9
+		color: white
+	.first-block--title, .row-block--desc
+		color: white
+
+.second-block--image
+	width: 250px
+
+.img-4
+	position: absolute
+	top: 20px
+
+.img-5
+	position: absolute
+	right: 60px
+	top: 20px
+
+.black-section
+	.main-first-block
+		background: #1A1A1A
+		color: white
+	.first-block--title, .row-block--desc
+		color: white
+
+.image-item
+	margin-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+
+.image-containers-item-2
+	position: relative
+	left: 70px
+
+.image-containers-item-3
+	position: relative
+	left: 140px
+	animation: wave-row 3s ease-in-out infinite alternate
+
+.image-containers-item-1
+	animation: wave-row 3s ease-in-out infinite alternate
+
+.contact-section
+	padding: 70px 0
+
+input[type=radio]
+	display: none
+
+.contact-title
+	font-weight: bold
+	font-size: 32px
+	line-height: 100%
+	text-align: center
+	margin-bottom: 30px
+
+.contact-label
+	display: flex
+	align-items: center
+	padding: 16px 18px
+	font-size: 16px
+	line-height: 100%
+	background: rgba(0, 95, 249, 0.05)
+	border-radius: 10px
+	transition: all 0.1s ease-in-out
+	cursor: pointer
+	user-select: none
+	&::before
+		content: ''
+		display: flex
+		width: 18px
+		height: 18px
+		background: url('../images/dist/socials.svg')
+		margin-right: 10px
+	&.email::before
+		background-position-y: center !important
+	&.whatsapp::before
+		background-position-y: bottom !important
+
+input[type=radio]:checked + label
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+	background: rgba(0, 95, 249, 0.1)
+
+.default-input
+	display: flex
+	width: 100%
+	background: #FFFFFF
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.05)
+	border-radius: 10px
+	padding: 22px 25px
+	height: 60px
+	font-size: 16px
+	line-height: 120%
+	border: 0
+	transition: all 0.2s ease-in-out
+	&::placeholder
+		color: rgba(0, 0, 0, 0.25)
+	&:hover
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.1)
+	&:focus
+		box-shadow: inset 0px 0px 0px 1px #005ff9
+		
+
+.contact-btn
+	display: flex
+	width: 100%
+	align-items: center
+	justify-content: center
+	font-size: 16px
+	line-height: 100%
+	color: #FFFFFF
+	background: #005FF9
+	border-radius: 10px
+	border: 0
+	height: 60px
+	transition: all 0.1s ease-in-out
+	&:hover
+		background: darken(#005FF9, 5%)
+	&:active
+		opacity: 0.75
+
+.mobile
+	display: none
+
+.first-block--title, .row-block--desc, .default-btn
+	position: relative
+	z-index: 9
+
+@import media
