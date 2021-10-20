@@ -864,3 +864,10 @@ $(document).on('click', '#map-button', function(e) {
 //     $('.warehouse-editor-list').append(template);
 
 // }
+
+
+
+$(document).on('click', '.opt_settings', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+});

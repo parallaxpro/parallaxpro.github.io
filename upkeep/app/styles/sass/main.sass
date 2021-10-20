@@ -1030,6 +1030,15 @@ html .ui-button.ui-state-disabled
 		.label-control--text
 			font-size: 14px
 			line-height: 100%
+	&.opt
+		padding: 0
+		background: none
+		.label-control--text
+			font-size: 14px
+			margin-left: 10px
+		&:hover
+			box-shadow: none
+			transform: unset !important
 
 
 label
@@ -2452,5 +2461,76 @@ hr.order-hr
 	&.status-0
 		color: #BF9F3C
 
+// 
+
+.opt_group
+	background: white
+	border-radius: 10px
+	
+.opt_group_header,
+.opt_group_header--right
+	display: flex
+	align-items: center
+
+.opt_group_input
+	background: none
+	padding: 0px
+	border: 0
+	font-size: 18px
+	// height: 24px
+	line-height: 120%
+	appearance: none
+	width: 100%
+	&::placeholder
+		color: rgba(black, 0.2)
+
+.opt_delete
+	font-size: 13px
+	line-height: 100%
+	text-align: right
+	color: #FB0D0D
+	cursor: pointer
+	user-select: none
+	transition: opacity 0.2s ease-in-out
+	&:hover
+		color: darken(#FB0D0D, 10%)
+	&:active
+		opacity: 0.5
+
+.opt_settings
+	display: inline-flex
+	width: 24px
+	height: 24px
+	background: url('../images/dist/icons/opt_settings.svg') no-repeat
+	background-position-y: top
+	opacity: 0.2
+	transition: opacity 0.2s ease-in-out
+	cursor: pointer
+	&:hover
+		// background-position-y: bottom
+		opacity: 0.5
+	&.active
+		background-position-y: bottom
+		opacity: 1
+	&:active
+		opacity: 0.5
+
+.opt_group_header
+	padding: 30px 30px 0 30px
+		
+
+.opt_group_header--left
+	flex-grow: 1
+
+.opt_group_header--right > span
+	margin-left: 15px
+
+.opt_group_settings
+	display: grid
+	grid-template-columns: auto auto auto
+	margin: 20px 30px
+	background: rgba(0, 95, 249, 0.05)
+	border-radius: 10px
+	padding: 20px
 
 @import media
