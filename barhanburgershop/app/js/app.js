@@ -4,9 +4,6 @@ $(function () {
 
 	autosize($('textarea'));
 	// $('select').selectmenu();
-	$('select').multipleSelect({
-		selectAll: false
-	});
 
 	const swiper = new Swiper('.main-slider--slider', {
 			// Optional parameters
