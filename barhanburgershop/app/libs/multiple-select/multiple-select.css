@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/**
+ * @author zhixin wen <wenzhixin2010@gmail.com>
+ */
+.ms-offscreen {
+  clip: rect(0 0 0 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  outline: 0 !important;
+  left: auto !important;
+  top: auto !important; }
+
+.ms-parent {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle; }
+
+.ms-search {
+  display: inline-block;
+  margin: 0;
+  min-height: 26px;
+  padding: 2px;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 10000;
+  box-sizing: border-box; }
+  .ms-search input {
+    width: 100%;
+    height: auto !important;
+    min-height: 24px;
+    padding: 0 5px;
+    margin: 0;
+    outline: 0;
+    font-family: sans-serif;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: none; }
+
+
+
+
+
+.ms-drop .ms-no-results {
+  display: none; }
