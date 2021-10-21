@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-9">
 
-                <div class="editor-content active" data-content="main">
+                <div class="editor-content active" data-content="main" style="display: none;">
                     <div class="row">
                         <div class="col-8">
                             <input type="text" class="b-input" placeholder="Введите название блюда">
@@ -179,72 +179,15 @@
                     </div>
                 </div>
 
-                <div class="editor-content" data-content="options">
+                <div class="editor-content" data-content="options" style="display: block;">
                     <div class="row">
 
-                        <div class="col-6 mb-3">
-                            <label for="bun" class="label-control">
-                                <span class="label-control--text">Булочка <span style="opacity: 0.5; font-size: 13px;">(Бриошь, Черная)</span></span>
-                                <label class="cl-checkbox">
-                                    <input type="checkbox" name="bun" id="bun">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </label>
-
-                        </div>
-                        <div class="col-6 mb-3">
-                            <label for="roasting" class="label-control">
-                                <span class="label-control--text">Прожарки <span style="opacity: 0.5; font-size: 13px;">(Почти, Средняя, Полная)</span></span>
-                                <label class="cl-checkbox">
-                                    <input type="checkbox" name="roasting" id="roasting">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </label>
-                        </div>
-
                         <div class="col-12 mb-3">
-
-                            <div class="options-groups">
-
-                                <!-- <div class="option-group--container" data-options="1">
-                                    <div class="option-group--header">
-    
-                                        <div class="option-group--title">
-                                            <input type="text" class="option-group--title-input" placeholder="Название опции" data-options="1">
-                                        </div>
-                                        <div class="option-group--delete">
-                                            <span class="option-group--delete-btn multiform-btn multiform-btn--minus" data-options="1"></span>
-                                        </div>
-    
-                                    </div>
-                                    <div class="option-group--body">
-    
-                                        <div class="option-item--rows" data-options="1">
-                                            <div class="option-item--row" data-options="1" data-row="1">
-                                                <div class="option-item--title">
-                                                    <input class="option-item--title-input" placeholder="Пункт" data-options="1" data-row="1">
-                                                </div>
-                                                <div class="option-item--sum">
-                                                    <span class="option-item--sum-item plus" data-options="1" data-row="1"></span>
-                                                    <input type="text" class="option-item--sum-input" placeholder="Сумма" data-options="1" data-row="1">
-                                                    <span class="option-item--sum-total" data-options="1" data-row="1"></span>
-                                                </div>
-                                                <span class="option-item--row-delete-btn multiform-btn multiform-btn--minus"></span>
-                                            </div>
-                                        </div>
-    
-                                        <span class="option-item--row-add" data-options="1">Добавить пункт</span>
-    
-                                    </div>
-                                </div> -->
-
-                            </div>
-
-
+                            <div class="opt_container"></div>
                         </div>
 
                         <div class="col-12">
-                            <span class="option-add">Добавить опцию</span>
+                            <span class="option-add">Добавить группу</span>
                             <input type="hidden" id="options-result">
                         </div>
                     </div>

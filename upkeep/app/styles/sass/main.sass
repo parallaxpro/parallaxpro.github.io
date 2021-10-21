@@ -2466,9 +2466,13 @@ hr.order-hr
 .opt_group
 	background: white
 	border-radius: 10px
+	margin-bottom: 15px
 	
 .opt_group_header,
-.opt_group_header--right
+.opt_group_header--right,
+.opt_group_item_content,
+.opt_group_item--right,
+.opt_group_item_settings
 	display: flex
 	align-items: center
 
@@ -2496,6 +2500,23 @@ hr.order-hr
 		color: darken(#FB0D0D, 10%)
 	&:active
 		opacity: 0.5
+	&.loading
+		position: relative
+		color: transparent
+		user-select: none
+		pointer-events: none
+		&:before
+			content: ''
+			display: flex
+			position: absolute
+			top: 50%
+			left: 20px
+			width: 16px
+			height: 16px
+			border: 2px solid rgba($red, 0.5)
+			border-top: 2px solid rgba($red, 1)
+			border-radius: 50%
+			animation: spin-search 1s linear infinite
 
 .opt_settings
 	display: inline-flex
@@ -2528,9 +2549,120 @@ hr.order-hr
 .opt_group_settings
 	display: grid
 	grid-template-columns: auto auto auto
-	margin: 20px 30px
+	margin: 20px 30px -10px
 	background: rgba(0, 95, 249, 0.05)
 	border-radius: 10px
 	padding: 20px
+	max-height: 61px
+
+.opt_group_item
+	padding: 5px 0
+	transition: background 0.1s ease-in-out
+	&:hover
+		background: rgba(#005FF9, 0.05)
+
+.opt_group_item_content
+	padding: 0 30px 5px
+
+.opt_group_item_value--input, .opt_group_item_sum--input
+	width: 100%
+	background: #F7F7F7
+	box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02)
+	border-radius: 5px
+	border: 0
+	appearance: none
+	padding: 14px
+	font-size: 14px
+	height: 42px
+	transition: box-shadow 0.1s ease-in-out
+	&:hover
+		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2)
+	&:focus
+		box-shadow: inset 0px 0px 0px 1px #005FF9
+		
+.opt_group_item--left
+	flex-grow: 1
+	margin-right: 10px
+
+.opt_group_item_settings > span
+	margin-left: 15px
+		
+.opt_group_item_sum--input
+	padding-left: 44px
+
+.opt_group_item_sum
+	position: relative
+
+.opt_group_item_sum_type
+	display: flex
+	align-items: center
+	justify-content: center
+	position: absolute
+	top: 5px
+	left: 5px
+	width: 32px
+	height: 32px
+	background: rgba(black, 0.03)
+	border-radius: 5px
+	font-size: 22px
+	line-height: 100%
+	// opacity: 0.5
+	color: rgba(black, 0.5)
+	margin-right: 10px
+	cursor: pointer
+	user-select: none
+	transition: all 0.1s ease-in-out
+	&:hover
+		background: rgba(black, 0.1)	
+		color: rgba(black, 0.6)
+	&[data-type=plus]::before
+		content: '+'
+	&[data-type=minus]::before
+		content: '-'
+
+.opt_group_item_settings_content
+	display: grid
+	grid-template-columns: auto auto auto
+	margin: 0 30px 5px
+	padding: 20px
+	background: rgba(0, 0, 0, 0.03)
+	border-radius: 10px
+	max-height: 61px
+
+.opt_group_settings, .opt_group_item_settings_content
+	display: none
+
+.opt_group_list
+	margin-top: 30px
+
+.opt_group_item--add
+	display: flex
+	border-radius: 5px
+	font-size: 13px
+	padding: 16px
+	cursor: pointer
+	justify-content: center
+	margin: 10px 30px 30px
+	color: #005FF9
+	background: rgba(0, 95, 249, 0.05)
+	transition: all 0.1s ease-in-out
+	&:hover
+		background: rgba(0, 95, 249, 0.1)
+		
+
+.opt_group
+	padding-bottom: 1px
+
+.option-add
+	display: flex
+	justify-content: center
+	width: 100%
+	padding: 16px
+	background: rgba(0, 95, 249, 0.05)
+	border-radius: 5px
+	font-size: 13px
+	color: #005FF9
+	cursor: pointer
+	user-select: none
 
 @import media

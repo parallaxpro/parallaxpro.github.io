@@ -619,43 +619,43 @@ $(document).on('click', '.option-group--delete-btn', function(e) {
     
 });
 
-$(document).on('click', '.option-add', function(e) {
+// $(document).on('click', '.option-add', function(e) {
 
-    var next_id = $('.option-group--container').last().data('options') + 1;
+//     var next_id = $('.option-group--container').last().data('options') + 1;
 
-    if (!next_id) var next_id = 1;
+//     if (!next_id) var next_id = 1;
 
-    var template = '\
-    <div class="option-group--container" data-options="'+ next_id +'">\
-        <div class="option-group--header">\
-            <div class="option-group--title">\
-                <input type="text" class="option-group--title-input" placeholder="Название опции" data-options="'+ next_id +'">\
-            </div>\
-            <div class="option-group--delete">\
-                <span class="option-group--delete-btn multiform-btn multiform-btn--minus" data-options="'+ next_id +'"></span>\
-            </div>\
-        </div>\
-        <div class="option-group--body">\
-            <div class="option-item--rows" data-options="'+ next_id +'">\
-                <div class="option-item--row" data-options="'+ next_id +'" data-row="1">\
-                    <div class="option-item--title">\
-                        <input class="option-item--title-input" placeholder="Пункт" data-options="'+ next_id +'" data-row="1">\
-                    </div>\
-                    <div class="option-item--sum">\
-                        <span class="option-item--sum-item plus" data-options="'+ next_id +'" data-row="1"></span>\
-                        <input type="text" class="option-item--sum-input" placeholder="Сумма" data-options="'+ next_id +'" data-row="1">\
-                        <span class="option-item--sum-total" data-options="'+ next_id +'" data-row="1"></span>\
-                    </div>\
-                    <span class="option-item--row-delete-btn multiform-btn multiform-btn--minus"></span>\
-                </div>\
-            </div>\
-            <span class="option-item--row-add" data-options="'+ next_id +'">Добавить пункт</span>\
-        </div>\
-    </div>\
-    ';
+//     var template = '\
+//     <div class="option-group--container" data-options="'+ next_id +'">\
+//         <div class="option-group--header">\
+//             <div class="option-group--title">\
+//                 <input type="text" class="option-group--title-input" placeholder="Название опции" data-options="'+ next_id +'">\
+//             </div>\
+//             <div class="option-group--delete">\
+//                 <span class="option-group--delete-btn multiform-btn multiform-btn--minus" data-options="'+ next_id +'"></span>\
+//             </div>\
+//         </div>\
+//         <div class="option-group--body">\
+//             <div class="option-item--rows" data-options="'+ next_id +'">\
+//                 <div class="option-item--row" data-options="'+ next_id +'" data-row="1">\
+//                     <div class="option-item--title">\
+//                         <input class="option-item--title-input" placeholder="Пункт" data-options="'+ next_id +'" data-row="1">\
+//                     </div>\
+//                     <div class="option-item--sum">\
+//                         <span class="option-item--sum-item plus" data-options="'+ next_id +'" data-row="1"></span>\
+//                         <input type="text" class="option-item--sum-input" placeholder="Сумма" data-options="'+ next_id +'" data-row="1">\
+//                         <span class="option-item--sum-total" data-options="'+ next_id +'" data-row="1"></span>\
+//                     </div>\
+//                     <span class="option-item--row-delete-btn multiform-btn multiform-btn--minus"></span>\
+//                 </div>\
+//             </div>\
+//             <span class="option-item--row-add" data-options="'+ next_id +'">Добавить пункт</span>\
+//         </div>\
+//     </div>\
+//     ';
 
-    $('.options-groups').append(template);
-});
+//     $('.options-groups').append(template);
+// });
 
 function updateOptionsResult() {
 
@@ -870,4 +870,43 @@ $(document).on('click', '#map-button', function(e) {
 $(document).on('click', '.opt_settings', function(e) {
     e.preventDefault();
     $(this).toggleClass('active');
+});
+
+$(document).on('click', '[data-opt_settings_btn]', function(e) {
+    e.preventDefault();
+
+    var block = $('[data-opt_settings='+ $(this).data('opt_settings_btn') +']');
+        block.slideToggle({
+            duration: 500,
+            easing: "easeOutQuad",
+            start: function() {
+              $(this).css('display','grid');
+            }
+        });
+
+});
+
+$(document).mouseup(function (e) {
+    var container = $(".mouseup");
+
+    if (container.has(e.target).length === 0){
+        
+        $('.opt_settings').removeClass('active');
+        $('[data-opt_settings]').slideUp();
+        $('[data-opt_settings_item]').slideUp();
+
+    }
+});
+
+$(document).on('click', '.opt_settings[data-opt_settings_item_btn]', function(e) {
+    e.preventDefault();
+
+    var block = $('.opt_group_item_settings_content[data-opt_group='+ $(this).data('opt_group') +'][data-opt_settings_item='+ $(this).data('opt_settings_item_btn') +']');
+        block.slideToggle({
+            duration: 400,
+            easing: "easeOutQuad",
+            start: function() {
+              $(this).css('display','grid');
+            }
+        });
 });
