@@ -32,6 +32,6 @@
 		"webpack-stream": "^6.1.1"
 	},
 	"dependencies": {
-		"autosize": "^5.0.0"
+		"autosize": "^5.0.1"
 	}
 }

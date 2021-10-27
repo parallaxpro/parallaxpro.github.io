@@ -1,9 +1,25 @@
-import autosize from 'autosize';
-
 $(function () {
 
 	autosize($('textarea'));
 	// $('select').selectmenu();
+
+	// $('input[data-phone]').iMask({
+	// 	mask: '+{7} (000) 000-00-00'
+	// })
+
+	var phones = document.querySelectorAll('[data-phone]');
+
+	for (var i = 0; i < phones.length; i++) {
+		new IMask(phones[i], {
+			mask: '+{7} (000) 000-00-00',
+		});
+	}
+
+	// Array.prototype.forEach.call(phones, function(element) {
+	// 	var phoneMask = new IMask(element, {
+	// 		mask: '+{7} (000) 000-00-00',
+	// 	});
+	// });
 
 	const swiper = new Swiper('.main-slider--slider', {
 			// Optional parameters
@@ -120,7 +136,6 @@ $(function () {
 
 		event.preventDefault();
 
-		k
 		var sc = $(this).attr("href"),
 			dn = $(sc).offset().top - 100;
 		/*
