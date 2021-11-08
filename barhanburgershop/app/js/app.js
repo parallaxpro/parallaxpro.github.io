@@ -280,7 +280,7 @@ function openMenu(options) {
 
 	options.menu.css({
 		'opacity': '1',
-		'zIndex': '9999'
+		'zIndex': '99999'
 	});
 
 	options.menu_btn.addClass('opened');
@@ -308,6 +308,13 @@ function closeMenu(options) {
 	options.menu_btn.removeClass('opened');
 }
 
+
+$(document).mouseup(function (e) {
+    var container = $(".aside-block--selector");
+    if (container.has(e.target).length === 0){
+        closeMenu(aside_menu_options);
+    }
+});
 
 // 
 
